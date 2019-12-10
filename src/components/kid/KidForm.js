@@ -35,7 +35,16 @@ class KidForm extends Component {
                 points: null,
             };
             KidManager.post(kid)
-                .then(() => this.props.history.push("/reward"));
+                .then((response) => {
+                    const relationship = {
+                        parentId: userId.id,
+                        userId: response.id
+                    };
+                    KidManager.postRelationship(relationship)
+                    console.log(response.id)
+                    this.props.history.push("/reward")
+                            });
+
         }
 
     };
