@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
 import { Form, Button, Nav, NavDropdown, FormControl } from "react-bootstrap"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import KidManager from "../../modules/KidManager"
 
 
