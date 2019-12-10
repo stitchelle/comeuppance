@@ -61,7 +61,7 @@ class Register extends Component {
                                             this.props.setUser(user)
                                         });
                                         // then once the local storage is set, then take the user to the articles page
-                                        this.props.history.push("/")
+                                        this.props.history.push("/home")
                                     })
                             })
                     } else {
