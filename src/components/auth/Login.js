@@ -40,28 +40,32 @@ class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
-                <fieldset>
-                    <h3>Login</h3>
-                    <div className="formgrid">
-                        <input onChange={this.handleFieldChange} type="email"
-                            id="email"
-                            placeholder="Email address"
-                            required="" autoFocus="" />
-                        <label htmlFor="inputEmail">Email address</label>
+            <>
+                <center><h1>WELCOME TO COMEUPPANCE!!!</h1></center>
 
-                        <input onChange={this.handleFieldChange} type="password"
-                            id="password"
-                            placeholder="Password"
-                            required="" />
-                        <label htmlFor="inputPassword">Password</label>
-                    </div>
-                    <button type="submit">
-                        Log In
+                <form onSubmit={this.handleLogin}>
+                    <fieldset>
+                        <h3>Login</h3>
+                        <div className="formgrid">
+                            <input onChange={this.handleFieldChange} type="email"
+                                id="email"
+                                placeholder="Email address"
+                                required="" autoFocus="" />
+                            <label htmlFor="inputEmail">Email address</label>
+
+                            <input onChange={this.handleFieldChange} type="password"
+                                id="password"
+                                placeholder="Password"
+                                required="" />
+                            <label htmlFor="inputPassword">Password</label>
+                        </div>
+                        <button type="submit">
+                            Log In
                     </button>
-                    <Link className="nav-link" to="/register">Register New Account</Link>
-                </fieldset>
-            </form>
+                        <Link className="nav-link" to="/register">Register New Account</Link>
+                    </fieldset>
+                </form>
+            </>
         )
     }
 
