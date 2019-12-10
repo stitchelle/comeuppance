@@ -38,23 +38,6 @@ export default class ApplicationViews extends Component {
                     return <KidForm {...props} />
                 }} />
 
-                {/* <Route
-                    exact
-                    path="/kid"
-                    render={props => {
-                        if (this.props.user) {
-                            return <KidCard />;
-                        } else {
-                            return <Redirect to="/login" />
-                        }
-                        // Remove null and return the component which will show news articles
-                    }}
-                /> */}
-
-
-                {/* <Route path="/kid/new" render={(props) => {
-                    return <KidForm {...props} />
-                }} /> */}
             </React.Fragment>
         );
     }

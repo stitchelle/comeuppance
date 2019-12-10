@@ -15,6 +15,26 @@
       "isParent": false,
       "points": null,
       "id": 2
+    },
+    {
+      "username": "Devin",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 3
+    }
+  ],
+  "Relationships": [
+    {
+      "parentId": 1,
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "parentId": 1,
+      "userId": 3,
+      "id": 2
     }
   ]
 }

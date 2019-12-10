@@ -3,8 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
 import { Form, Button, Nav, NavDropdown, FormControl } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import KidManager from "../../modules/KidManager"
+
+
+
 
 class NavBar extends Component {
+    state = {
+        relationships: []
+    };
+
+    componentDidMount() {
+        KidManager.getAllRelationsips()
+            .then(relationships => this.setState({ relationships: relationships }))
+    }
+
     render() {
         return (
             <Navbar bg="dark" variant="dark" expand="lg">
@@ -24,19 +37,24 @@ class NavBar extends Component {
                         <Nav.Link href="/reward">Reward</Nav.Link>
                         <Nav.Link href="/punishment">Punishment</Nav.Link>
                         <NavDropdown title="Kid" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/kid/1">Xander</NavDropdown.Item>
-                            <NavDropdown.Item href="/kid/2">Devin</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="/kid/new">New Kid</NavDropdown.Item>
+
+                            {this.state.relationships.map(kid => 
+                                    <NavDropdown.Item href={`/kid/${kid.id}`} key={kid.id}> 
+                                    { kid.user.username } </NavDropdown.Item >
+                            )}
+
+                        <NavDropdown.Divider />
+
+                        <NavDropdown.Item href="/kid/new">New Kid</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>Logout</Nav.Link>
+                    <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>Logout</Nav.Link>
                     </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
+                <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-success">Search</Button>
+                </Form>
                 </Navbar.Collapse>
-            </Navbar>
+            </Navbar >
         )
     }
 }
