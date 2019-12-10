@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import NavBar from "./nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 import "./comeuppance.css"
+import KidCard from "./kid/KidCard"
 
 class Comeuppance extends Component {
     state = {

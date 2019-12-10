@@ -11,7 +11,9 @@ class Register extends Component {
         email: "",
         password: "",
         loadingStatus: false,
-        confirmPassword: ""
+        confirmPassword: "",
+        isParent: "",
+        points: ""
     }
 
     // Update state whenever an input field is edited
@@ -49,6 +51,8 @@ class Register extends Component {
                             username: this.state.username,
                             email: this.state.email,
                             password: this.state.password,
+                            isParent: true,
+                            points: null,
                         }
                         // post user to database
                         RegistrationLoginManager.postNewUser(userObj)
@@ -61,7 +65,7 @@ class Register extends Component {
                                             this.props.setUser(user)
                                         });
                                         // then once the local storage is set, then take the user to the articles page
-                                        this.props.history.push("/home")
+                                        this.props.history.push("/")
                                     })
                             })
                     } else {

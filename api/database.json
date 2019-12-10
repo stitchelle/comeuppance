@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "Michelle",
+      "email": "bob1234girl@gmail.com",
+      "password": "123",
+      "isParent": true,
+      "points": null,
+      "id": 1
+    },
+    {
+      "username": "Xander",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 2
+    }
+  ]
+}

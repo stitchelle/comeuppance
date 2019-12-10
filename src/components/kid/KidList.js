@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import KidCard from './ChildCard'
+import KidCard from './KidCard'
 import RegistrationLoginManager from '../../modules/RegistrationLoginManager'
-import './ChildForm.css'
+import './KidForm.css'
 
 class KidList extends Component {
   //define what this component needs to render
@@ -26,11 +26,8 @@ class KidList extends Component {
     return (
       <>
         <br/>
-        <center><strong></strong><em><h1>Kids</h1></em><strong></strong></center>
         <section className="section-content">
-          <button type="button" className="btn" onClick={() => {this.props.history.push("/kid/new") }}>
-            Add Kid
-          </button>
+        <center><strong></strong><em><h1>Kids</h1></em><strong></strong></center>
         </section>
         <div className="container-cards">
           {this.state.kid.map(kid =>
