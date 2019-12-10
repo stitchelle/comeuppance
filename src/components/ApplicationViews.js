@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import Register from "./auth/Registration";
 import Login from "./auth/Login"
 import Home from "./Home"
-import KidCard from "./kid/KidCard"
 import KidForm from './kid/KidForm'
+import KidCard from "./kid/KidCard";
 
 
 
@@ -36,6 +36,10 @@ export default class ApplicationViews extends Component {
 
                 <Route path="/kid/new" render={(props) => {
                     return <KidForm {...props} />
+                }} />
+
+                <Route path="/kid/:kidId(\d+)" render={(props) => {
+                    return <KidCard {...props} />
                 }} />
 
             </React.Fragment>
