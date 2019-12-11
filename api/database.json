@@ -23,6 +23,22 @@
       "isParent": false,
       "points": null,
       "id": 3
+    },
+    {
+      "username": "Lauren",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 4
+    },
+    {
+      "username": "Julian",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 5
     }
   ],
   "Relationships": [
@@ -35,6 +51,16 @@
       "parentId": 1,
       "userId": 3,
       "id": 2
+    },
+    {
+      "parentId": 1,
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "parentId": 1,
+      "userId": 5,
+      "id": 4
     }
   ]
 }
