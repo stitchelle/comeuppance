@@ -8,19 +8,19 @@ class Comeuppance extends Component {
         user: false
     }
 
-    isAuthenticated = () => localStorage.getItem("credentials") !== null
+    isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
-    // this function sets local storage upon register or login
+    // this function sets session storage upon register or login
     setUser = authObj => {
-        localStorage.setItem("credentials", JSON.stringify(authObj))
+        sessionStorage.setItem("credentials", JSON.stringify(authObj))
         this.setState({
             user: this.isAuthenticated(),
         })
     }
 
-    // this function clears local storage and directs the user to the register page
+    // this function clears session storage and directs the user to the register page
     clearUser = () => {
-        localStorage.removeItem("credentials")
+        sessionStorage.removeItem("credentials")
         this.setState({
             user: this.isAuthenticated()
         });

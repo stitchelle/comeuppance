@@ -25,7 +25,7 @@ class KidForm extends Component {
             window.alert("Please Input Kid's Name");
         } else {
             this.setState({ loadingStatus: true });
-            const userId = JSON.parse(localStorage.getItem("credentials"))
+            const userId = JSON.parse(sessionStorage.getItem("credentials"))
 
             const kid = {
                 username: this.state.username,
