@@ -41,6 +41,7 @@ class Login extends Component {
     render() {
         return (
             <>
+                <br/>
                 <center><h1>WELCOME TO COMEUPPANCE!!!</h1></center>
 
                 <form onSubmit={this.handleLogin}>
