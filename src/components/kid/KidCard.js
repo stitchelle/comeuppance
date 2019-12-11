@@ -15,7 +15,21 @@ class KidCard extends Component {
       .then(kid =>
         this.setState({ kid: kid.user }))
   }
+
+  deleteKid = id => {
+    KidManager.delete(id)
+    .then(() => {
+      KidManager.getAll()
+      .then((newKids) => {
+        this.setState({
+            kids: newKids
+        })
+      })
+    })
+  }
+
   render() {
+    console.log(this.state.kid)
     return (
       <>
         <br/>
@@ -30,7 +44,13 @@ class KidCard extends Component {
                   <Button type="button" variant="dark" ariant="outline-secondary" onClick={() => { this.props.history.push(`/kids/${this.props.kid.id}/edit`) }}>Edit</Button>
                 </ButtonGroup>
                 <ButtonGroup className="kidButton">
-                  <Button type="button" variant="dark" ariant="outline-secondary" onClick={() => this.props.deleteKid(this.props.kid.id)}>Delete</Button>
+                  <Button type="button" variant="dark" ariant="outline-secondary" 
+                  onClick={() => {
+                    this.deleteKid(this.state.kid.id)
+                    this.props.history.push(`/`)}
+                  }
+                    
+                    >Delete</Button>
                 </ButtonGroup>
 
               </div>

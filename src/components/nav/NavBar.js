@@ -30,7 +30,7 @@ class NavBar extends Component {
         if (this.props.user === true) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
-                    <Navbar.Brand href="/home">
+                    <Navbar.Brand href="/">
                         <img
                             alt=""
                             src={require('./kuma2.png')}
