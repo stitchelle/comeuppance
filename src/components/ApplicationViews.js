@@ -5,6 +5,7 @@ import Login from "./auth/Login"
 import Home from "./Home"
 import KidForm from './kid/KidForm'
 import KidCard from "./kid/KidCard";
+import KidEditForm from "./kid/KidEditForm"
 
 
 
@@ -35,13 +36,19 @@ export default class ApplicationViews extends Component {
                     return <Home />
                 }} />
 
-                <Route path="/kid/new" render={(props) => {
+                <Route exact path="/kid/new" render={(props) => {
                     return <KidForm {...props} />
                 }} />
 
-                <Route path="/kid/:kidId(\d+)" render={(props) => {
+                <Route exact path="/kid/:kidId(\d+)" render={(props) => {
                     return <KidCard {...props} {...this.props} />
                 }} />
+
+                <Route
+                    path="/kid/:kidId(\d+)/edit" render={props => {
+                        return <KidEditForm {...props} />
+                    }}
+                />
 
             </React.Fragment>
         );

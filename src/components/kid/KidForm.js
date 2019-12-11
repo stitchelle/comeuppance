@@ -58,7 +58,10 @@ class KidForm extends Component {
                     <center><strong><h1>Add New Kid</h1></strong></center>
                     <fieldset>
                         <div className="formgrid">
-                            <input type="text" required onChange={this.handleFieldChange} id="username" placeholder="Kid Name" />
+                            <input 
+                            type="text" 
+                            required 
+                            onChange={this.handleFieldChange} id="username" placeholder="Kid Name" />
                             <label htmlFor="kidName">Name</label>
                         </div>
                         <div className="alignRight">
