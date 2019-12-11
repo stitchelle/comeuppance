@@ -41,7 +41,10 @@ class KidCard extends Component {
               <div className="card-content">
                 <Card.Title className="kidName">{this.state.kid.username} </Card.Title><hr />
                 <ButtonGroup className="kidButton">
-                  <Button type="button" variant="dark" ariant="outline-secondary" onClick={() => { this.props.history.push(`/kids/${this.props.kid.id}/edit`) }}>Edit</Button>
+                  <Button type="button" variant="dark" ariant="outline-secondary" 
+                  onClick={() => { 
+                    this.props.history.push
+                    (`/kid/${this.state.kid.id}/edit`) }}>Edit</Button>
                 </ButtonGroup>
                 <ButtonGroup className="kidButton">
                   <Button type="button" variant="dark" ariant="outline-secondary" 

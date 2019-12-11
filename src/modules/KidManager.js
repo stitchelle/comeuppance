@@ -9,6 +9,9 @@ export default {
             },
             body: JSON.stringify(newKid)
         }).then(data => data.json())
+    }, 
+    get(id) {
+        return fetch(`${remoteURL}/users/${id}`).then(result => result.json())
     },
     getKid(kid) {
         return fetch(`${remoteURL}/relationships/${kid}?_expand=user`).then(result => result.json())
@@ -18,10 +21,19 @@ export default {
         return fetch(`${remoteURL}/users?userId=${userId.id}&`).then(result => result.json())
     },
     delete(id) {
-        return fetch(`http://localhost:5002/users/${id}`, {
+        return fetch(`${remoteURL}/users/${id}`, {
             method: "DELETE"
         })
             .then(result => result.json())
+    },
+    update(editedKid,id) {
+        return fetch(`${remoteURL}/users/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedKid)
+        }).then(data => data.json());
     },
     postRelationship(newRelationship) {
         return fetch(`${remoteURL}/relationships`, {
