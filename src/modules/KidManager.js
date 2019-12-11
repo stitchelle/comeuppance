@@ -17,7 +17,7 @@ export default {
         return fetch(`${remoteURL}/relationships/${kid}?_expand=user`).then(result => result.json())
     },
     getAll() {
-        const userId = JSON.parse(localStorage.getItem("credentials"))
+        const userId = JSON.parse(sessionStorage.getItem("credentials"))
         return fetch(`${remoteURL}/users?userId=${userId.id}&`).then(result => result.json())
     },
     delete(id) {
@@ -45,7 +45,7 @@ export default {
         }).then(data => data.json())
     },
     getAllRelationsips() {
-        const userId = JSON.parse(localStorage.getItem("credentials"))
+        const userId = JSON.parse(sessionStorage.getItem("credentials"))
         return fetch(`${remoteURL}/relationships?parentId=${userId.id}&_expand=user`).then(result => result.json())
     }
     //   http://localhost:5002/relationships?parentId=1&&_expand=user

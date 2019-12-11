@@ -33,7 +33,11 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/" render={(props) => {
-                    return <Home />
+                    if (this.props.user) {
+                        return <Home />
+                    } else {
+                        return <Redirect to="/Login" />
+                    }
                 }} />
 
                 <Route exact path="/kid/new" render={(props) => {

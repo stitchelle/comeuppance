@@ -14,7 +14,7 @@ class NavBar extends Component {
     };
 
     componentDidMount() {
-        const user = localStorage.getItem("credentials")
+        const user = sessionStorage.getItem("credentials")
         console.log(user)
         if (user !== null) {
             KidManager.getAllRelationsips()
@@ -68,7 +68,7 @@ class NavBar extends Component {
         } else {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
-                    <Navbar.Brand href="/home">
+                    <Navbar.Brand href="/">
                         <img
                             alt=""
                             src={require('./kuma2.png')}
