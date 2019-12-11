@@ -29,7 +29,6 @@ export default {
       },
     getAllRelationsips() {
         const userId = JSON.parse(localStorage.getItem("credentials"))
-        console.log(userId.id)
         return fetch(`${remoteURL}/relationships?parentId=${userId.id}&_expand=user`).then(result => result.json())
       }
     //   http://localhost:5002/relationships?parentId=1&&_expand=user
