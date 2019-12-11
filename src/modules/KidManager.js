@@ -19,12 +19,15 @@ export default {
         body: JSON.stringify(newRelationship)
         }).then(data => data.json())
     },
+    getKid(kid) {
+        return fetch(`${remoteURL}/relationships/${kid}?_expand=user`).then(result => result.json())
+      },
     getAll() {
         const userId = JSON.parse(localStorage.getItem("credentials"))
         console.log(userId.id)
         return fetch(`${remoteURL}/users?userId=${userId.id}&`).then(result => result.json())
       },
-      getAllRelationsips() {
+    getAllRelationsips() {
         const userId = JSON.parse(localStorage.getItem("credentials"))
         console.log(userId.id)
         return fetch(`${remoteURL}/relationships?parentId=${userId.id}&_expand=user`).then(result => result.json())
