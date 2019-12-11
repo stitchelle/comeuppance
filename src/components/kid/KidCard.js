@@ -14,14 +14,8 @@ class KidCard extends Component {
     KidManager.getKid(this.props.match.params.kidId)
       .then(kid =>
         this.setState({ kid: kid.user }))
-        console.log("test")
-        console.log("compnent did mount")
   }
   render() {
-    // console.log("props",this.props)
-    // console.log("hi",this.state.kid)
-    console.log(this.state.kid)
-    console.log("render")
     return (
       <>
         <br/>
