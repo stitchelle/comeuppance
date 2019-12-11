@@ -39,7 +39,7 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route path="/kid/:kidId(\d+)" render={(props) => {
-                    return <KidCard {...props} />
+                    return <KidCard {...props} {...this.props} />
                 }} />
 
             </React.Fragment>
