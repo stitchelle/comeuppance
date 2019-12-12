@@ -62,30 +62,30 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/rewards" render={(props) => {
-                    return <RewardList {...props} />
+                    return <RewardList kidId={this.props.kidId} {...props} />
                 }} />
 
                 <Route path="/rewards/new" render={(props) => {
-                    return <RewardForm {...props} />
+                    return <RewardForm  kidId={this.props.kidId} {...props} />
                 }} />
 
                 <Route
                     path="/rewards/:rewardId(\d+)/edit" render={props => {
-                        return <RewardsEditForm {...props} />
+                        return <RewardsEditForm kidId={this.props.kidId} {...props} />
                     }}
                 />
 
                 <Route exact path="/punishments" render={(props) => {
-                    return <PunishmentList {...props} />
+                    return <PunishmentList kidId={this.props.kidId} {...props} />
                 }} />
 
                 <Route path="/punishments/new" render={(props) => {
-                    return <PunishmentForm {...props} />
+                    return <PunishmentForm kidId={this.props.kidId} {...props} />
                 }} />
 
                 <Route
                     path="/punishments/:punishmentId(\d+)/edit" render={props => {
-                        return <PunishmentEditForm {...props} />
+                        return <PunishmentEditForm kidId={this.props.kidId} {...props} />
                     }}
                 />
 

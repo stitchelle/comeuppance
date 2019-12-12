@@ -5,7 +5,8 @@ import "./comeuppance.css"
 
 class Comeuppance extends Component {
     state = {
-        user: false
+        user: false,
+        kidId: ""
     }
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null
@@ -25,16 +26,27 @@ class Comeuppance extends Component {
             user: this.isAuthenticated()
         });
     }
+
+    setKidId = (id) => {
+        console.log("hi",id)
+        this.setState({
+            kidId: id
+        });
+        console.log("this is working",this.state.kidId)
+    }
+
     componentDidMount() {
         this.setState({
             user: this.isAuthenticated()
         })
     }
     render() {
+        console.log("this is working",this.state.kidId)
+
         return (
             <>
-                <NavBar clearUser = {this.clearUser} user={this.state.user}/>
-                <ApplicationViews setUser = {this.setUser} user={this.state.user}/>
+                <NavBar setKidId={this.setKidId} clearUser = {this.clearUser} user={this.state.user}/>
+                <ApplicationViews kidId={this.state.kidId}setUser = {this.setUser} user={this.state.user}/>
             </>
         )
     }

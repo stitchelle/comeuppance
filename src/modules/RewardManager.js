@@ -2,19 +2,19 @@ const remoteURL = "http://localhost:5002"
 
 export default {
     get(id) {
-        return fetch(`${remoteURL}/rewards/${id}`).then(result => result.json())
+        return fetch(`${remoteURL}/comeuppance/${id}`).then(result => result.json())
     },
     getAll() {
-        return fetch(`${remoteURL}/rewards`).then(result => result.json())
+        return fetch(`${remoteURL}/comeuppance?comeuppanceType=1`).then(result => result.json())
     },
     delete(id) {
-        return fetch(`${remoteURL}/rewards/${id}`, {
+        return fetch(`${remoteURL}/comeuppance/${id}`, {
             method: "DELETE"
         })
             .then(result => result.json())
     },
     post(newReward) {
-        return fetch(`${remoteURL}/rewards`, {
+        return fetch(`${remoteURL}/comeuppance`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -23,7 +23,7 @@ export default {
         }).then(data => data.json())
     },
     update(editedReward) {
-        return fetch(`${remoteURL}/rewards/${editedReward.id}`, {
+        return fetch(`${remoteURL}/comeuppance/${editedReward.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"

@@ -6,7 +6,10 @@ import "./PunishmentForm.css"
 class PunishmentEditForm extends Component {
     //set the initial state
     state = {
+        userId: "",
+        point: "",
         punishmentName: "",
+        comeuppanceType: "",
         loadingStatus: true,
     };
 
@@ -20,8 +23,11 @@ class PunishmentEditForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedPunishment = {
-            id: this.props.match.params.punishmentId,
+            userId: this.state.userId,
+            points: null,
             name: this.state.punishmentName,
+            comeuppanceType: 2,
+            id: this.props.match.params.punishmentId,
         };
 
         PunishmentManager.update(editedPunishment)
@@ -33,7 +39,10 @@ class PunishmentEditForm extends Component {
             .then(punishment => {
                 console.log("punishment",punishment)
                 this.setState({
+                    userId: punishment.userId,
+                    points: null,
                     punishmentName: punishment.name,
+                    comeuppanceType: 2,
                     loadingStatus: false,
                 });
             });
