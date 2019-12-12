@@ -12,5 +12,14 @@ export default {
         method: "DELETE"
     })
     .then(result => result.json())
-  }
+  },
+  post(newReward) {
+    return fetch(`${remoteURL}/rewards`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newReward)
+    }).then(data => data.json())
+}
 }
