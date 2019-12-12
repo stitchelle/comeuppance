@@ -11,7 +11,11 @@ class RewardCard extends Component {
                             {/* <picture>
             <img src={require('./dog.svg')} alt="My Dog" />
           </picture> */}
-                            <h3>Name: <span className="card-petname">{this.props.reward.name}</span></h3>
+                            <h3>Name: <span className="card-rewardname">{this.props.reward.name}</span></h3>
+                            <Button type="button"
+                                variant="dark" ariant="outline-secondary" 
+                                onClick={() => { this.props.history.push(`/rewards/${this.props.reward.id}/edit`) }}>Edit
+                            </Button>
                             <Button
                                 type="button"
                                 variant="dark"

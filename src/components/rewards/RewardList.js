@@ -54,7 +54,8 @@ render(){
             <RewardCard 
             key={reward.id} 
             reward={reward} 
-            deleteReward={this.deleteReward}/>
+            deleteReward={this.deleteReward}
+            {...this.props}/>
             )}
             </div>
         </>

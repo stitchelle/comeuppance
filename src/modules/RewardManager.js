@@ -21,5 +21,14 @@ export default {
             },
             body: JSON.stringify(newReward)
         }).then(data => data.json())
-    }
+    },
+    update(editedReward) {
+        return fetch(`${remoteURL}/rewards/${editedReward.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(editedReward)
+        }).then(data => data.json());
+      }
 }

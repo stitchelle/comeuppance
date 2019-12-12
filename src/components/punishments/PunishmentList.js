@@ -53,7 +53,8 @@ class PunishmentList extends Component {
                         <PunishmentCard
                             key={punishment.id}
                             punishment={punishment}
-                            deletePunishment={this.deletePunishment} />
+                            deletePunishment={this.deletePunishment}
+                            {...this.props} />
                     )}
                 </div>
             </>

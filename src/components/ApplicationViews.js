@@ -3,13 +3,15 @@ import React, { Component } from "react";
 import Register from "./auth/Registration";
 import Login from "./auth/Login";
 import Home from "./Home";
-import KidForm from './kid/KidForm';
+import KidForm from "./kid/KidForm";
 import KidCard from "./kid/KidCard";
 import KidEditForm from "./kid/KidEditForm";
 import RewardList from "./rewards/RewardList";
-import RewardForm from './rewards/RewardForm'
+import RewardForm from "./rewards/RewardForm";
+import RewardsEditForm from "./rewards/RewardEditForm";
 import PunishmentList from "./punishments/PunishmentList";
-import PunishmentForm from './punishments/PunishmentForm'
+import PunishmentForm from "./punishments/PunishmentForm";
+import PunishmentEditForm from "./punishments/PunishmentEditForm";
 
 
 
@@ -60,20 +62,32 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/rewards" render={(props) => {
-                    return <RewardList {...props}/>
+                    return <RewardList {...props} />
                 }} />
 
                 <Route path="/rewards/new" render={(props) => {
                     return <RewardForm {...props} />
                 }} />
 
+                <Route
+                    path="/rewards/:rewardId(\d+)/edit" render={props => {
+                        return <RewardsEditForm {...props} />
+                    }}
+                />
+
                 <Route exact path="/punishments" render={(props) => {
-                    return <PunishmentList {...props}/>
+                    return <PunishmentList {...props} />
                 }} />
 
                 <Route path="/punishments/new" render={(props) => {
                     return <PunishmentForm {...props} />
                 }} />
+
+                <Route
+                    path="/punishments/:punishmentId(\d+)/edit" render={props => {
+                        return <PunishmentEditForm {...props} />
+                    }}
+                />
 
             </React.Fragment>
         );
