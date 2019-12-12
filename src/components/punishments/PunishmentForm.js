@@ -5,8 +5,11 @@ import './PunishmentForm.css'
 
 class PunishmentForm extends Component {
     state = {
-        name: "",
-        loadingStatus: false,
+        userId: "",
+        point: "",
+        rewardName: "",
+        comeuppanceType: "",
+        loadingStatus: false
     };
 
     handleFieldChange = evt => {
@@ -24,7 +27,10 @@ class PunishmentForm extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const reward = {
+                userId: sessionStorage.getItem("kidCredentials"),
+                points: null,
                 name: this.state.punishmentName,
+                comeuppanceType: 2,
             };
 
             // Create the punishment and redirect user to punishment list
@@ -34,7 +40,7 @@ class PunishmentForm extends Component {
     };
 
     render() {
-
+        console.log(this.props.kidId)
         return (
             <>
                 <form>

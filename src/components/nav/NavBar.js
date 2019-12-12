@@ -10,7 +10,8 @@ import KidManager from "../../modules/KidManager"
 
 class NavBar extends Component {
     state = {
-        relationships: []
+        relationships: [],
+        userId: ""
     };
 
     componentDidMount() {
@@ -19,14 +20,19 @@ class NavBar extends Component {
         if (user !== null) {
             KidManager.getAllRelationsips()
                 .then(relationships => {
-                    console.log(relationships)
+
                     this.setState({ relationships: relationships }
                     )
                 })
         }
     }
 
+    setUserId (kid) {
+        this.setState({ userId: kid })
+            console.log("setUser", this.state.userId)
+    }
     render() {
+        console.log("render", this.state.use)
         if (this.props.user === true) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
@@ -48,7 +54,10 @@ class NavBar extends Component {
                             <NavDropdown title="Kid" id="basic-nav-dropdown">
 
                                 {this.state.relationships.map(kid =>
-                                    <NavDropdown.Item href={`/kid/${kid.id}`} key={kid.id}>
+                                    <NavDropdown.Item onClick={()=> {
+                                        console.log("hi",kid.user.id)
+                                        this.props.setKidId(kid.user.id)
+                                    }}href={`/kid/${kid.id}`} key={kid.id}>
                                         {kid.user.username} </NavDropdown.Item >
                                 )}
 

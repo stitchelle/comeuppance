@@ -5,8 +5,11 @@ import './RewardForm.css'
 
 class RewardForm extends Component {
     state = {
-        name: "",
-        loadingStatus: false,
+        userId: "",
+        point: "",
+        rewardName: "",
+        comeuppanceType: "",
+        loadingStatus: false
     };
 
     handleFieldChange = evt => {
@@ -23,8 +26,12 @@ class RewardForm extends Component {
             window.alert("Please input an reward name");
         } else {
             this.setState({ loadingStatus: true });
+
             const reward = {
+                userId: sessionStorage.getItem("kidCredentials"),
+                points: null,
                 name: this.state.rewardName,
+                comeuppanceType: 1,
             };
 
             // Create the reward and redirect user to reward list

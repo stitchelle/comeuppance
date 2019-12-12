@@ -1,12 +1,15 @@
 import React, { Component } from "react"
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import PunishmentManager from "../../modules/PunishmentManager"
 import "./PunishmentForm.css"
 
 class PunishmentEditForm extends Component {
     //set the initial state
     state = {
+        userId: "",
+        point: "",
         punishmentName: "",
+        comeuppanceType: "",
         loadingStatus: true,
     };
 
@@ -20,8 +23,11 @@ class PunishmentEditForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedPunishment = {
-            id: this.props.match.params.punishmentId,
+            userId: sessionStorage.getItem("kidCredentials"),
+            points: null,
             name: this.state.punishmentName,
+            comeuppanceType: 2,
+            id: this.props.match.params.punishmentId,
         };
 
         PunishmentManager.update(editedPunishment)
@@ -31,9 +37,12 @@ class PunishmentEditForm extends Component {
     componentDidMount() {
         PunishmentManager.get(this.props.match.params.punishmentId)
             .then(punishment => {
-                console.log("punishment",punishment)
+                console.log("punishment", punishment)
                 this.setState({
+                    userId: punishment.userId,
+                    points: null,
                     punishmentName: punishment.name,
+                    comeuppanceType: 2,
                     loadingStatus: false,
                 });
             });
@@ -43,7 +52,7 @@ class PunishmentEditForm extends Component {
         return (
             <>
                 <form>
-                <br />
+                    <br />
                     <center><strong><h1>Edit Punishment</h1></strong></center>
                     <fieldset>
                         <div className="formgrid">
@@ -59,7 +68,7 @@ class PunishmentEditForm extends Component {
                         </div>
                         <div className="alignRight">
                             <Button
-                                type="button" 
+                                type="button"
                                 variant="dark"
                                 ariant="outline-secondary"
                                 disabled={this.state.loadingStatus}

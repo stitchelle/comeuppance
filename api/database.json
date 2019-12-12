@@ -71,40 +71,87 @@
       "id": 4
     }
   ],
-  "Rewards": [
+  "comeuppanceType": [
     {
-      "id": 3,
-      "name": "rewards 2"
+      "type": "Reward",
+      "id": 1
     },
     {
-      "name": "test",
-      "id": 4
-    },
-    {
-      "name": "Reward 1",
-      "id": 5
-    },
-    {
-      "name": "Reward 3",
-      "id": 6
+      "type": "Punishment",
+      "id": 2
     }
   ],
-  "Punishments": [
+  "comeuppance": [
     {
-      "id": 2,
-      "name": "punishments 3"
+      "userId": 2,
+      "points": null,
+      "name": "reward ",
+      "comeuppanceType": 1,
+      "id": 1
     },
     {
-      "id": 3,
-      "name": "punishments 2"
+      "userId": "2",
+      "points": null,
+      "name": "punishment 00111",
+      "comeuppanceType": 2,
+      "id": 2
     },
     {
-      "name": "test",
+      "userId": 2,
+      "points": null,
+      "name": "123",
+      "comeuppanceType": 1,
       "id": 4
     },
     {
-      "name": "Punishment 4",
+      "userId": 2,
+      "points": null,
+      "name": "876876",
+      "comeuppanceType": 2,
       "id": 5
+    },
+    {
+      "userId": "2",
+      "points": null,
+      "name": "hi",
+      "comeuppanceType": 2,
+      "id": 6
+    },
+    {
+      "userId": "3",
+      "points": null,
+      "name": "hi2",
+      "comeuppanceType": 2,
+      "id": 7
+    },
+    {
+      "userId": "3",
+      "points": null,
+      "name": "12313",
+      "comeuppanceType": 2,
+      "id": 8
+    },
+    {
+      "userId": "5",
+      "points": null,
+      "name": "take out trash",
+      "comeuppanceType": 2,
+      "id": 9
+    },
+    {
+      "userId": "5",
+      "points": null,
+      "name": "walk the dog",
+      "comeuppanceType": 2,
+      "id": 10
+    },
+    {
+      "userId": "5",
+      "points": null,
+      "name": "go stand outside in the snow",
+      "comeuppanceType": 2,
+      "id": 11
     }
-  ]
+  ],
+  "history": []
 }

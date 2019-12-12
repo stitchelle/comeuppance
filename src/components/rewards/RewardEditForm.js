@@ -6,7 +6,10 @@ import "./RewardForm.css"
 class RewardEditForm extends Component {
     //set the initial state
     state = {
+        userId: "",
+        point: "",
         rewardName: "",
+        comeuppanceType: "",
         loadingStatus: true,
     };
 
@@ -19,9 +22,13 @@ class RewardEditForm extends Component {
     updateExistingReward = evt => {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
+
         const editedReward = {
-            id: this.props.match.params.rewardId,
+            userId: sessionStorage.getItem("kidCredentials"),
+            points: null,
             name: this.state.rewardName,
+            comeuppanceType: 1,
+            id: this.props.match.params.rewardId,
         };
 
         RewardManager.update(editedReward)
@@ -34,7 +41,10 @@ class RewardEditForm extends Component {
             .then(reward => {
                 console.log("reward",reward)
                 this.setState({
+                    userId: reward.userId,
+                    points: null,
                     rewardName: reward.name,
+                    comeuppanceType: 1,
                     loadingStatus: false,
                 });
             });
