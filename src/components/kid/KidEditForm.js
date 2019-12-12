@@ -24,7 +24,7 @@ class KidEditForm extends Component {
     updateExistingKid = evt => {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
-        const userId = JSON.parse(sessionStorage.getItem("credentials"))
+        // const userId = JSON.parse(sessionStorage.getItem("credentials"))
 
         const editedKid = {
             username: this.state.username,

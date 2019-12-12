@@ -70,5 +70,17 @@
       "userId": 5,
       "id": 4
     }
+  ],
+  "Rewards": [
+    {
+      "name": "rewards",
+      "id": 1
+    }
+  ],
+  "Punishments": [
+    {
+      "name": "punishments",
+      "id": 1
+    }
   ]
 }

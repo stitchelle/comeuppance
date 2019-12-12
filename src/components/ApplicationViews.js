@@ -1,11 +1,13 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Register from "./auth/Registration";
-import Login from "./auth/Login"
-import Home from "./Home"
-import KidForm from './kid/KidForm'
+import Login from "./auth/Login";
+import Home from "./Home";
+import KidForm from './kid/KidForm';
 import KidCard from "./kid/KidCard";
-import KidEditForm from "./kid/KidEditForm"
+import KidEditForm from "./kid/KidEditForm";
+import RewardList from "./rewards/RewardList";
+import PunishmentList from "./punishments/PunishmentList";
 
 
 
@@ -53,6 +55,14 @@ export default class ApplicationViews extends Component {
                         return <KidEditForm {...props} />
                     }}
                 />
+
+                <Route path="/rewards" render={(props) => {
+                    return <RewardList />
+                }} />
+
+                <Route path="/punishments" render={(props) => {
+                    return <PunishmentList />
+                }} />
 
             </React.Fragment>
         );

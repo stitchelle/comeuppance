@@ -43,8 +43,8 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/reward">Reward</Nav.Link>
-                            <Nav.Link href="/punishment">Punishment</Nav.Link>
+                            <Nav.Link href="/rewards">Reward</Nav.Link>
+                            <Nav.Link href="/punishments">Punishment</Nav.Link>
                             <NavDropdown title="Kid" id="basic-nav-dropdown">
 
                                 {this.state.relationships.map(kid =>
