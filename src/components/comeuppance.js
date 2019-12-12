@@ -16,14 +16,17 @@ class Comeuppance extends Component {
         sessionStorage.setItem("credentials", JSON.stringify(authObj))
         this.setState({
             user: this.isAuthenticated(),
+            kidId: ""
         })
     }
 
     // this function clears session storage and directs the user to the register page
     clearUser = () => {
         sessionStorage.removeItem("credentials")
+        sessionStorage.removeItem("kidCredentials")
         this.setState({
-            user: this.isAuthenticated()
+            user: this.isAuthenticated(),
+
         });
     }
 
