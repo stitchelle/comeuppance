@@ -33,12 +33,16 @@ deleteReward = id => {
       })
     })
   }
+  pickRandomReward = () => {
+      let randomValue = this.state.rewards[Math.floor(Math.random() * this.state.rewards.length)];
+      alert(`YOU GOT: ${randomValue.name}`)
+  }
 
 render(){
     console.log("RewardList: Render");
-    console.log("props",this.props.history)
     return(
         <>
+        
             <br/>
             <section className="section-content">
             <Button type="button"
@@ -58,6 +62,17 @@ render(){
             {...this.props}/>
             )}
             </div>
+            <br/>
+            <section className="section-content">
+            <Button type="button"
+                className="btn"
+                variant="dark" ariant="outline-secondary"
+                onClick={() => {this.pickRandomReward()}}
+                >
+                Pick Random Reward
+            </Button>
+            </section>
+            <br/>
         </>
     )
   }
