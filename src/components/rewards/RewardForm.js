@@ -20,7 +20,7 @@ class RewardForm extends Component {
     constructNewReward = evt => {
         evt.preventDefault();
         if (this.state.rewardName === "") {
-            window.alert("Please input an reward name and breed");
+            window.alert("Please input an reward name");
         } else {
             this.setState({ loadingStatus: true });
             const reward = {

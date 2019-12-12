@@ -60,7 +60,7 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/rewards" render={(props) => {
-                    return <RewardList />
+                    return <RewardList {...props}/>
                 }} />
 
                 <Route path="/rewards/new" render={(props) => {
@@ -68,7 +68,7 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route exact path="/punishments" render={(props) => {
-                    return <PunishmentList />
+                    return <PunishmentList {...props}/>
                 }} />
 
                 <Route path="/punishments/new" render={(props) => {
