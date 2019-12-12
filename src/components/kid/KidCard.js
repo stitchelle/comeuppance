@@ -47,7 +47,9 @@ class KidCard extends Component {
                     (`/kid/${this.state.kid.id}/edit`) }}>Edit</Button>
                 </ButtonGroup>
                 <ButtonGroup className="kidButton">
-                  <Button type="button" variant="dark" ariant="outline-secondary" 
+                  <Button 
+                  type="button" 
+                  variant="dark" ariant="outline-secondary" 
                   onClick={() => {
                     this.deleteKid(this.state.kid.id)
                     this.props.history.push(`/`)}

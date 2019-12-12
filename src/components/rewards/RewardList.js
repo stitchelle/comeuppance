@@ -21,12 +21,27 @@ componentDidMount(){
     })
 }
 
+deleteReward = id => {
+    RewardManager.delete(id)
+    .then(() => {
+      RewardManager.getAll()
+      .then((newRewards) => {
+        this.setState({
+            rewards: newRewards
+        })
+      })
+    })
+  }
+
 render(){
     console.log("RewardList: Render");
     return(
       <div className="container-cards">
         {this.state.rewards.map(reward =>
-          <RewardCard key={reward.id} reward={reward} />
+          <RewardCard 
+          key={reward.id} 
+          reward={reward} 
+          deleteReward={this.deleteReward}/>
         )}
       </div>
     )

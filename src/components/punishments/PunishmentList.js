@@ -20,13 +20,28 @@ class PunishmentList extends Component {
             })
     }
 
+    deletePunishment = id => {
+        PunishmentManager.delete(id)
+        .then(() => {
+          PunishmentManager.getAll()
+          .then((newPunishments) => {
+            this.setState({
+                punishments: newPunishments
+            })
+          })
+        })
+      }
+
     render(){
         console.log("PunishmentList: Render");
       
         return(
           <div className="container-cards">
             {this.state.punishments.map(punishment =>
-              <PunishmentCard key={punishment.id} punishment={punishment} />
+              <PunishmentCard 
+              key={punishment.id} 
+              punishment={punishment}
+              deletePunishment={this.deletePunishment} />
             )}
           </div>
         )

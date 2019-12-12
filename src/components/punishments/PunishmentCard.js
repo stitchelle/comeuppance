@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from 'react-bootstrap'
 
 class PunishmentCard extends Component {
   render() {
@@ -9,6 +10,13 @@ class PunishmentCard extends Component {
             <img src={require('./dog.svg')} alt="My Dog" />
           </picture> */}
           <h3>Name: <span className="card-petname">{this.props.punishment.name}</span></h3>
+          <Button 
+          type="button"
+          variant="dark" 
+          ariant="outline-secondary"  
+          onClick={() => this.props.deletePunishment(this.props.punishment.id)}
+          >Delete</Button>
+
         </div>
       </div>
     );
