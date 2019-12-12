@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 //import the components we will need
 import PunishmentCard from './PunishmentCard'
 import PunishmentManager from '../../modules/PunishmentManager'
@@ -33,12 +33,17 @@ class PunishmentList extends Component {
             })
     }
 
+    pickRandomPunishment = () => {
+        let randomValue = this.state.punishments[Math.floor(Math.random() * this.state.punishments.length)];
+        alert(`YOU GOT: ${randomValue.name}`)
+    }
+
     render() {
         console.log("PunishmentList: Render");
 
         return (
             <>
-                <br/>
+                <br />
                 <section className="section-content">
                     <Button type="button"
                         className="btn"
@@ -47,7 +52,7 @@ class PunishmentList extends Component {
                         Add Punishment
                     </Button>
                 </section>
-                <br/>
+                <br />
                 <div className="container-cards">
                     {this.state.punishments.map(punishment =>
                         <PunishmentCard
@@ -57,6 +62,17 @@ class PunishmentList extends Component {
                             {...this.props} />
                     )}
                 </div>
+                <br />
+                <section className="section-content">
+                    <Button type="button"
+                        className="btn"
+                        variant="dark" ariant="outline-secondary"
+                        onClick={() => { this.pickRandomPunishment() }}
+                    >
+                        Pick Random Punishment
+                    </Button>
+                </section>
+                <br />
             </>
         )
     }
