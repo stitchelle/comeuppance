@@ -74,11 +74,11 @@
   "Rewards": [
     {
       "name": "rewards",
-      "id": 1
+      "id": 3
     },
     {
-      "name": "rewards",
-      "id": 3
+      "name": "test",
+      "id": 4
     }
   ],
   "Punishments": [
@@ -89,6 +89,10 @@
     {
       "name": "punishments",
       "id": 3
+    },
+    {
+      "name": "test",
+      "id": 4
     }
   ]
 }

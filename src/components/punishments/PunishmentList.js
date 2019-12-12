@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button} from 'react-bootstrap'
 //import the components we will need
 import PunishmentCard from './PunishmentCard'
 import PunishmentManager from '../../modules/PunishmentManager'
@@ -22,30 +23,42 @@ class PunishmentList extends Component {
 
     deletePunishment = id => {
         PunishmentManager.delete(id)
-        .then(() => {
-          PunishmentManager.getAll()
-          .then((newPunishments) => {
-            this.setState({
-                punishments: newPunishments
+            .then(() => {
+                PunishmentManager.getAll()
+                    .then((newPunishments) => {
+                        this.setState({
+                            punishments: newPunishments
+                        })
+                    })
             })
-          })
-        })
-      }
+    }
 
-    render(){
+    render() {
         console.log("PunishmentList: Render");
-      
-        return(
-          <div className="container-cards">
-            {this.state.punishments.map(punishment =>
-              <PunishmentCard 
-              key={punishment.id} 
-              punishment={punishment}
-              deletePunishment={this.deletePunishment} />
-            )}
-          </div>
+
+        return (
+            <>
+                <br/>
+                <section className="section-content">
+                    <Button type="button"
+                        className="btn"
+                        variant="dark" ariant="outline-secondary"
+                        onClick={() => { this.props.history.push("/punishments/new") }}>
+                        Add Punishment
+                    </Button>
+                </section>
+                <br/>
+                <div className="container-cards">
+                    {this.state.punishments.map(punishment =>
+                        <PunishmentCard
+                            key={punishment.id}
+                            punishment={punishment}
+                            deletePunishment={this.deletePunishment} />
+                    )}
+                </div>
+            </>
         )
-      }
+    }
 }
 
 export default PunishmentList

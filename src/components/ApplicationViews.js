@@ -7,7 +7,10 @@ import KidForm from './kid/KidForm';
 import KidCard from "./kid/KidCard";
 import KidEditForm from "./kid/KidEditForm";
 import RewardList from "./rewards/RewardList";
+import RewardForm from './rewards/RewardForm'
 import PunishmentList from "./punishments/PunishmentList";
+import PunishmentForm from './punishments/PunishmentForm'
+
 
 
 
@@ -56,12 +59,20 @@ export default class ApplicationViews extends Component {
                     }}
                 />
 
-                <Route path="/rewards" render={(props) => {
-                    return <RewardList />
+                <Route exact path="/rewards" render={(props) => {
+                    return <RewardList {...props}/>
                 }} />
 
-                <Route path="/punishments" render={(props) => {
-                    return <PunishmentList />
+                <Route path="/rewards/new" render={(props) => {
+                    return <RewardForm {...props} />
+                }} />
+
+                <Route exact path="/punishments" render={(props) => {
+                    return <PunishmentList {...props}/>
+                }} />
+
+                <Route path="/punishments/new" render={(props) => {
+                    return <PunishmentForm {...props} />
                 }} />
 
             </React.Fragment>
