@@ -29,6 +29,7 @@ class Comeuppance extends Component {
 
     setKidId = (id) => {
         console.log("hi",id)
+        sessionStorage.setItem("kidCredentials", JSON.stringify(id))
         this.setState({
             kidId: id
         });
@@ -46,7 +47,7 @@ class Comeuppance extends Component {
         return (
             <>
                 <NavBar setKidId={this.setKidId} clearUser = {this.clearUser} user={this.state.user}/>
-                <ApplicationViews kidId={this.state.kidId}setUser = {this.setUser} user={this.state.user}/>
+                <ApplicationViews kidId={this.state.kidId} setUser = {this.setUser} user={this.state.user}/>
             </>
         )
     }

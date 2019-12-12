@@ -90,9 +90,9 @@
       "id": 1
     },
     {
-      "userId": 2,
+      "userId": "2",
       "points": null,
-      "name": "punishment 00",
+      "name": "punishment 00111",
       "comeuppanceType": 2,
       "id": 2
     },
@@ -111,18 +111,46 @@
       "id": 5
     },
     {
-      "userId": "",
+      "userId": "2",
       "points": null,
-      "name": "Hello",
+      "name": "hi",
       "comeuppanceType": 2,
       "id": 6
     },
     {
-      "userId": "",
+      "userId": "3",
       "points": null,
-      "name": "yo",
+      "name": "hi2",
       "comeuppanceType": 2,
       "id": 7
+    },
+    {
+      "userId": "3",
+      "points": null,
+      "name": "12313",
+      "comeuppanceType": 2,
+      "id": 8
+    },
+    {
+      "userId": "5",
+      "points": null,
+      "name": "take out trash",
+      "comeuppanceType": 2,
+      "id": 9
+    },
+    {
+      "userId": "5",
+      "points": null,
+      "name": "walk the dog",
+      "comeuppanceType": 2,
+      "id": 10
+    },
+    {
+      "userId": "5",
+      "points": null,
+      "name": "go stand outside in the snow",
+      "comeuppanceType": 2,
+      "id": 11
     }
   ],
   "history": []

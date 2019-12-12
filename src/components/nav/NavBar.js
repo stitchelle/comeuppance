@@ -28,8 +28,7 @@ class NavBar extends Component {
     }
 
     setUserId (kid) {
-        this.setState({ userId: kid }
-            )
+        this.setState({ userId: kid })
             console.log("setUser", this.state.userId)
     }
     render() {

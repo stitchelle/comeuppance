@@ -4,8 +4,8 @@ export default {
   get(id) {
     return fetch(`${remoteURL}/comeuppance/${id}`).then(result => result.json())
   },
-  getAll() {
-    return fetch(`${remoteURL}/comeuppance?comeuppanceType=2`).then(result => result.json())
+  getAll(id) {
+    return fetch(`${remoteURL}/comeuppance?comeuppanceType=2&userId=${id}`).then(result => result.json())
   },
   delete(id) {
     return fetch(`${remoteURL}/comeuppance/${id}`, {

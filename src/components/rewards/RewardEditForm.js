@@ -24,7 +24,7 @@ class RewardEditForm extends Component {
         this.setState({ loadingStatus: true });
 
         const editedReward = {
-            userId: this.state.userId,
+            userId: sessionStorage.getItem("kidCredentials"),
             points: null,
             name: this.state.rewardName,
             comeuppanceType: 1,
