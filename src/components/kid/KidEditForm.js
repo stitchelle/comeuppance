@@ -36,6 +36,7 @@ class KidEditForm extends Component {
         };
 
         KidManager.update(editedKid, editedKid.id)
+            .then(this.props.updateRelationships)
             .then(() => this.props.history.push("/"))
     }
 

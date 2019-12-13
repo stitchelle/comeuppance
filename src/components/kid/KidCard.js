@@ -19,12 +19,13 @@ class KidCard extends Component {
   deleteKid = id => {
     KidManager.delete(id)
     .then(() => {
-      KidManager.getAll()
-      .then((newKids) => {
-        this.setState({
-            kids: newKids
-        })
-      })
+      this.props.updateRelationships()
+      // KidManager.getAll()
+      // .then((newKids) => {
+      //   this.setState({
+      //       kids: newKids
+      //   })
+      // })
     })
   }
 
