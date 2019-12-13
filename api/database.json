@@ -25,28 +25,36 @@
       "id": 3
     },
     {
-      "username": "Lauren",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 4
-    },
-    {
-      "username": "Julian",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 5
-    },
-    {
       "username": "Robert",
       "email": "robert@gmail.com",
       "password": "123",
       "isParent": true,
       "points": null,
       "id": 6
+    },
+    {
+      "username": "Jisie",
+      "email": "jisie@gmail.com",
+      "password": "123",
+      "isParent": true,
+      "points": null,
+      "id": 7
+    },
+    {
+      "username": "Kristen",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 8
+    },
+    {
+      "username": "Rose",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 9
     }
   ],
   "Relationships": [
@@ -61,14 +69,14 @@
       "id": 2
     },
     {
-      "parentId": 1,
-      "userId": 4,
-      "id": 3
+      "parentId": 7,
+      "userId": 8,
+      "id": 5
     },
     {
-      "parentId": 1,
-      "userId": 5,
-      "id": 4
+      "parentId": 7,
+      "userId": 9,
+      "id": 6
     }
   ],
   "comeuppanceType": [
@@ -125,32 +133,46 @@
       "id": 7
     },
     {
+      "userId": "9",
+      "points": null,
+      "name": "Reward 1",
+      "comeuppanceType": 1,
+      "id": 14
+    },
+    {
+      "userId": "9",
+      "points": null,
+      "name": "a;flkewnf;lakenlk;e",
+      "comeuppanceType": 2,
+      "id": 15
+    },
+    {
+      "userId": "9",
+      "points": null,
+      "name": "asfeaewf",
+      "comeuppanceType": 2,
+      "id": 16
+    },
+    {
+      "userId": "8",
+      "points": null,
+      "name": "a;flkne;lkena",
+      "comeuppanceType": 1,
+      "id": 17
+    },
+    {
+      "userId": "8",
+      "points": null,
+      "name": "sfaee",
+      "comeuppanceType": 1,
+      "id": 18
+    },
+    {
       "userId": "3",
       "points": null,
-      "name": "12313",
-      "comeuppanceType": 2,
-      "id": 8
-    },
-    {
-      "userId": "5",
-      "points": null,
-      "name": "take out trash",
-      "comeuppanceType": 2,
-      "id": 9
-    },
-    {
-      "userId": "5",
-      "points": null,
-      "name": "walk the dog",
-      "comeuppanceType": 2,
-      "id": 10
-    },
-    {
-      "userId": "5",
-      "points": null,
-      "name": "go stand outside in the snow",
-      "comeuppanceType": 2,
-      "id": 11
+      "name": "afdweae",
+      "comeuppanceType": 1,
+      "id": 24
     }
   ],
   "history": []

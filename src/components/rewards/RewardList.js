@@ -25,8 +25,9 @@ componentDidMount(){
 deleteReward = id => {
     RewardManager.delete(id)
     .then(() => {
-      RewardManager.getAll()
+      RewardManager.getAll(sessionStorage.getItem("kidCredentials"))
       .then((newRewards) => {
+          console.log("new",newRewards)
         this.setState({
             rewards: newRewards
         })

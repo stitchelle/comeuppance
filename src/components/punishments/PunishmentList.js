@@ -24,7 +24,7 @@ class PunishmentList extends Component {
     deletePunishment = id => {
         PunishmentManager.delete(id)
             .then(() => {
-                PunishmentManager.getAll()
+                PunishmentManager.getAll(sessionStorage.getItem("kidCredentials"))
                     .then((newPunishments) => {
                         this.setState({
                             punishments: newPunishments
