@@ -48,16 +48,16 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route exact path="/kid/new" render={(props) => {
-                    return <KidForm {...props} />
+                    return <KidForm updateRelationships={this.props.updateRelationships}{...props} />
                 }} />
 
                 <Route exact path="/kid/:kidId(\d+)" render={(props) => {
-                    return <KidCard {...props} {...this.props} />
+                    return <KidCard updateRelationships={this.props.updateRelationships} {...props} {...this.props} />
                 }} />
 
                 <Route
                     path="/kid/:kidId(\d+)/edit" render={props => {
-                        return <KidEditForm {...props} />
+                        return <KidEditForm updateRelationships={this.props.updateRelationships}{...props} />
                     }}
                 />
 

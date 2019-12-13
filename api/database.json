@@ -55,6 +55,46 @@
       "isParent": false,
       "points": null,
       "id": 9
+    },
+    {
+      "username": "bob",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 10
+    },
+    {
+      "username": "Dog",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 11
+    },
+    {
+      "username": "cat",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 12
+    },
+    {
+      "username": "yay",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 13
+    },
+    {
+      "username": "fart",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 14
     }
   ],
   "Relationships": [
@@ -77,6 +117,31 @@
       "parentId": 7,
       "userId": 9,
       "id": 6
+    },
+    {
+      "parentId": 1,
+      "userId": 10,
+      "id": 7
+    },
+    {
+      "parentId": 1,
+      "userId": 11,
+      "id": 8
+    },
+    {
+      "parentId": 1,
+      "userId": 12,
+      "id": 9
+    },
+    {
+      "parentId": 1,
+      "userId": 13,
+      "id": 10
+    },
+    {
+      "parentId": 1,
+      "userId": 14,
+      "id": 11
     }
   ],
   "comeuppanceType": [
@@ -126,13 +191,6 @@
       "id": 6
     },
     {
-      "userId": "3",
-      "points": null,
-      "name": "hi2",
-      "comeuppanceType": 2,
-      "id": 7
-    },
-    {
       "userId": "9",
       "points": null,
       "name": "Reward 1",
@@ -170,9 +228,16 @@
     {
       "userId": "3",
       "points": null,
-      "name": "afdweae",
+      "name": "lkjlkn",
       "comeuppanceType": 1,
-      "id": 24
+      "id": 26
+    },
+    {
+      "userId": "3",
+      "points": null,
+      "name": "hi",
+      "comeuppanceType": 2,
+      "id": 29
     }
   ],
   "history": []

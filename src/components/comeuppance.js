@@ -2,11 +2,13 @@ import React, { Component } from "react"
 import NavBar from "./nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 import "./comeuppance.css"
+import KidManager from "../modules/KidManager"
 
 class Comeuppance extends Component {
     state = {
         user: false,
-        kidId: ""
+        kidId: "",
+        relationships: []
     }
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null
@@ -14,10 +16,29 @@ class Comeuppance extends Component {
     // this function sets session storage upon register or login
     setUser = authObj => {
         sessionStorage.setItem("credentials", JSON.stringify(authObj))
-        this.setState({
-            user: this.isAuthenticated(),
-            kidId: ""
-        })
+        KidManager.getAllRelationsips()
+            .then(relationships => {
+
+                this.setState(
+                    {
+                        relationships: relationships,
+                        user: this.isAuthenticated(),
+                    }
+                )
+            })
+    }
+
+    updateRelationships = () => {
+        KidManager.getAllRelationsips()
+            .then(relationships => {
+
+                this.setState(
+                    {
+                        relationships: relationships,
+                        user: this.isAuthenticated(),
+                    }
+                )
+            })
     }
 
     // this function clears session storage and directs the user to the register page
@@ -31,12 +52,12 @@ class Comeuppance extends Component {
     }
 
     setKidId = (id) => {
-        console.log("hi",id)
+        console.log("hi", id)
         sessionStorage.setItem("kidCredentials", JSON.stringify(id))
         this.setState({
             kidId: id
         });
-        console.log("this is working",this.state.kidId)
+        console.log("this is working", this.state.kidId)
     }
 
     componentDidMount() {
@@ -45,12 +66,12 @@ class Comeuppance extends Component {
         })
     }
     render() {
-        console.log("this is working",this.state.kidId)
+        console.log("this is working", this.state.kidId)
 
         return (
             <>
-                <NavBar setKidId={this.setKidId} clearUser = {this.clearUser} user={this.state.user}/>
-                <ApplicationViews kidId={this.state.kidId} setUser = {this.setUser} user={this.state.user}/>
+                <NavBar setKidId={this.setKidId} clearUser={this.clearUser} user={this.state.user} relationships={this.state.relationships}/>
+                <ApplicationViews kidId={this.state.kidId} setUser={this.setUser} updateRelationships={this.updateRelationships} user={this.state.user} />
             </>
         )
     }

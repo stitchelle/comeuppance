@@ -10,22 +10,22 @@ import KidManager from "../../modules/KidManager"
 
 class NavBar extends Component {
     state = {
-        relationships: [],
+        // relationships: [],
         userId: ""
     };
 
-    componentDidMount() {
-        const user = sessionStorage.getItem("credentials")
-        console.log(user)
-        if (user !== null) {
-            KidManager.getAllRelationsips()
-                .then(relationships => {
+    // componentDidMount() {
+    //     const user = sessionStorage.getItem("credentials")
+    //     console.log(user)
+    //     if (user !== null) {
+    //         KidManager.getAllRelationsips()
+    //             .then(relationships => {
 
-                    this.setState({ relationships: relationships }
-                    )
-                })
-        }
-    }
+    //                 this.setState({ relationships: relationships }
+    //                 )
+    //             })
+    //     }
+    // }
 
     setUserId (kid) {
         this.setState({ userId: kid })
@@ -53,7 +53,7 @@ class NavBar extends Component {
                             <Nav.Link href="/punishments">Punishment</Nav.Link>
                             <NavDropdown title="Kid" id="basic-nav-dropdown">
 
-                                {this.state.relationships.map(kid =>
+                                {this.props.relationships.map(kid =>
                                     <NavDropdown.Item onClick={()=> {
                                         console.log("hi",kid.user.id)
                                         this.props.setKidId(kid.user.id)
