@@ -48,25 +48,30 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route exact path="/kid/new" render={(props) => {
-                    return <KidForm {...props} />
+                    return <KidForm updateRelationships={this.props.updateRelationships}{...props} />
                 }} />
 
                 <Route exact path="/kid/:kidId(\d+)" render={(props) => {
-                    return <KidCard {...props} {...this.props} />
+                    return <KidCard updateRelationships={this.props.updateRelationships} clearKid={this.clearKid} {...props} {...this.props} />
                 }} />
 
                 <Route
                     path="/kid/:kidId(\d+)/edit" render={props => {
-                        return <KidEditForm {...props} />
+                        return <KidEditForm updateRelationships={this.props.updateRelationships}{...props} />
                     }}
                 />
 
                 <Route exact path="/rewards" render={(props) => {
-                    return <RewardList kidId={this.props.kidId} {...props} />
+                    console.log(sessionStorage.getItem("kidCredentials"))
+                    if (sessionStorage.getItem("kidCredentials") !== null) {
+                        return <RewardList kidId={this.props.kidId} {...props} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
 
                 <Route path="/rewards/new" render={(props) => {
-                    return <RewardForm  kidId={this.props.kidId} {...props} />
+                    return <RewardForm kidId={this.props.kidId} {...props} />
                 }} />
 
                 <Route
@@ -76,7 +81,13 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/punishments" render={(props) => {
-                    return <PunishmentList kidId={this.props.kidId} {...props} />
+                    console.log(sessionStorage.getItem("kidCredentials"))
+
+                    if (sessionStorage.getItem("kidCredentials") !== null) {
+                        return <PunishmentList kidId={this.props.kidId} {...props} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
 
                 <Route path="/punishments/new" render={(props) => {

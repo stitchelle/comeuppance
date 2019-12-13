@@ -52,6 +52,7 @@ class KidCard extends Component {
                   variant="dark" ariant="outline-secondary" 
                   onClick={() => {
                     this.deleteKid(this.state.kid.id)
+                    this.props.clearKid()
                     this.props.history.push(`/`)}
                   }
                     
