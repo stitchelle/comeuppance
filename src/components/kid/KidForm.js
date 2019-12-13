@@ -43,6 +43,7 @@ class KidForm extends Component {
                     KidManager.postRelationship(relationship)
                     .then((relationship) => {this.props.updateRelationships()
                     console.log(relationship.id)
+                    sessionStorage.setItem("kidCredentials",relationship.id)
                     this.props.history.push(`/kid/${relationship.id}`)
                 })
             });

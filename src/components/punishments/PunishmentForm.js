@@ -27,7 +27,7 @@ class PunishmentForm extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const reward = {
-                userId: sessionStorage.getItem("kidCredentials"),
+                userId: Number(sessionStorage.getItem("kidCredentials")),
                 points: null,
                 name: this.state.punishmentName,
                 comeuppanceType: 2,

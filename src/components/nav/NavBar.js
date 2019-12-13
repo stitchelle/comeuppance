@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
 import { Form, Button, Nav, NavDropdown, FormControl } from "react-bootstrap"
 // import { Link } from "react-router-dom"
-import KidManager from "../../modules/KidManager"
+// import KidManager from "../../modules/KidManager"
 
 
 
@@ -31,8 +31,8 @@ class NavBar extends Component {
         this.setState({ userId: kid })
             console.log("setUser", this.state.userId)
     }
+    
     render() {
-        console.log("render", this.state.use)
         if (this.props.user === true) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">

@@ -51,6 +51,13 @@ class Comeuppance extends Component {
         });
     }
 
+    clearKid = () => {
+        sessionStorage.removeItem("kidCredentials")
+        this.setState({
+            kidId: ""
+        })
+    }
+
     setKidId = (id) => {
         console.log("hi", id)
         sessionStorage.setItem("kidCredentials", JSON.stringify(id))
@@ -61,17 +68,25 @@ class Comeuppance extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            user: this.isAuthenticated()
-        })
+        KidManager.getAllRelationsips()
+            .then(relationships => {
+                this.setState(
+                    {
+                        relationships: relationships,
+                        user: this.isAuthenticated(),
+                    }
+                )
+            })
     }
+    
+
     render() {
         console.log("this is working", this.state.kidId)
 
         return (
             <>
-                <NavBar setKidId={this.setKidId} clearUser={this.clearUser} user={this.state.user} relationships={this.state.relationships}/>
-                <ApplicationViews kidId={this.state.kidId} setUser={this.setUser} updateRelationships={this.updateRelationships} user={this.state.user} />
+                <NavBar setKidId={this.setKidId} clearUser={this.clearUser} user={this.state.user} relationships={this.state.relationships} />
+                <ApplicationViews kidId={this.state.kidId} setUser={this.setUser} updateRelationships={this.updateRelationships} user={this.state.user} clearKid={this.clearKid} />
             </>
         )
     }

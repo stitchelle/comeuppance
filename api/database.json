@@ -25,76 +25,28 @@
       "id": 3
     },
     {
-      "username": "Robert",
-      "email": "robert@gmail.com",
-      "password": "123",
-      "isParent": true,
+      "username": "kjlkn",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 4
+    },
+    {
+      "username": "sdfa",
+      "email": null,
+      "password": null,
+      "isParent": false,
+      "points": null,
+      "id": 5
+    },
+    {
+      "username": "iugh",
+      "email": null,
+      "password": null,
+      "isParent": false,
       "points": null,
       "id": 6
-    },
-    {
-      "username": "Jisie",
-      "email": "jisie@gmail.com",
-      "password": "123",
-      "isParent": true,
-      "points": null,
-      "id": 7
-    },
-    {
-      "username": "Kristen",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 8
-    },
-    {
-      "username": "Rose",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 9
-    },
-    {
-      "username": "bob",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 10
-    },
-    {
-      "username": "Dog",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 11
-    },
-    {
-      "username": "cat",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 12
-    },
-    {
-      "username": "yay",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 13
-    },
-    {
-      "username": "fart",
-      "email": null,
-      "password": null,
-      "isParent": false,
-      "points": null,
-      "id": 14
     }
   ],
   "Relationships": [
@@ -109,39 +61,19 @@
       "id": 2
     },
     {
-      "parentId": 7,
-      "userId": 8,
+      "parentId": 1,
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "parentId": 1,
+      "userId": 5,
+      "id": 4
+    },
+    {
+      "parentId": 1,
+      "userId": 6,
       "id": 5
-    },
-    {
-      "parentId": 7,
-      "userId": 9,
-      "id": 6
-    },
-    {
-      "parentId": 1,
-      "userId": 10,
-      "id": 7
-    },
-    {
-      "parentId": 1,
-      "userId": 11,
-      "id": 8
-    },
-    {
-      "parentId": 1,
-      "userId": 12,
-      "id": 9
-    },
-    {
-      "parentId": 1,
-      "userId": 13,
-      "id": 10
-    },
-    {
-      "parentId": 1,
-      "userId": 14,
-      "id": 11
     }
   ],
   "comeuppanceType": [
@@ -163,13 +95,6 @@
       "id": 1
     },
     {
-      "userId": "2",
-      "points": null,
-      "name": "punishment 00111",
-      "comeuppanceType": 2,
-      "id": 2
-    },
-    {
       "userId": 2,
       "points": null,
       "name": "123",
@@ -182,62 +107,6 @@
       "name": "876876",
       "comeuppanceType": 2,
       "id": 5
-    },
-    {
-      "userId": "2",
-      "points": null,
-      "name": "hi",
-      "comeuppanceType": 2,
-      "id": 6
-    },
-    {
-      "userId": "9",
-      "points": null,
-      "name": "Reward 1",
-      "comeuppanceType": 1,
-      "id": 14
-    },
-    {
-      "userId": "9",
-      "points": null,
-      "name": "a;flkewnf;lakenlk;e",
-      "comeuppanceType": 2,
-      "id": 15
-    },
-    {
-      "userId": "9",
-      "points": null,
-      "name": "asfeaewf",
-      "comeuppanceType": 2,
-      "id": 16
-    },
-    {
-      "userId": "8",
-      "points": null,
-      "name": "a;flkne;lkena",
-      "comeuppanceType": 1,
-      "id": 17
-    },
-    {
-      "userId": "8",
-      "points": null,
-      "name": "sfaee",
-      "comeuppanceType": 1,
-      "id": 18
-    },
-    {
-      "userId": "3",
-      "points": null,
-      "name": "lkjlkn",
-      "comeuppanceType": 1,
-      "id": 26
-    },
-    {
-      "userId": "3",
-      "points": null,
-      "name": "hi",
-      "comeuppanceType": 2,
-      "id": 29
     }
   ],
   "history": []

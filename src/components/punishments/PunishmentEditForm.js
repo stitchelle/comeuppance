@@ -23,7 +23,7 @@ class PunishmentEditForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedPunishment = {
-            userId: sessionStorage.getItem("kidCredentials"),
+            userId: Number(sessionStorage.getItem("kidCredentials")),
             points: null,
             name: this.state.punishmentName,
             comeuppanceType: 2,

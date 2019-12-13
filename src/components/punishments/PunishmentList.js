@@ -75,6 +75,7 @@ class PunishmentList extends Component {
                 <br />
             </>
         )
+
     }
 }
 
