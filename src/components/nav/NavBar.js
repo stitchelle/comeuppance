@@ -51,6 +51,7 @@ class NavBar extends Component {
                         <Nav className="mr-auto">
                             <Nav.Link href="/rewards">Reward</Nav.Link>
                             <Nav.Link href="/punishments">Punishment</Nav.Link>
+                            <Nav.Link href="/points">Points</Nav.Link>
                             <NavDropdown title="Kid" id="basic-nav-dropdown">
 
                                 {this.props.relationships.map(kid =>
