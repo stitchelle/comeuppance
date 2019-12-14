@@ -12,6 +12,7 @@ import RewardsEditForm from "./rewards/RewardEditForm";
 import PunishmentList from "./punishments/PunishmentList";
 import PunishmentForm from "./punishments/PunishmentForm";
 import PunishmentEditForm from "./punishments/PunishmentEditForm";
+import PointCard from "./points/PointCard"
 
 
 
@@ -99,6 +100,10 @@ export default class ApplicationViews extends Component {
                         return <PunishmentEditForm kidId={this.props.kidId} {...props} />
                     }}
                 />
+
+                <Route path="/points" render={(props) => {
+                    return <PointCard />
+                }} />
 
             </React.Fragment>
         );
