@@ -10,16 +10,16 @@
     },
     {
       "username": "Xander",
-      "email": null,
-      "password": null,
+      "email": "bob1234girl@gmail.com",
+      "password": 123,
       "isParent": false,
       "points": null,
       "id": 2
     },
     {
       "username": "Devin",
-      "email": null,
-      "password": null,
+      "email": "bob1234girl@gmail.com",
+      "password": 123,
       "isParent": false,
       "points": null,
       "id": 3
