@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button } from 'react-bootstrap'
+import { Button, Form, Col } from 'react-bootstrap'
 import PunishmentManager from "../../modules/PunishmentManager"
 import "./PunishmentForm.css"
 
@@ -24,7 +24,7 @@ class PunishmentEditForm extends Component {
         this.setState({ loadingStatus: true });
         const editedPunishment = {
             userId: Number(sessionStorage.getItem("kidCredentials")),
-            points: null,
+            points: Number(this.state.points),
             name: this.state.punishmentName,
             comeuppanceType: 2,
             id: this.props.match.params.punishmentId,
@@ -40,7 +40,7 @@ class PunishmentEditForm extends Component {
                 console.log("punishment", punishment)
                 this.setState({
                     userId: punishment.userId,
-                    points: null,
+                    points: Number(punishment.points),
                     punishmentName: punishment.name,
                     comeuppanceType: 2,
                     loadingStatus: false,
@@ -51,33 +51,49 @@ class PunishmentEditForm extends Component {
     render() {
         return (
             <>
-                <form>
-                    <br />
-                    <center><strong><h1>Edit Punishment</h1></strong></center>
+                <Form>
                     <fieldset>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="punishmentName"
-                                value={this.state.punishmentName}
-                            />
-                            <label htmlFor="punishmentName">Punishment</label>
-                        </div>
+                        <center><h2>ADD PUNISHMENT</h2></center>
+
+                        <Form.Row>
+                            <Col className="alignLeft">
+                                <Form.Control
+                                    as="select"
+                                    id="points"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    value={this.state.points}>
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>15</option>
+                                    <option>20</option>
+                                </Form.Control>
+                                <Form.Text className="text-muted">Select Number of Points</Form.Text>
+                            </Col>
+                            <Col className="alignLeft">
+
+                                <Form.Control
+                                    type="text"
+                                    required
+                                    className="form-control"
+                                    onChange={this.handleFieldChange}
+                                    id="punishmentName"
+                                    value={this.state.punishmentName} />
+                                <Form.Text className="text-muted">What Is The Punishment?</Form.Text>
+                            </Col>
+                        </Form.Row>
                         <div className="alignRight">
                             <Button
                                 type="button"
                                 variant="dark"
                                 ariant="outline-secondary"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingPunishment}
+                                onClick={this.updateExistinPunishment}
                                 className="btn btn-primary"
                             >Submit</Button>
                         </div>
                     </fieldset>
-                </form>
+                </Form>
             </>
         );
     }
