@@ -68,17 +68,21 @@ class Comeuppance extends Component {
     }
 
     componentDidMount() {
-        KidManager.getAllRelationsips()
-            .then(relationships => {
-                this.setState(
-                    {
-                        relationships: relationships,
-                        user: this.isAuthenticated(),
-                    }
-                )
-            })
+        const user = sessionStorage.getItem("credentials")
+        console.log(user)
+        if (user !== null) {
+            KidManager.getAllRelationsips()
+                .then(relationships => {
+                    this.setState(
+                        {
+                            relationships: relationships,
+                            user: this.isAuthenticated(),
+                        }
+                    )
+                })
+        }
     }
-    
+
 
     render() {
         console.log("this is working", this.state.kidId)
