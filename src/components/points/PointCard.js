@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import { Tooltip,Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 
 class PointCard extends Component {
 
-    renderTooltipPositive(props) {
-        return <Tooltip {...props}>Add Positive Points</Tooltip>;
-    }
-
-    renderTooltipNegative(props) {
-        return <Tooltip {...props}>Add Negative Points</Tooltip>;
-    }
 
     render() {
         return (

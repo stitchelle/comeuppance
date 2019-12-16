@@ -63,45 +63,24 @@
   "comeuppance": [
     {
       "userId": 2,
-      "points": null,
-      "name": "reward ",
+      "points": 10,
+      "name": "reward 1",
       "comeuppanceType": 1,
-      "id": 1
+      "id": 12
     },
     {
-      "userId": 2,
-      "points": null,
-      "name": "123",
+      "userId": "2",
+      "points": 5,
+      "name": "sfae",
       "comeuppanceType": 1,
-      "id": 4
+      "id": 13
     },
     {
-      "userId": 2,
-      "points": null,
-      "name": "876876",
-      "comeuppanceType": 2,
-      "id": 5
-    },
-    {
-      "userId": 3,
-      "points": null,
-      "name": "Reward 2",
+      "userId": "2",
+      "points": 15,
+      "name": "sefefe",
       "comeuppanceType": 1,
-      "id": 6
-    },
-    {
-      "userId": "3",
-      "points": null,
-      "name": "Reward 1",
-      "comeuppanceType": 1,
-      "id": 7
-    },
-    {
-      "userId": 3,
-      "points": null,
-      "name": "punish 2",
-      "comeuppanceType": 2,
-      "id": 9
+      "id": 14
     }
   ],
   "history": []

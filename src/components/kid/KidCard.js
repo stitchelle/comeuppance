@@ -43,53 +43,25 @@ class KidCard extends Component {
               {this.state.kid.password}
             </Card.Text>
             <ButtonGroup className="kidButton">
-                  <Button type="button" variant="dark" ariant="outline-secondary"
-                    onClick={() => {
-                      this.props.history.push
-                        (`/kid/${this.state.kid.id}/edit`)
-                    }}>Edit</Button>
-                </ButtonGroup>
-                <ButtonGroup className="kidButton">
-                  <Button
-                    type="button"
-                    variant="dark" ariant="outline-secondary"
-                    onClick={() => {
-                      this.deleteKid(this.state.kid.id)
-                      this.props.clearKid()
-                      this.props.history.push(`/`)
-                    }
-                    }
-                  >Delete</Button>
-                </ButtonGroup>
+              <Button type="button" variant="dark" ariant="outline-secondary"
+                onClick={() => {
+                  this.props.history.push
+                    (`/kid/${this.state.kid.id}/edit`)
+                }}>Edit</Button>
+            </ButtonGroup>
+            <ButtonGroup className="kidButton">
+              <Button
+                type="button"
+                variant="dark" ariant="outline-secondary"
+                onClick={() => {
+                  this.deleteKid(this.state.kid.id)
+                  this.props.clearKid()
+                  this.props.history.push(`/`)
+                }
+                }
+              >Delete</Button>
+            </ButtonGroup>
           </Card.Body>
-          {/* <Card.Body>
-            <div className="card">
-              <div className="card-content">
-                <Card.Title className="kidName">{this.state.kid.username} </Card.Title><hr />
-                <ButtonGroup className="kidButton">
-                  <Button type="button" variant="dark" ariant="outline-secondary"
-                    onClick={() => {
-                      this.props.history.push
-                        (`/kid/${this.state.kid.id}/edit`)
-                    }}>Edit</Button>
-                </ButtonGroup>
-                <ButtonGroup className="kidButton">
-                  <Button
-                    type="button"
-                    variant="dark" ariant="outline-secondary"
-                    onClick={() => {
-                      this.deleteKid(this.state.kid.id)
-                      this.props.clearKid()
-                      this.props.history.push(`/`)
-                    }
-                    }
-
-                  >Delete</Button>
-                </ButtonGroup>
-
-              </div>
-            </div>
-          </Card.Body> */}
         </Card>
       </>
     );
