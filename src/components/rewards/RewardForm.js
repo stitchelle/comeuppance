@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap'
+import { Button, Form, Col } from 'react-bootstrap'
 import RewardManager from '../../modules/RewardManager';
 import './RewardForm.css'
 
 class RewardForm extends Component {
     state = {
         userId: "",
-        point: "",
+        points: "",
         rewardName: "",
         comeuppanceType: "",
         loadingStatus: false
@@ -22,14 +22,14 @@ class RewardForm extends Component {
     */
     constructNewReward = evt => {
         evt.preventDefault();
-        if (this.state.rewardName === "") {
-            window.alert("Please input an reward name");
+        if (this.state.rewardName === "" || this.state.points === "") {
+            window.alert("Please input an reward information");
         } else {
             this.setState({ loadingStatus: true });
 
             const reward = {
                 userId: sessionStorage.getItem("kidCredentials"),
-                points: null,
+                points: Number(this.state.points),
                 name: this.state.rewardName,
                 comeuppanceType: 1,
             };
@@ -44,18 +44,36 @@ class RewardForm extends Component {
 
         return (
             <>
-                <form>
+                <Form>
                     <fieldset>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="rewardName"
-                                placeholder="Reward"
-                            />
-                            <label htmlFor="rewardName">Name</label>
-                        </div>
+                        <center><h2>ADD REWARD</h2></center>
+
+                        <Form.Row>
+                            <Col className="alignLeft">
+                                <Form.Control 
+                                    as="select" 
+                                    id="points" 
+                                    required
+                                    onChange={this.handleFieldChange}>
+                                    <option>select points</option>    
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>15</option>
+                                    <option>20</option>
+                                </Form.Control>
+                                <Form.Text className="text-muted">Select Number of Points</Form.Text>
+                            </Col>
+                            <Col className="alignLeft">
+
+                                <Form.Control
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="rewardName"
+                                    placeholder="Reward" />
+                                <Form.Text className="text-muted">What Is The Reward?</Form.Text>
+                            </Col>
+                        </Form.Row>
                         <div className="alignRight">
                             <Button
                                 type="button"
@@ -66,7 +84,7 @@ class RewardForm extends Component {
                             >Submit</Button>
                         </div>
                     </fieldset>
-                </form>
+                </Form>
             </>
         )
     }

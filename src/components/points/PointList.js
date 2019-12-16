@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Col, Tooltip, OverlayTrigger } from 'react-bootstrap'
 import PointCard from "./PointCard"
+import KidPointCard from './KidPointCard';
 
 
 class PointList extends Component {
@@ -48,8 +49,7 @@ class PointList extends Component {
                                 <OverlayTrigger
                                     placement="right"
                                     delay={{ show: 250, hide: 400 }}
-                                    overlay={this.renderTooltipNegative}
-                                >
+                                    overlay={this.renderTooltipNegative}>
                                     <picture>
                                         <img src={require('./remove_circle-24px.svg')} alt="add button" height="50em" />
                                     </picture>
@@ -69,6 +69,7 @@ class PointList extends Component {
                         </Form.Group>
                     </fieldset>
                 </Form>
+                <KidPointCard/>
             </>
         );
     }
