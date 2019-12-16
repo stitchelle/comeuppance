@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Col, Row, Tooltip, OverlayTrigger,Card } from 'react-bootstrap'
+import { Tooltip,Card } from 'react-bootstrap'
 
 
 class PointCard extends Component {

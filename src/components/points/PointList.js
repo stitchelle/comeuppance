@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Col, Row, Tooltip, OverlayTrigger } from 'react-bootstrap'
+import { Form, Col, Tooltip, OverlayTrigger } from 'react-bootstrap'
 import PointCard from "./PointCard"
 
 

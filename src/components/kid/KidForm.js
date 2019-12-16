@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Button } from 'react-bootstrap'
 import KidManager from '../../modules/KidManager';
 import './KidForm.css'
 
@@ -21,16 +22,16 @@ class KidForm extends Component {
 
     constructNewKid = evt => {
         evt.preventDefault();
-        if (this.state.name === "") {
-            window.alert("Please Input Kid's Name");
-        } else {
+        // if (this.state.username === "" || this.state.email === "" || this.state.password === "") {
+        //     window.alert("Please Input All Kid's Fields");
+        // } else {
             this.setState({ loadingStatus: true });
             const userId = JSON.parse(sessionStorage.getItem("credentials"))
 
             const kid = {
                 username: this.state.username,
-                email: null,
-                password: null,
+                email: this.state.email,
+                password: this.state.password,
                 isParent: false,
                 points: null,
             };
@@ -41,14 +42,15 @@ class KidForm extends Component {
                         userId: response.id
                     };
                     KidManager.postRelationship(relationship)
-                    .then((relationship) => {this.props.updateRelationships()
-                    console.log(relationship.id)
-                    sessionStorage.setItem("kidCredentials",relationship.id)
-                    this.props.history.push(`/kid/${relationship.id}`)
-                })
-            });
+                        .then((relationship) => {
+                            this.props.updateRelationships()
+                            console.log("relationship",relationship.id)
+                            sessionStorage.setItem("kidCredentials", relationship.id)
+                            this.props.history.push(`/kid/${relationship.id}`)
+                        })
+                });
 
-        }
+        // }
 
     };
 
@@ -56,22 +58,79 @@ class KidForm extends Component {
 
         return (
             <>
-                <form>
+                {/* <Form>
                     <br />
                     <center><strong><h1>Add New Kid</h1></strong></center>
                     <fieldset>
                         <div className="formgrid">
-                            <input 
-                            type="text" 
-                            required 
-                            onChange={this.handleFieldChange} id="username" placeholder="Kid Name" />
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange} id="username" placeholder="Kid Name" />
                             <label htmlFor="kidName">Name</label>
                         </div>
+
+                        <input onChange={this.handleFieldChange} type="email"
+                            id="email"
+                            placeholder="Email address"
+                            required="" autoFocus="" />
+                        <label htmlFor="inputEmail">Email address</label>
+
+                        <input onChange={this.handleFieldChange} type="password"
+                            id="password"
+                            placeholder="Password"
+                            required="" />
+                        <label htmlFor="inputPassword">Password</label>
+
                         <div className="alignRight">
                             <button type="button" disabled={this.state.loadingStatus} onClick={this.constructNewKid}>Submit</button>
                         </div>
                     </fieldset>
-                </form>
+                </Form> */}
+                <Form>
+                    <fieldset>
+                        <center><strong><h1>Add New Kid</h1></strong></center>
+
+                        <Form.Group id="formBasicName">
+                            <Form.Label>Kid Name</Form.Label>
+                            <Form.Control 
+                                id="username"
+                                type="text" 
+                                placeholder="Kids Name" 
+                                required
+                                onChange={this.handleFieldChange}/>
+                        </Form.Group>
+
+                        <Form.Group id="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control 
+                                id="email"
+                                type="email" 
+                                placeholder="Enter email" 
+                                required
+                                onChange={this.handleFieldChange}/>
+                        </Form.Group>
+
+                        <Form.Group id="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control 
+                                id="password"
+                                type="password" 
+                                placeholder="Password" 
+                                required
+                                onChange={this.handleFieldChange}/>
+                        </Form.Group>
+
+                        <Button
+                            type="submit"
+                            variant="dark" 
+                            ariant="outline-secondary"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.constructNewKid}>
+                            Submit
+                        </Button>
+                    </fieldset>
+                </Form>
             </>
         )
     }

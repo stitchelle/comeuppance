@@ -23,6 +23,14 @@
       "isParent": false,
       "points": null,
       "id": 3
+    },
+    {
+      "username": "Lauren",
+      "email": "bob1234girl@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": null,
+      "id": 4
     }
   ],
   "Relationships": [
@@ -35,6 +43,11 @@
       "parentId": 1,
       "userId": 3,
       "id": 2
+    },
+    {
+      "parentId": 1,
+      "userId": 4,
+      "id": 3
     }
   ],
   "comeuppanceType": [

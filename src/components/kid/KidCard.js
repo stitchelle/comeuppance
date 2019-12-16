@@ -18,51 +18,78 @@ class KidCard extends Component {
 
   deleteKid = id => {
     KidManager.delete(id)
-    .then(() => {
-      this.props.updateRelationships()
-      // KidManager.getAll()
-      // .then((newKids) => {
-      //   this.setState({
-      //       kids: newKids
-      //   })
-      // })
-    })
+      .then(() => {
+        this.props.updateRelationships()
+        // KidManager.getAll()
+        // .then((newKids) => {
+        //   this.setState({
+        //       kids: newKids
+        //   })
+        // })
+      })
   }
 
   render() {
     console.log(this.state.kid)
     return (
       <>
-        <br/>
-        <strong><h1>Selected Kid:</h1></strong>
-        <br/>
+        <br />
+        <strong><h3>Kid Info:</h3></strong>
         <Card className="text-center">
+          <Card.Header as="h5" className="kidName">{this.state.kid.username}</Card.Header>
           <Card.Body>
+            <Card.Title className="kidEmail">{this.state.kid.email}</Card.Title>
+            <Card.Text className="kidPassword">
+              {this.state.kid.password}
+            </Card.Text>
+            <ButtonGroup className="kidButton">
+                  <Button type="button" variant="dark" ariant="outline-secondary"
+                    onClick={() => {
+                      this.props.history.push
+                        (`/kid/${this.state.kid.id}/edit`)
+                    }}>Edit</Button>
+                </ButtonGroup>
+                <ButtonGroup className="kidButton">
+                  <Button
+                    type="button"
+                    variant="dark" ariant="outline-secondary"
+                    onClick={() => {
+                      this.deleteKid(this.state.kid.id)
+                      this.props.clearKid()
+                      this.props.history.push(`/`)
+                    }
+                    }
+                  >Delete</Button>
+                </ButtonGroup>
+          </Card.Body>
+          {/* <Card.Body>
             <div className="card">
               <div className="card-content">
                 <Card.Title className="kidName">{this.state.kid.username} </Card.Title><hr />
                 <ButtonGroup className="kidButton">
-                  <Button type="button" variant="dark" ariant="outline-secondary" 
-                  onClick={() => { 
-                    this.props.history.push
-                    (`/kid/${this.state.kid.id}/edit`) }}>Edit</Button>
+                  <Button type="button" variant="dark" ariant="outline-secondary"
+                    onClick={() => {
+                      this.props.history.push
+                        (`/kid/${this.state.kid.id}/edit`)
+                    }}>Edit</Button>
                 </ButtonGroup>
                 <ButtonGroup className="kidButton">
-                  <Button 
-                  type="button" 
-                  variant="dark" ariant="outline-secondary" 
-                  onClick={() => {
-                    this.deleteKid(this.state.kid.id)
-                    this.props.clearKid()
-                    this.props.history.push(`/`)}
-                  }
-                    
-                    >Delete</Button>
+                  <Button
+                    type="button"
+                    variant="dark" ariant="outline-secondary"
+                    onClick={() => {
+                      this.deleteKid(this.state.kid.id)
+                      this.props.clearKid()
+                      this.props.history.push(`/`)
+                    }
+                    }
+
+                  >Delete</Button>
                 </ButtonGroup>
 
               </div>
             </div>
-          </Card.Body>
+          </Card.Body> */}
         </Card>
       </>
     );
