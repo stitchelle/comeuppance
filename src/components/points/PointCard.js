@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Col, Row, Tooltip, OverlayTrigger } from 'react-bootstrap'
+import { Form, Col, Row, Tooltip, OverlayTrigger,Card } from 'react-bootstrap'
 
 
 class PointCard extends Component {
@@ -14,59 +14,28 @@ class PointCard extends Component {
 
     render() {
         return (
-            <form>
-                <br />
-                <center><h1>ADD POINTS</h1></center>
-                <fieldset>
-                    <Form.Row middle="xs sm md lg xl">
-                        <Col className="alignLeft">
-
-                            <OverlayTrigger
-                                placement="right"
-                                delay={{ show: 250, hide: 400 }}
-                                overlay={this.renderTooltipPositive}
-                            >
-                                <picture hover="Add Positive Points">
-                                    <img src={require('./plus add.png')} alt="add button" height="45em" />
-                                </picture>
-                            </OverlayTrigger>
-                        </Col>
-                        <Col className="alignCenter">
-                        
-                            <Form.Control
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="reason" placeholder="Reason" />
-                            <Form.Text className="text-muted">Enter Reason For Points</Form.Text>
-                        </Col>
-                        <Col className="alignRight">
-
-                            <OverlayTrigger
-                                placement="right"
-                                delay={{ show: 250, hide: 400 }}
-                                overlay={this.renderTooltipNegative}
-                            >
-                                <picture>
-                                    <img src={require('./remove_circle-24px.svg')} alt="add button" height="50em" />
-                                </picture>
-                            </OverlayTrigger>
-                        </Col>
-                    </Form.Row>
-                    <br />
-                    <Form.Group controlId="selectNumberOfPoints">
-                        <Form.Control as="select">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </Form.Control>
-                        <Form.Text className="text-muted">Select Number of Points</Form.Text>
-                    </Form.Group>
-                </fieldset>
-            </form>
-        );
+            <>
+            
+            <Card className="text-center">
+                <Card.Body>
+                    <div className="card">
+                        <div className="card-content">
+                            <Card.Title className="previousMonthsPoints">Previous Month's Points Remaining</Card.Title><hr />
+                        </div>
+                    </div>
+                </Card.Body>
+            </Card>
+            <Card className="text-center">
+                <Card.Body>
+                    <div className="card">
+                        <div className="card-content">
+                            <Card.Title className="currentMonthsPoints">Current Month's Points </Card.Title><hr />
+                        </div>
+                    </div>
+                </Card.Body>
+            </Card>
+            </>
+                            );
     }
 }
 

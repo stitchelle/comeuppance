@@ -12,7 +12,7 @@ import RewardsEditForm from "./rewards/RewardEditForm";
 import PunishmentList from "./punishments/PunishmentList";
 import PunishmentForm from "./punishments/PunishmentForm";
 import PunishmentEditForm from "./punishments/PunishmentEditForm";
-import PointCard from "./points/PointCard"
+import PointList from "./points/PointList"
 
 
 
@@ -102,7 +102,7 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route path="/points" render={(props) => {
-                    return <PointCard />
+                    return <PointList />
                 }} />
 
             </React.Fragment>
