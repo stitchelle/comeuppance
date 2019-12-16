@@ -33,7 +33,7 @@ class KidForm extends Component {
                 email: this.state.email,
                 password: this.state.password,
                 isParent: false,
-                points: null,
+                points: this.state.points,
             };
             KidManager.post(kid)
                 .then((response) => {

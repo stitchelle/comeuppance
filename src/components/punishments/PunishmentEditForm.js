@@ -24,7 +24,7 @@ class PunishmentEditForm extends Component {
         this.setState({ loadingStatus: true });
         const editedPunishment = {
             userId: Number(sessionStorage.getItem("kidCredentials")),
-            points: Number(this.state.points),
+            points: Number(this.state.pointsId),
             name: this.state.punishmentName,
             comeuppanceType: 2,
             id: this.props.match.params.punishmentId,
@@ -40,7 +40,7 @@ class PunishmentEditForm extends Component {
                 console.log("punishment", punishment)
                 this.setState({
                     userId: punishment.userId,
-                    points: Number(punishment.points),
+                    points: Number(punishment.pointsId),
                     punishmentName: punishment.name,
                     comeuppanceType: 2,
                     loadingStatus: false,
@@ -62,7 +62,7 @@ class PunishmentEditForm extends Component {
                                     id="points"
                                     required
                                     onChange={this.handleFieldChange}
-                                    value={this.state.points}>
+                                    value={this.state.pointsId}>
                                     <option>5</option>
                                     <option>10</option>
                                     <option>15</option>

@@ -12,7 +12,7 @@ class RewardCard extends Component {
                                 <img src={require('./dog.svg')} alt="My Dog" />
                             </picture> */}
                             <Row>
-                                <Card.Subtitle className="card-rewardpoints">Points:{this.props.reward.points}</Card.Subtitle>
+                                <Card.Subtitle className="card-rewardpoints">Points:{this.props.reward.pointsId}</Card.Subtitle>
                                 <Card.Title className="card-rewardname">{this.props.reward.name}</Card.Title>
 
                             </Row>
@@ -34,4 +34,19 @@ class RewardCard extends Component {
     }
 }
 
+class KidRewardCard extends Component {
+    render() {
+        return (
+            <Card>
+                <Card.Header as="h5">5 Points</Card.Header>
+                <Card.Body>
+                    <Card.Title>Special title treatment</Card.Title>
+                    <Button variant="dark">Redeem</Button>
+                </Card.Body>
+            </Card>
+        )
+    }
+}
+
 export default RewardCard;
+export default KidRewardCard;

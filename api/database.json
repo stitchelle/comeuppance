@@ -63,42 +63,42 @@
   "comeuppance": [
     {
       "userId": 2,
-      "points": 10,
+      "pointsId": 10,
       "name": "reward 1",
       "comeuppanceType": 1,
       "id": 12
     },
     {
       "userId": "2",
-      "points": 5,
+      "pointsId": 5,
       "name": "sfae",
       "comeuppanceType": 1,
       "id": 13
     },
     {
       "userId": "2",
-      "points": 15,
+      "pointsId": 15,
       "name": "sefefe",
       "comeuppanceType": 1,
       "id": 14
     },
     {
       "userId": 2,
-      "points": 10,
+      "pointsId": 10,
       "name": "sdfe",
       "comeuppanceType": 2,
       "id": 15
     },
     {
       "userId": 2,
-      "points": 15,
+      "pointsId": 15,
       "name": "efaeaf",
       "comeuppanceType": 2,
       "id": 16
     },
     {
       "userId": 2,
-      "points": 5,
+      "pointsId": 5,
       "name": "afaefaewfae",
       "comeuppanceType": 2,
       "id": 17

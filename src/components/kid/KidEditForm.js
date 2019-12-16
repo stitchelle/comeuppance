@@ -31,7 +31,7 @@ class KidEditForm extends Component {
             email: this.state.email,
             password: this.state.password,
             isParent: false,
-            points: null,
+            points: this.state.points,
             id: this.props.match.params.kidId
         };
 
@@ -50,7 +50,7 @@ class KidEditForm extends Component {
                     email: kid.email,
                     password: kid.password,
                     isParent: false,
-                    points: null,
+                    points: kid.points,
                 });console.log(this.state)
             });
     }

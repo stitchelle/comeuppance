@@ -6,7 +6,7 @@ import './PunishmentForm.css'
 class PunishmentForm extends Component {
     state = {
         userId: "",
-        point: "",
+        pointsId: "",
         punishmentName: "",
         comeuppanceType: "",
         loadingStatus: false
@@ -22,13 +22,13 @@ class PunishmentForm extends Component {
     */
     constructNewPunishment = evt => {
         evt.preventDefault();
-        if (this.state.punishmentName === "" || this.state.points === "") {
+        if (this.state.punishmentName === "" || this.state.pointsId === "") {
             window.alert("Please input an punishment name");
         } else {
             this.setState({ loadingStatus: true });
             const reward = {
                 userId: Number(sessionStorage.getItem("kidCredentials")),
-                points: Number(this.state.points),
+                pointsId: Number(this.state.pointsId),
                 name: this.state.punishmentName,
                 comeuppanceType: 2,
             };

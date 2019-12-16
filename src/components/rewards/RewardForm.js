@@ -6,7 +6,7 @@ import './RewardForm.css'
 class RewardForm extends Component {
     state = {
         userId: "",
-        points: "",
+        pointsId: "",
         rewardName: "",
         comeuppanceType: "",
         loadingStatus: false
@@ -22,14 +22,14 @@ class RewardForm extends Component {
     */
     constructNewReward = evt => {
         evt.preventDefault();
-        if (this.state.rewardName === "" || this.state.points === "") {
+        if (this.state.rewardName === "" || this.state.pointsId === "") {
             window.alert("Please input an reward information");
         } else {
             this.setState({ loadingStatus: true });
 
             const reward = {
                 userId: sessionStorage.getItem("kidCredentials"),
-                points: Number(this.state.points),
+                pointsId: Number(this.state.pointsId),
                 name: this.state.rewardName,
                 comeuppanceType: 1,
             };

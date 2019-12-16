@@ -22,7 +22,7 @@ class PointList extends Component {
                 <Form>
                     <fieldset>
                         <center><h2>ADD POINTS</h2></center>
-                        <Form.Row middle="xs sm md lg xl">
+                        <Form.Row>
                             <Col className="alignLeft">
 
                                 <OverlayTrigger
