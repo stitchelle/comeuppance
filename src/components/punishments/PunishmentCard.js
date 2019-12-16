@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Row } from 'react-bootstrap'
 
 class PunishmentCard extends Component {
     render() {
@@ -9,11 +9,15 @@ class PunishmentCard extends Component {
                     <div className="card">
                         <div className="card-content">
                             {/* <picture>
-            <img src={require('./dog.svg')} alt="My Dog" />
-          </picture> */}
-                            <h3>Name: <span className="card-punishmentname">{this.props.punishment.name}</span></h3>
+                                <img src={require('./dog.svg')} alt="My Dog" />
+                            </picture> */}
+                            <Row>
+                                <Card.Subtitle className="card-punishmentpoints">Points:{this.props.punishment.points}</Card.Subtitle>
+                                <Card.Title className="card-punishmentname">{this.props.punishment.name}</Card.Title>
+
+                            </Row>
                             <Button type="button"
-                                variant="dark" ariant="outline-secondary" 
+                                variant="dark" ariant="outline-secondary"
                                 onClick={() => { this.props.history.push(`/punishments/${this.props.punishment.id}/edit`) }}>Edit
                             </Button>
                             <Button
@@ -22,7 +26,6 @@ class PunishmentCard extends Component {
                                 ariant="outline-secondary"
                                 onClick={() => this.props.deletePunishment(this.props.punishment.id)}
                             >Delete</Button>
-
                         </div>
                     </div>
                 </Card.Body>
