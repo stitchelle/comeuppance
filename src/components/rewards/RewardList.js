@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 //import the components we will need
 import RewardCard from './RewardCard';
 import RewardManager from '../../modules/RewardManager';
+import KidRewardCard from "./KidRewardCard"
 
 class RewardList extends Component {
     //define what this component needs to render
@@ -39,50 +40,52 @@ class RewardList extends Component {
         alert(`YOU GOT: ${randomValue.name}`)
     }
 
-    // isParent = () => {
-    //     let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-    //     console.log("RewardList: Render", Parent.isParent);
-    // }
+    isParent = () => {
+        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
+        console.log("RewardList: Render", Parent.isParent);
+    }
 
     render() {
-        // if (isParent === true) {
-        return (
-            <>
-                <br />
-                <section className="section-content">
-                    <Button type="button"
-                        className="btn"
-                        variant="dark" ariant="outline-secondary"
-                        onClick={() => { this.props.history.push("/rewards/new") }}>
-                        Add Reward
+        if (this.isParent() !== false) {
+            return (
+                <>
+                    <br />
+                    <section className="section-content">
+                        <Button type="button"
+                            className="btn"
+                            variant="dark" ariant="outline-secondary"
+                            onClick={() => { this.props.history.push("/rewards/new") }}>
+                            Add Reward
                 </Button>
-                </section>
-                <br />
-                <div className="container-cards">
-                    {this.state.rewards.map(reward =>
-                        <RewardCard
-                            key={reward.id}
-                            reward={reward}
-                            deleteReward={this.deleteReward}
-                            {...this.props} />
-                    )}
-                </div>
-                <br />
-                <section className="section-content">
-                    <Button type="button"
-                        className="btn"
-                        variant="dark" ariant="outline-secondary"
-                        onClick={() => { this.pickRandomReward() }}
-                    >
-                        Pick Random Reward
+                    </section>
+                    <br />
+                    <div className="container-cards">
+                        {this.state.rewards.map(reward =>
+                            <RewardCard
+                                key={reward.id}
+                                reward={reward}
+                                deleteReward={this.deleteReward}
+                                {...this.props} />
+                        )}
+                    </div>
+                    <br />
+                    <section className="section-content">
+                        <Button type="button"
+                            className="btn"
+                            variant="dark" ariant="outline-secondary"
+                            onClick={() => { this.pickRandomReward() }}
+                        >
+                            Pick Random Reward
                 </Button>
-                </section>
-                <br />
-            </>
-        )
-        // } else {
-
-        // }
+                    </section>
+                    <br />
+                </>
+            )
+        } else {
+            return (
+                <KidRewardCard />
+            )
+        }
     }
 
 }

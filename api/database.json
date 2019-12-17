@@ -10,27 +10,43 @@
     },
     {
       "username": "Xander",
-      "email": "bob1234girl@gmail.com",
-      "password": 123,
+      "email": "xander@gmail.com",
+      "password": "123",
       "isParent": false,
       "points": null,
       "id": 2
     },
     {
       "username": "Devin",
-      "email": "bob1234girl@gmail.com",
-      "password": 123,
+      "email": "devin@gmail.com",
+      "password": "123",
       "isParent": false,
       "points": null,
       "id": 3
     },
     {
       "username": "Lauren",
-      "email": "bob1234girl@gmail.com",
+      "email": "lauren@gmail.com",
       "password": "123",
       "isParent": false,
       "points": null,
       "id": 4
+    },
+    {
+      "username": "yo",
+      "email": "yo@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": "",
+      "id": 5
+    },
+    {
+      "username": "uouou",
+      "email": "l@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": "",
+      "id": 6
     }
   ],
   "Relationships": [
@@ -48,6 +64,16 @@
       "parentId": 1,
       "userId": 4,
       "id": 3
+    },
+    {
+      "parentId": 1,
+      "userId": 5,
+      "id": 4
+    },
+    {
+      "parentId": 1,
+      "userId": 6,
+      "id": 5
     }
   ],
   "comeuppanceType": [

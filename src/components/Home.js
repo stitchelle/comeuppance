@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import RewardList from "./rewards/RewardList"
 
 class Home extends Component {
   render() {
-    if (sessionStorage.getItem("kidCredentials") !== null) {
+    if (sessionStorage.getItem("kidCredentials") !== null || RewardList.isParent !== true) {
       return (
         <center><h1>COMEUPPANCE</h1></center>)
     } else {

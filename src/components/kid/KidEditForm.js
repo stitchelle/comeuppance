@@ -58,31 +58,6 @@ class KidEditForm extends Component {
     render() {
         return (
             <>
-                {/* <form>
-                    <br />
-                    <center><strong><h1>Add New Kid</h1></strong></center>
-                    <fieldset>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                className="form-control"
-                                onChange={this.handleFieldChange}
-                                id="username"
-                                value={this.state.username}
-                            />
-                            <label htmlFor="username">Name </label>
-                        </div>
-                        <div className="alignRight">
-                            <Button
-                                type="button" 
-                                disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingKid}
-                                className="kidButton" variant="dark" ariant="outline-secondary"
-                            >Submit</Button>
-                        </div>
-                    </fieldset>
-                </form> */}
                 <Form>
                     <fieldset>
                         <center><strong><h1>Edit Kid</h1></strong></center>
