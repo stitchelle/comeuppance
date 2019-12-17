@@ -12,7 +12,7 @@ class PunishmentCard extends Component {
                                 <img src={require('./dog.svg')} alt="My Dog" />
                             </picture> */}
                             <Row>
-                                <Card.Subtitle className="card-punishmentpoints">Points:{this.props.punishment.pointId}</Card.Subtitle>
+                                <Card.Subtitle className="card-punishmentpoints">Points:{this.props.punishment.point.numberOfPoints}</Card.Subtitle>
                                 <Card.Title className="card-punishmentname">{this.props.punishment.name}</Card.Title>
 
                             </Row>
