@@ -6,7 +6,7 @@ import './PunishmentForm.css'
 class PunishmentForm extends Component {
     state = {
         userId: "",
-        pointsId: "",
+        pointId: "",
         punishmentName: "",
         comeuppanceType: "",
         loadingStatus: false
@@ -22,13 +22,13 @@ class PunishmentForm extends Component {
     */
     constructNewPunishment = evt => {
         evt.preventDefault();
-        if (this.state.punishmentName === "" || this.state.pointsId === "") {
+        if (this.state.punishmentName === "" || this.state.pointId === "") {
             window.alert("Please input an punishment name");
         } else {
             this.setState({ loadingStatus: true });
             const reward = {
                 userId: Number(sessionStorage.getItem("kidCredentials")),
-                pointsId: Number(this.state.pointsId),
+                pointId: Number(this.state.pointId),
                 name: this.state.punishmentName,
                 comeuppanceType: 2,
             };
@@ -51,7 +51,7 @@ class PunishmentForm extends Component {
                             <Col className="alignLeft">
                                 <Form.Control 
                                     as="select" 
-                                    id="pointsId" 
+                                    id="pointId" 
                                     required
                                     onChange={this.handleFieldChange}>
                                     <option>select points</option>    

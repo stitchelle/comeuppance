@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 //import the components we will need
 import RewardCard from './RewardCard';
 import RewardManager from '../../modules/RewardManager';
-import KidRewardCard from "./KidRewardCard"
+import KidRewardList from "./KidRewardList"
 
 class RewardList extends Component {
     //define what this component needs to render
@@ -43,10 +43,14 @@ class RewardList extends Component {
     isParent = () => {
         let Parent = JSON.parse(sessionStorage.getItem("credentials"))
         console.log("RewardList: Render", Parent.isParent);
+            return(
+                Parent.isParent
+            )
     }
 
     render() {
-        if (this.isParent() !== false) {
+
+        if (this.isParent() !== false ) {
             return (
                 <>
                     <br />
@@ -83,7 +87,7 @@ class RewardList extends Component {
             )
         } else {
             return (
-                <KidRewardCard />
+                <KidRewardList />
             )
         }
     }

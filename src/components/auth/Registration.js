@@ -13,7 +13,7 @@ class Register extends Component {
         loadingStatus: false,
         confirmPassword: "",
         isParent: "",
-        pointsId: ""
+        pointId: ""
     }
 
     // Update state whenever an input field is edited
@@ -50,9 +50,9 @@ class Register extends Component {
                         const userObj = {
                             username: this.state.username,
                             email: this.state.email,
-                            password: this.state.password,
+                            password: String(this.state.password) ,
                             isParent: true,
-                            pointsId: this.state.pointsId,
+                            pointId: this.state.pointId,
                         }
                         // post user to database
                         RegistrationLoginManager.postNewUser(userObj)

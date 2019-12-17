@@ -6,7 +6,7 @@ export default {
         return fetch(`${remoteURL}/comeuppance/${id}`).then(result => result.json())
     },
     getAll(id) {
-        return fetch(`${remoteURL}/comeuppance?comeuppanceType=1&userId=${id}&_sort=pointsId&_order=ascd`).then(result => result.json())
+        return fetch(`${remoteURL}/comeuppance?comeuppanceType=1&userId=${id}&_sort=pointId&_order=ascd&_expand=point`).then(result => result.json())
     },
     delete(id) {
         return fetch(`${remoteURL}/comeuppance/${id}`, {

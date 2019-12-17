@@ -7,7 +7,7 @@ class RewardEditForm extends Component {
     //set the initial state
     state = {
         userId: "",
-        pointsId: "",
+        pointId: "",
         rewardName: "",
         comeuppanceType: "",
         loadingStatus: true,
@@ -25,7 +25,7 @@ class RewardEditForm extends Component {
 
         const editedReward = {
             userId: Number(sessionStorage.getItem("kidCredentials")),
-            pointsId: Number(this.state.pointsId),
+            pointId: Number(this.state.pointId),
             name: this.state.rewardName,
             comeuppanceType: 1,
             id: this.props.match.params.rewardId,
@@ -42,7 +42,7 @@ class RewardEditForm extends Component {
                 console.log("reward", reward)
                 this.setState({
                     userId: reward.userId,
-                    pointsId: Number(reward.pointsId),
+                    pointId: Number(reward.pointId),
                     rewardName: reward.name,
                     comeuppanceType: 1,
                     loadingStatus: false,
@@ -61,10 +61,10 @@ class RewardEditForm extends Component {
                             <Col className="alignLeft">
                                 <Form.Control
                                     as="select"
-                                    id="pointsId"
+                                    id="pointId"
                                     required
                                     onChange={this.handleFieldChange}
-                                    value={this.state.pointsId}>
+                                    value={this.state.pointId}>
                                     <option>5</option>
                                     <option>10</option>
                                     <option>15</option>
