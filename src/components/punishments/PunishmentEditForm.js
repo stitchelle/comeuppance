@@ -7,7 +7,7 @@ class PunishmentEditForm extends Component {
     //set the initial state
     state = {
         userId: "",
-        point: "",
+        pointsId: "",
         punishmentName: "",
         comeuppanceType: "",
         loadingStatus: true,
@@ -24,11 +24,12 @@ class PunishmentEditForm extends Component {
         this.setState({ loadingStatus: true });
         const editedPunishment = {
             userId: Number(sessionStorage.getItem("kidCredentials")),
-            points: Number(this.state.pointsId),
+            pointsId: Number(this.state.pointsId),
             name: this.state.punishmentName,
             comeuppanceType: 2,
             id: this.props.match.params.punishmentId,
         };
+        console.log(editedPunishment)
 
         PunishmentManager.update(editedPunishment)
             .then(() => this.props.history.push("/punishments"))
@@ -40,7 +41,7 @@ class PunishmentEditForm extends Component {
                 console.log("punishment", punishment)
                 this.setState({
                     userId: punishment.userId,
-                    points: Number(punishment.pointsId),
+                    pointsId: Number(punishment.pointsId),
                     punishmentName: punishment.name,
                     comeuppanceType: 2,
                     loadingStatus: false,
@@ -59,7 +60,7 @@ class PunishmentEditForm extends Component {
                             <Col className="alignLeft">
                                 <Form.Control
                                     as="select"
-                                    id="points"
+                                    id="pointsId"
                                     required
                                     onChange={this.handleFieldChange}
                                     value={this.state.pointsId}>
@@ -88,7 +89,7 @@ class PunishmentEditForm extends Component {
                                 variant="dark"
                                 ariant="outline-secondary"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.updateExistinPunishment}
+                                onClick={this.updateExistingPunishment}
                                 className="btn btn-primary"
                             >Submit</Button>
                         </div>

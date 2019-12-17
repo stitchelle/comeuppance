@@ -51,7 +51,7 @@ class PunishmentForm extends Component {
                             <Col className="alignLeft">
                                 <Form.Control 
                                     as="select" 
-                                    id="points" 
+                                    id="pointsId" 
                                     required
                                     onChange={this.handleFieldChange}>
                                     <option>select points</option>    

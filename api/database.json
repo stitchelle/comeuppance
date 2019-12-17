@@ -69,8 +69,8 @@
       "id": 12
     },
     {
-      "userId": "2",
-      "pointsId": 5,
+      "userId": 2,
+      "pointsId": 15,
       "name": "sfae",
       "comeuppanceType": 1,
       "id": 13
@@ -84,7 +84,7 @@
     },
     {
       "userId": 2,
-      "pointsId": 10,
+      "pointsId": 20,
       "name": "sdfe",
       "comeuppanceType": 2,
       "id": 15
@@ -98,11 +98,43 @@
     },
     {
       "userId": 2,
-      "pointsId": 5,
+      "pointsId": 15,
       "name": "afaefaewfae",
       "comeuppanceType": 2,
       "id": 17
+    },
+    {
+      "userId": 2,
+      "pointsId": 20,
+      "name": "sfae lkjlm",
+      "comeuppanceType": 1,
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "pointsId": 10,
+      "name": "aefaeawws",
+      "comeuppanceType": 2,
+      "id": 19
     }
   ],
-  "history": []
+  "history": [],
+  "points": [
+    {
+      "id": 1,
+      "numberOfPoints": 5
+    },
+    {
+      "id": 2,
+      "numberOfPoints": 10
+    },
+    {
+      "id": 3,
+      "numberOfPoints": 15
+    },
+    {
+      "id": 4,
+      "numberOfPoints": 20
+    }
+  ]
 }

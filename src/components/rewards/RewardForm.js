@@ -52,7 +52,7 @@ class RewardForm extends Component {
                             <Col className="alignLeft">
                                 <Form.Control 
                                     as="select" 
-                                    id="points" 
+                                    id="pointsId" 
                                     required
                                     onChange={this.handleFieldChange}>
                                     <option>select points</option>    
@@ -66,10 +66,10 @@ class RewardForm extends Component {
                             <Col className="alignLeft">
 
                                 <Form.Control
+                                    id="rewardName"
                                     type="text"
                                     required
                                     onChange={this.handleFieldChange}
-                                    id="rewardName"
                                     placeholder="Reward" />
                                 <Form.Text className="text-muted">What Is The Reward?</Form.Text>
                             </Col>
@@ -80,8 +80,9 @@ class RewardForm extends Component {
                                 variant="dark"
                                 ariant="outline-secondary"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.constructNewReward}
-                            >Submit</Button>
+                                onClick={this.constructNewReward}>
+                                    Submit
+                            </Button>
                         </div>
                     </fieldset>
                 </Form>

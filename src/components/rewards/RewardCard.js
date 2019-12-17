@@ -34,19 +34,5 @@ class RewardCard extends Component {
     }
 }
 
-class KidRewardCard extends Component {
-    render() {
-        return (
-            <Card>
-                <Card.Header as="h5">5 Points</Card.Header>
-                <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
-                    <Button variant="dark">Redeem</Button>
-                </Card.Body>
-            </Card>
-        )
-    }
-}
 
 export default RewardCard;
-export default KidRewardCard;

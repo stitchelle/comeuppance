@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-import RegistrationLoginManager from "../../modules/RegistrationLoginManager"
 import { Link } from "react-router-dom"
+import {Button} from "react-bootstrap"
+import RegistrationLoginManager from "../../modules/RegistrationLoginManager"
 
 
 class Login extends Component {
@@ -60,9 +61,10 @@ class Login extends Component {
                                 required="" />
                             <label htmlFor="inputPassword">Password</label>
                         </div>
-                        <button type="submit">
+                        <Button type="submit" variant="primary" 
+                            ariant="outline-secondary">
                             Log In
-                    </button>
+                        </Button>
                         <Link className="nav-link" to="/register">Register New Account</Link>
                     </fieldset>
                 </form>

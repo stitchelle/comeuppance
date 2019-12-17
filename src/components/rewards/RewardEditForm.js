@@ -55,13 +55,13 @@ class RewardEditForm extends Component {
             <>
                 <Form>
                     <fieldset>
-                        <center><h2>ADD REWARD</h2></center>
+                        <center><h2>EDIT REWARD</h2></center>
 
                         <Form.Row>
                             <Col className="alignLeft">
                                 <Form.Control
                                     as="select"
-                                    id="points"
+                                    id="pointsId"
                                     required
                                     onChange={this.handleFieldChange}
                                     value={this.state.pointsId}>
@@ -75,11 +75,11 @@ class RewardEditForm extends Component {
                             <Col className="alignLeft">
 
                                 <Form.Control
+                                    id="rewardName"
                                     type="text"
                                     required
                                     className="form-control"
                                     onChange={this.handleFieldChange}
-                                    id="rewardName"
                                     value={this.state.rewardName} />
                                 <Form.Text className="text-muted">What Is The Reward?</Form.Text>
                             </Col>
