@@ -8,30 +8,53 @@ class KidRewardList extends Component {
     //define what this component needs to render
     state = {
         points: [],
+        rewards1: [],
+        rewards2: [],
+        rewards3: [],
+        rewards4: []
     }
 
-componentDidMount(){
-    console.log("KID REWARD LIST: ComponentDidMount");
-    //getAll from PointManager and hang on to that data; put it in state
-    PointManager.getAll()
-    .then((points) => {
-        console.log("bob",points)
-        this.setState({
-            points: points
+    componentDidMount() {
+        console.log("KID REWARD LIST: ComponentDidMount");
+        //getAll from PointManager and hang on to that data; put it in state
+        // Parse all the getAllByPoints
+        let credentials =
+            JSON.parse(sessionStorage.getItem("credentials"))
+        
+
+        Promise.all([
+            PointManager.getAll(),
+            RewardManager.getAllByPoints( credentials.id, 1),
+            RewardManager.getAllByPoints( credentials.id, 2),
+            RewardManager.getAllByPoints( credentials.id, 3),
+            RewardManager.getAllByPoints( credentials.id, 4)
+        ])
+            .then(([points, rewards1, rewards2, rewards3, rewards4]) => {
+            
+            this.setState({
+                points: points,
+                rewards1: rewards1,
+                rewards2: rewards2,
+                rewards3: rewards3,
+                rewards4: rewards4
+            })
         })
-    })
-}
+    }
 
-render(){
-    console.log("Points LIST: Render");
 
-    return(
-        <div className="container-cards">
-            <h3>Rewards</h3>
-            {this.state.points.map(point => <KidRewardCard key={point.id} point={point}/>)}
-        </div>
-    )
-}
+
+
+
+    render() {
+        console.log("Points LIST: Render", this.state);
+
+        return (
+            <div className="container-cards">
+                <h3>Rewards</h3>
+                {this.state.points.map(point => <KidRewardCard key={point.id} point={point} />)}
+            </div>
+        )
+    }
 }
 
 export default KidRewardList
