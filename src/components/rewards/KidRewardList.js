@@ -9,7 +9,6 @@ class KidRewardList extends Component {
     state = {
         points: [],
         rewards: []
-        
     }
 
     componentDidMount() {
@@ -39,13 +38,17 @@ class KidRewardList extends Component {
 
 
 
+
     render() {
-        console.log("Points LIST: Render", this.state.rewards);
+        console.log("Points LIST: Render", this.state);
 
         return (
             <div className="container-cards">
                 <h3>Rewards</h3>
-                {this.state.points.map(point => <KidRewardCard key={point.id} point={point} rewards={this.state.rewards}/>)}
+                {
+                this.state.points.map((point, index) =>             <KidRewardCard key={point.id} point={point}         rewards={this.state.rewards[index]}/>
+                )
+                }
             </div>
         )
     }
