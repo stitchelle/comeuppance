@@ -8,10 +8,8 @@ class KidRewardList extends Component {
     //define what this component needs to render
     state = {
         points: [],
-        rewards1: [],
-        rewards2: [],
-        rewards3: [],
-        rewards4: []
+        rewards: []
+        
     }
 
     componentDidMount() {
@@ -33,10 +31,7 @@ class KidRewardList extends Component {
             
             this.setState({
                 points: points,
-                rewards1: rewards1,
-                rewards2: rewards2,
-                rewards3: rewards3,
-                rewards4: rewards4
+                rewards: [rewards1, rewards2, rewards3,rewards4]
             })
         })
     }
@@ -44,14 +39,13 @@ class KidRewardList extends Component {
 
 
 
-
     render() {
-        console.log("Points LIST: Render", this.state);
+        console.log("Points LIST: Render", this.state.rewards);
 
         return (
             <div className="container-cards">
                 <h3>Rewards</h3>
-                {this.state.points.map(point => <KidRewardCard key={point.id} point={point} />)}
+                {this.state.points.map(point => <KidRewardCard key={point.id} point={point} rewards={this.state.rewards}/>)}
             </div>
         )
     }
