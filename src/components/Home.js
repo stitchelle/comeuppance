@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import RewardList from "./rewards/RewardList"
 
 class Home extends Component {
   isParent = () => {
