@@ -7,6 +7,9 @@ export default {
   getAll(id) {
     return fetch(`${remoteURL}/comeuppance?comeuppanceType=2&userId=${id}&_sort=pointId&_order=ascd&_expand=point`).then(result => result.json())
   },
+  getAllByPoints(id,pointId) {
+    return fetch(`${remoteURL}/comeuppance?comeuppanceType=2&userId=${id}&_sort=pointId&_order=ascd&_expand=point&pointId=${pointId}`).then(result => result.json())
+},
   delete(id) {
     return fetch(`${remoteURL}/comeuppance/${id}`, {
       method: "DELETE"
