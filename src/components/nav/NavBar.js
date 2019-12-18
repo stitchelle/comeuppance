@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
-import { Form, Button, Nav, NavDropdown, FormControl } from "react-bootstrap"
+import { Nav, NavDropdown} from "react-bootstrap"
 // import { Link } from "react-router-dom"
 // import KidManager from "../../modules/KidManager"
 
@@ -27,13 +27,40 @@ class NavBar extends Component {
     //     }
     // }
 
-    setUserId (kid) {
+    setUserId(kid) {
         this.setState({ userId: kid })
-            console.log("setUser", this.state.userId)
+        console.log("setUser", this.state.userId)
     }
-    
+
+    isParent = () => {
+        if(this.props.user === true){
+            let Parent = JSON.parse(sessionStorage.getItem("credentials"))
+            console.log("RewardList: Render", Parent.isParent);
+            return (
+                Parent.isParent
+            )
+        }
+    }
+
     render() {
-        if (this.props.user === true) {
+        console.log("hi",this.props.isParent)
+
+        if (this.props.user !== true && this.isParent() === undefined ){
+            return (
+                <Navbar bg="dark" variant="dark" expand="lg">
+                    <Navbar.Brand href="/">
+                        <img
+                            alt=""
+                            src={require('./kuma2.png')}
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                        />
+                        COMEUPPANCE
+                     </Navbar.Brand>
+                </Navbar >
+            )
+        }else if (this.props.user === true && this.isParent() !== false) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
                     <Navbar.Brand href="/">
@@ -55,10 +82,10 @@ class NavBar extends Component {
                             <NavDropdown title="Kid" id="basic-nav-dropdown">
 
                                 {this.props.relationships.map(kid =>
-                                    <NavDropdown.Item onClick={()=> {
-                                        console.log("hi",kid.user.id)
+                                    <NavDropdown.Item onClick={() => {
+                                        console.log("hi", kid.user.id)
                                         this.props.setKidId(kid.user.id)
-                                    }}href={`/kid/${kid.id}`} key={kid.id}>
+                                    }} href={`/kid/${kid.id}`} key={kid.id}>
                                         {kid.user.username} </NavDropdown.Item >
                                 )}
 
@@ -68,11 +95,11 @@ class NavBar extends Component {
                             </NavDropdown>
                             <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>Logout</Nav.Link>
                         </Nav>
-                    
+
                     </Navbar.Collapse>
                 </Navbar >
             )
-        } else {
+        } else if (this.isParent() !== true) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
                     <Navbar.Brand href="/">
@@ -88,16 +115,16 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-
+                            <Nav.Link href="/rewards">Reward</Nav.Link>
+                            <Nav.Link href="/punishments">Punishment</Nav.Link>
+                            <Nav.Link href="/points">Points</Nav.Link>
+                            <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>Logout</Nav.Link>
                         </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
+
                     </Navbar.Collapse>
                 </Navbar >
             )
-        }
+        } 
     }
 }
 
