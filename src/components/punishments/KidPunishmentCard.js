@@ -23,7 +23,7 @@ class KidPunishmentCard extends Component {
                                     )
                                 }
                             </Card.Text>
-                            <Button variant="dark">Redeem</Button>
+                            <Button variant="dark">Pick</Button>
                         </Card.Body>
                     </Card>
                 </CardGroup>
