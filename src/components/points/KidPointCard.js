@@ -8,7 +8,6 @@ class KidPointCard extends Component {
     render() {
         return (
             <>
-
                 <Card className="text-center">
                     <Card.Body>
                         <div className="card">

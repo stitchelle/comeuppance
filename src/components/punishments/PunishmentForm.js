@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Button, Form, Col} from 'react-bootstrap'
+import { Button, Form, Col } from 'react-bootstrap'
 import PunishmentManager from '../../modules/PunishmentManager';
+import PointManager from "../../modules/PointManager"
 import './PunishmentForm.css'
 
 class PunishmentForm extends Component {
     state = {
         userId: "",
-        point: "",
+        pointId: "",
         punishmentName: "",
         comeuppanceType: "",
-        loadingStatus: false
+        loadingStatus: false,
+        points: []
     };
 
     handleFieldChange = evt => {
@@ -22,13 +24,13 @@ class PunishmentForm extends Component {
     */
     constructNewPunishment = evt => {
         evt.preventDefault();
-        if (this.state.punishmentName === "" || this.state.points === "") {
+        if (this.state.punishmentName === "" || this.state.pointId === "") {
             window.alert("Please input an punishment name");
         } else {
             this.setState({ loadingStatus: true });
             const reward = {
                 userId: Number(sessionStorage.getItem("kidCredentials")),
-                points: Number(this.state.points),
+                pointId: Number(this.state.pointId),
                 name: this.state.punishmentName,
                 comeuppanceType: 2,
             };
@@ -38,6 +40,16 @@ class PunishmentForm extends Component {
                 .then(() => this.props.history.push("/punishments"));
         }
     };
+
+    componentDidMount() {
+        PointManager.getAll()
+            .then((points) => {
+                console.log("bob", points)
+                this.setState({
+                    points: points
+                })
+            })
+    }
 
     render() {
         console.log(this.props.kidId)
@@ -49,16 +61,23 @@ class PunishmentForm extends Component {
 
                         <Form.Row>
                             <Col className="alignLeft">
-                                <Form.Control 
-                                    as="select" 
-                                    id="points" 
+                                <Form.Control
+                                    as="select"
+                                    id="pointId"
                                     required
                                     onChange={this.handleFieldChange}>
-                                    <option>select points</option>    
-                                    <option>5</option>
+                                    <option>select points</option>
+                                    {/* <option>5</option>
                                     <option>10</option>
                                     <option>15</option>
-                                    <option>20</option>
+                                    <option>20</option> */}
+
+                                    {this.state.points.map(point => {
+                                        return (
+                                            <option value={point.id} key={point.id}>{point.numberOfPoints}</option>
+                                        )
+                                    }
+                                    )}
                                 </Form.Control>
                                 <Form.Text className="text-muted">Select Number of Points</Form.Text>
                             </Col>

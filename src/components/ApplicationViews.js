@@ -64,7 +64,7 @@ export default class ApplicationViews extends Component {
 
                 <Route exact path="/rewards" render={(props) => {
                     console.log(sessionStorage.getItem("kidCredentials"))
-                    if (sessionStorage.getItem("kidCredentials") !== null) {
+                    if (sessionStorage.getItem("kidCredentials") !== null || RewardList.isParent !== true) {
                         return <RewardList kidId={this.props.kidId} {...props} />
                     } else {
                         return <Redirect to="/" />
@@ -84,7 +84,7 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/punishments" render={(props) => {
                     console.log(sessionStorage.getItem("kidCredentials"))
 
-                    if (sessionStorage.getItem("kidCredentials") !== null) {
+                    if (sessionStorage.getItem("kidCredentials") !== null || RewardList.isParent !== true) {
                         return <PunishmentList kidId={this.props.kidId} {...props} />
                     } else {
                         return <Redirect to="/" />

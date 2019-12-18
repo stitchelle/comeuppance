@@ -7,7 +7,7 @@ class RewardEditForm extends Component {
     //set the initial state
     state = {
         userId: "",
-        point: "",
+        pointId: "",
         rewardName: "",
         comeuppanceType: "",
         loadingStatus: true,
@@ -25,7 +25,7 @@ class RewardEditForm extends Component {
 
         const editedReward = {
             userId: Number(sessionStorage.getItem("kidCredentials")),
-            points: Number(this.state.points),
+            pointId: Number(this.state.pointId),
             name: this.state.rewardName,
             comeuppanceType: 1,
             id: this.props.match.params.rewardId,
@@ -42,7 +42,7 @@ class RewardEditForm extends Component {
                 console.log("reward", reward)
                 this.setState({
                     userId: reward.userId,
-                    points: Number(reward.points),
+                    pointId: Number(reward.pointId),
                     rewardName: reward.name,
                     comeuppanceType: 1,
                     loadingStatus: false,
@@ -55,16 +55,16 @@ class RewardEditForm extends Component {
             <>
                 <Form>
                     <fieldset>
-                        <center><h2>ADD REWARD</h2></center>
+                        <center><h2>EDIT REWARD</h2></center>
 
                         <Form.Row>
                             <Col className="alignLeft">
                                 <Form.Control
                                     as="select"
-                                    id="points"
+                                    id="pointId"
                                     required
                                     onChange={this.handleFieldChange}
-                                    value={this.state.points}>
+                                    value={this.state.pointId}>
                                     <option>5</option>
                                     <option>10</option>
                                     <option>15</option>
@@ -75,11 +75,11 @@ class RewardEditForm extends Component {
                             <Col className="alignLeft">
 
                                 <Form.Control
+                                    id="rewardName"
                                     type="text"
                                     required
                                     className="form-control"
                                     onChange={this.handleFieldChange}
-                                    id="rewardName"
                                     value={this.state.rewardName} />
                                 <Form.Text className="text-muted">What Is The Reward?</Form.Text>
                             </Col>

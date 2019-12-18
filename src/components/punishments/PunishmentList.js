@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 //import the components we will need
 import PunishmentCard from './PunishmentCard'
 import PunishmentManager from '../../modules/PunishmentManager'
+import KidPunishmentList from './KidPunishmentList'
 
 class PunishmentList extends Component {
     //define what this component needs to render
@@ -38,43 +39,57 @@ class PunishmentList extends Component {
         alert(`YOU GOT: ${randomValue.name}`)
     }
 
+    isParent = () => {
+        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
+        console.log("RewardList: Render", Parent.isParent);
+            return(
+                Parent.isParent
+            )
+    }
+
     render() {
         console.log("PunishmentList: Render");
+        if (this.isParent() !== false) {
+            return (
+                <>
+                    <br />
+                    <section className="section-content">
+                        <Button type="button"
+                            className="btn"
+                            variant="dark" ariant="outline-secondary"
+                            onClick={() => { this.props.history.push("/punishments/new") }}>
+                            Add Punishment
+                    </Button>
+                    </section>
+                    <br />
+                    <div className="container-cards">
+                        {this.state.punishments.map(punishment =>
+                            <PunishmentCard
+                                key={punishment.id}
+                                punishment={punishment}
+                                deletePunishment={this.deletePunishment}
+                                {...this.props} />
+                        )}
+                    </div>
+                    <br />
+                    <section className="section-content">
+                        <Button type="button"
+                            className="btn"
+                            variant="dark" ariant="outline-secondary"
+                            onClick={() => { this.pickRandomPunishment() }}
+                        >
+                            Pick Random Punishment
+                    </Button>
+                    </section>
+                    <br />
+                </>
+            )
 
-        return (
-            <>
-                <br />
-                <section className="section-content">
-                    <Button type="button"
-                        className="btn"
-                        variant="dark" ariant="outline-secondary"
-                        onClick={() => { this.props.history.push("/punishments/new") }}>
-                        Add Punishment
-                    </Button>
-                </section>
-                <br />
-                <div className="container-cards">
-                    {this.state.punishments.map(punishment =>
-                        <PunishmentCard
-                            key={punishment.id}
-                            punishment={punishment}
-                            deletePunishment={this.deletePunishment}
-                            {...this.props} />
-                    )}
-                </div>
-                <br />
-                <section className="section-content">
-                    <Button type="button"
-                        className="btn"
-                        variant="dark" ariant="outline-secondary"
-                        onClick={() => { this.pickRandomPunishment() }}
-                    >
-                        Pick Random Punishment
-                    </Button>
-                </section>
-                <br />
-            </>
-        )
+        } else {
+            return (
+                <KidPunishmentList />
+            )
+        }
 
     }
 }

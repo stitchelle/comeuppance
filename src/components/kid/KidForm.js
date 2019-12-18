@@ -22,18 +22,18 @@ class KidForm extends Component {
 
     constructNewKid = evt => {
         evt.preventDefault();
-        // if (this.state.username === "" || this.state.email === "" || this.state.password === "") {
-        //     window.alert("Please Input All Kid's Fields");
-        // } else {
+        if (this.state.username === "" || this.state.email === "" || this.state.password === "") {
+            window.alert("Please Input All Kid's Fields");
+        } else {
             this.setState({ loadingStatus: true });
             const userId = JSON.parse(sessionStorage.getItem("credentials"))
 
             const kid = {
                 username: this.state.username,
                 email: this.state.email,
-                password: this.state.password,
+                password: String(this.state.password),
                 isParent: false,
-                points: null,
+                points: this.state.points,
             };
             KidManager.post(kid)
                 .then((response) => {
@@ -50,7 +50,7 @@ class KidForm extends Component {
                         })
                 });
 
-        // }
+        }
 
     };
 
@@ -58,35 +58,6 @@ class KidForm extends Component {
 
         return (
             <>
-                {/* <Form>
-                    <br />
-                    <center><strong><h1>Add New Kid</h1></strong></center>
-                    <fieldset>
-                        <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange} id="username" placeholder="Kid Name" />
-                            <label htmlFor="kidName">Name</label>
-                        </div>
-
-                        <input onChange={this.handleFieldChange} type="email"
-                            id="email"
-                            placeholder="Email address"
-                            required="" autoFocus="" />
-                        <label htmlFor="inputEmail">Email address</label>
-
-                        <input onChange={this.handleFieldChange} type="password"
-                            id="password"
-                            placeholder="Password"
-                            required="" />
-                        <label htmlFor="inputPassword">Password</label>
-
-                        <div className="alignRight">
-                            <button type="button" disabled={this.state.loadingStatus} onClick={this.constructNewKid}>Submit</button>
-                        </div>
-                    </fieldset>
-                </Form> */}
                 <Form>
                     <fieldset>
                         <center><strong><h1>Add New Kid</h1></strong></center>

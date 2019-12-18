@@ -38,9 +38,9 @@ class KidCard extends Component {
         <Card className="text-center">
           <Card.Header as="h5" className="kidName">{this.state.kid.username}</Card.Header>
           <Card.Body>
-            <Card.Title className="kidEmail">{this.state.kid.email}</Card.Title>
+            <Card.Title className="kidEmail">Email: {this.state.kid.email}</Card.Title>
             <Card.Text className="kidPassword">
-              {this.state.kid.password}
+              Password: {this.state.kid.password}
             </Card.Text>
             <ButtonGroup className="kidButton">
               <Button type="button" variant="dark" ariant="outline-secondary"

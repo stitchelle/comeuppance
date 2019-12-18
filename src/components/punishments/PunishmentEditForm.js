@@ -7,7 +7,7 @@ class PunishmentEditForm extends Component {
     //set the initial state
     state = {
         userId: "",
-        point: "",
+        pointId: "",
         punishmentName: "",
         comeuppanceType: "",
         loadingStatus: true,
@@ -24,11 +24,12 @@ class PunishmentEditForm extends Component {
         this.setState({ loadingStatus: true });
         const editedPunishment = {
             userId: Number(sessionStorage.getItem("kidCredentials")),
-            points: Number(this.state.points),
+            pointId: Number(this.state.pointId),
             name: this.state.punishmentName,
             comeuppanceType: 2,
             id: this.props.match.params.punishmentId,
         };
+        console.log(editedPunishment)
 
         PunishmentManager.update(editedPunishment)
             .then(() => this.props.history.push("/punishments"))
@@ -40,7 +41,7 @@ class PunishmentEditForm extends Component {
                 console.log("punishment", punishment)
                 this.setState({
                     userId: punishment.userId,
-                    points: Number(punishment.points),
+                    pointId: Number(punishment.pointId),
                     punishmentName: punishment.name,
                     comeuppanceType: 2,
                     loadingStatus: false,
@@ -59,10 +60,10 @@ class PunishmentEditForm extends Component {
                             <Col className="alignLeft">
                                 <Form.Control
                                     as="select"
-                                    id="points"
+                                    id="pointId"
                                     required
                                     onChange={this.handleFieldChange}
-                                    value={this.state.points}>
+                                    value={this.state.pointId}>
                                     <option>5</option>
                                     <option>10</option>
                                     <option>15</option>
@@ -88,7 +89,7 @@ class PunishmentEditForm extends Component {
                                 variant="dark"
                                 ariant="outline-secondary"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.updateExistinPunishment}
+                                onClick={this.updateExistingPunishment}
                                 className="btn btn-primary"
                             >Submit</Button>
                         </div>

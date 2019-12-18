@@ -10,27 +10,43 @@
     },
     {
       "username": "Xander",
-      "email": null,
-      "password": null,
+      "email": "xander@gmail.com",
+      "password": "123",
       "isParent": false,
       "points": null,
       "id": 2
     },
     {
       "username": "Devin",
-      "email": null,
-      "password": null,
+      "email": "devin@gmail.com",
+      "password": "123",
       "isParent": false,
       "points": null,
       "id": 3
     },
     {
       "username": "Lauren",
-      "email": "bob1234girl@gmail.com",
+      "email": "lauren@gmail.com",
       "password": "123",
       "isParent": false,
       "points": null,
       "id": 4
+    },
+    {
+      "username": "yo",
+      "email": "yo@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": "",
+      "id": 5
+    },
+    {
+      "username": "uouou",
+      "email": "l@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": "",
+      "id": 6
     }
   ],
   "Relationships": [
@@ -48,6 +64,16 @@
       "parentId": 1,
       "userId": 4,
       "id": 3
+    },
+    {
+      "parentId": 1,
+      "userId": 5,
+      "id": 4
+    },
+    {
+      "parentId": 1,
+      "userId": 6,
+      "id": 5
     }
   ],
   "comeuppanceType": [
@@ -63,46 +89,57 @@
   "comeuppance": [
     {
       "userId": 2,
-      "points": 10,
-      "name": "reward 1",
+      "pointId": 2,
+      "name": "lol",
       "comeuppanceType": 1,
-      "id": 12
-    },
-    {
-      "userId": "2",
-      "points": 5,
-      "name": "sfae",
-      "comeuppanceType": 1,
-      "id": 13
-    },
-    {
-      "userId": "2",
-      "points": 15,
-      "name": "sefefe",
-      "comeuppanceType": 1,
-      "id": 14
+      "id": 1
     },
     {
       "userId": 2,
-      "points": 10,
-      "name": "sdfe",
-      "comeuppanceType": 2,
-      "id": 15
+      "pointId": 2,
+      "name": "Reward 1",
+      "comeuppanceType": 1,
+      "id": 2
     },
     {
       "userId": 2,
-      "points": 15,
-      "name": "efaeaf",
-      "comeuppanceType": 2,
-      "id": 16
+      "pointId": 4,
+      "name": "sf",
+      "comeuppanceType": 1,
+      "id": 3
     },
     {
       "userId": 2,
-      "points": 5,
-      "name": "afaefaewfae",
+      "pointId": 2,
+      "name": "lknono",
       "comeuppanceType": 2,
-      "id": 17
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "pointId": 1,
+      "name": "hunhu gumu",
+      "comeuppanceType": 2,
+      "id": 5
     }
   ],
-  "history": []
+  "history": [],
+  "points": [
+    {
+      "id": 1,
+      "numberOfPoints": 5
+    },
+    {
+      "id": 2,
+      "numberOfPoints": 10
+    },
+    {
+      "id": 3,
+      "numberOfPoints": 15
+    },
+    {
+      "id": 4,
+      "numberOfPoints": 20
+    }
+  ]
 }
