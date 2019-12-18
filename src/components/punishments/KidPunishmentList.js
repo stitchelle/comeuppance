@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from "react-bootstrap"
 //import the components we will need
 import KidPunishmentCard from './KidPunishmentCard'
 import PointManager from '../../modules/PointManager'
@@ -17,22 +18,22 @@ class KidPunishmentList extends Component {
         // Parse all the getAllByPoints
         let credentials =
             JSON.parse(sessionStorage.getItem("credentials"))
-        
+
 
         Promise.all([
             PointManager.getAll(),
-            PunishmentManager.getAllByPoints( credentials.id, 1),
-            PunishmentManager.getAllByPoints( credentials.id, 2),
-            PunishmentManager.getAllByPoints( credentials.id, 3),
-            PunishmentManager.getAllByPoints( credentials.id, 4)
+            PunishmentManager.getAllByPoints(credentials.id, 1),
+            PunishmentManager.getAllByPoints(credentials.id, 2),
+            PunishmentManager.getAllByPoints(credentials.id, 3),
+            PunishmentManager.getAllByPoints(credentials.id, 4)
         ])
             .then(([points, punishments1, punishments2, punishments3, punishments4]) => {
-            
-            this.setState({
-                points: points,
-                punishments: [punishments1, punishments2, punishments3,punishments4]
+
+                this.setState({
+                    points: points,
+                    punishments: [punishments1, punishments2, punishments3, punishments4]
+                })
             })
-        })
     }
 
 
@@ -43,13 +44,17 @@ class KidPunishmentList extends Component {
         console.log("Points LIST: Render", this.state);
 
         return (
-            <div className="container-cards">
-                <h3>Punishments</h3>
-                {
-                this.state.points.map((point, index) =>             <KidPunishmentCard key={point.id} point={point}         punishments={this.state.punishments[index]}/>
-                )
-                }
-            </div>
+            <>
+                <div className="container-cards">
+                    <h3>Punishments</h3>
+                    {
+                        this.state.points.map((point, index) => <KidPunishmentCard key={point.id} point={point} punishments={this.state.punishments[index]} />
+                        )
+                    }
+                </div>
+                <Button variant="dark">Redeem</Button>
+            </>
+
         )
     }
 }
