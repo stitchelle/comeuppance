@@ -1,10 +1,43 @@
 import React, { Component } from 'react';
 import { Form, Col, Tooltip, OverlayTrigger } from 'react-bootstrap'
+import PointHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
 
 
 class PointList extends Component {
+    state = {
+        userId: "",
+        numberOfPoints: "",
+        reason: "",
+        timestamp: "",
+        loadingStatus: false,
+    };
+
+    handleFieldChange = evt => {
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange);
+    };
+
+    constructNewPointReason = evt => {
+        evt.preventDefault();
+        if (this.state.numberOfPoints === "" || this.state.reason === "") {
+            window.alert("Please input point information");
+        } else {
+            this.setState({ loadingStatus: true });
+            const pointHistory = {
+                userId: this.state.userId,
+                numberOfPoints: this.state.numberOfPoints,
+                reason: this.state.reason,
+                timestamp: this.state.timestamp,
+            };
+
+            PointHistoryManager.post(pointHistory)
+            .then(() => this.props.history.push("/pointsHistory"));
+        }
+    };
+
 
     renderTooltipPositive(props) {
         return <Tooltip {...props}>Add Positive Points</Tooltip>;
@@ -14,7 +47,18 @@ class PointList extends Component {
         return <Tooltip {...props}>Add Negative Points</Tooltip>;
     }
 
+    isParent = () => {
+        if(this.props.user === true){
+            let Parent = JSON.parse(sessionStorage.getItem("credentials"))
+            console.log("RewardList: Render", Parent.isParent);
+            return (
+                Parent.isParent
+            )
+        }
+    }
+
     render() {
+        if (this.isParent() !== false ){
         return (
             <>
                 <strong><center><h1>TOTAL POINTS</h1></center></strong>
@@ -69,9 +113,15 @@ class PointList extends Component {
                         </Form.Group>
                     </fieldset>
                 </Form>
-                <KidPointCard/>
+                {/* <KidPointCard/> */}
             </>
+        
         );
+        }else if (this.isParent() !== true ){
+            return(
+                <KidPointCard/>
+            )
+        }
     }
 }
 
