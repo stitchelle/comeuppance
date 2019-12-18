@@ -12,7 +12,7 @@ class KidRewardCard extends Component {
                     <Card>
                         <Card.Header as="h5">{this.props.point.numberOfPoints} Points</Card.Header>
                         <Card.Body>
-                            <Card.Text>
+                            <Card.Title>
                                 {
                                     this.props.rewards.map(reward =>
                                         <Card>
@@ -22,7 +22,7 @@ class KidRewardCard extends Component {
                                         </Card>
                                     )
                                 }
-                            </Card.Text>
+                            </Card.Title>
                             <Button variant="dark">Pick</Button>
                         </Card.Body>
                     </Card>
