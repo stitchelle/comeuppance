@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
-import RewardList from "./rewards/RewardList"
 
 class Home extends Component {
+  isParent = () => {
+    let Parent = JSON.parse(sessionStorage.getItem("credentials"))
+    console.log("RewardList: Render", Parent.isParent);
+    return (
+      Parent.isParent
+    )
+  }
   render() {
-    if (sessionStorage.getItem("kidCredentials") !== null || RewardList.isParent !== true) {
+    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
       return (
         <center><h1>COMEUPPANCE</h1></center>)
     } else {
