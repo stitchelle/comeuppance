@@ -163,7 +163,63 @@
       "pointId": 2,
       "comeuppanceId": 2,
       "completed": false,
-      "timestamp":"2017-12-18T21:54:50.728Z"
+      "timestamp": "2017-12-18T21:54:50.728Z"
+    },
+    {
+      "userId": null,
+      "pointId": 2,
+      "comeuppanceId": 1,
+      "completed": null,
+      "timestamp": "2019-12-19T20:21:43.689Z",
+      "id": 2
+    },
+    {
+      "userId": null,
+      "pointId": 2,
+      "comeuppanceId": 1,
+      "completed": null,
+      "timestamp": "2019-12-19T20:22:28.580Z",
+      "id": 3
+    },
+    {
+      "userId": null,
+      "pointId": 2,
+      "comeuppanceId": 1,
+      "completed": null,
+      "timestamp": "2019-12-19T20:23:09.548Z",
+      "id": 4
+    },
+    {
+      "userId": null,
+      "pointId": 2,
+      "comeuppanceId": 2,
+      "completed": null,
+      "timestamp": "2019-12-19T20:23:47.316Z",
+      "id": 5
+    },
+    {
+      "userId": null,
+      "pointId": 2,
+      "comeuppanceId": 2,
+      "completed": null,
+      "timestamp": "2019-12-19T20:25:22.277Z",
+      "id": 6
+    },
+    {
+      "userId": null,
+      "pointId": 2,
+      "comeuppanceId": 1,
+      "completed": null,
+      "timestamp": "2019-12-19T20:28:23.980Z",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "pointId": 4,
+      "comeuppanceId": 3,
+      "completed": null,
+      "timestamp": "2019-12-19T20:28:48.480Z",
+      "id": 8
     }
   ],
   "points": [

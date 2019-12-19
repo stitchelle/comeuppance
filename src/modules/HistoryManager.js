@@ -4,8 +4,8 @@ export default {
   get(id) {
     return fetch(`${remoteURL}/history/${id}`).then(result => result.json())
   },
-  getAll() {
-    return fetch(`${remoteURL}/history`).then(result => result.json())
+  getAll(id) {
+    return fetch(`${remoteURL}/history?userId=${id}&_expand=comeuppance&_expand=point`).then(result => result.json())
   },
   post(newHistory) {
     return fetch(`${remoteURL}/history`, {
