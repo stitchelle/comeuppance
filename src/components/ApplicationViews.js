@@ -22,7 +22,6 @@ export default class ApplicationViews extends Component {
         return (
             <React.Fragment>
                 <Route path="/login" render={props => {
-                    console.log(this.props.user)
                     if (this.props.user === true) {
                         return <Redirect to="/" />
                     } else {

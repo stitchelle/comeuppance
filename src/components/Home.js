@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class Home extends Component {
   isParent = () => {
     let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-    console.log("RewardList: Render", Parent.isParent);
     return (
       Parent.isParent
     )

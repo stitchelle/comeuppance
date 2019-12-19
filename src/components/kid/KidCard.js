@@ -3,25 +3,18 @@ import { Card, Button, ButtonGroup, CardGroup } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./KidCard.css"
 import KidManager from "../../modules/KidManager"
-import PointHistoryManager from "../../modules/PointsHistoryManager"
+
 
 class KidCard extends Component {
   state = {
-    kid: "",
-    pointHistory: []
+    kid: ""
   };
 
   componentDidMount() {
-    Promise.all([
-      KidManager.getKid(this.props.match.params.kidId),
-      PointHistoryManager.getAll()
-
-
-    ])
-      .then(([kid, pointHistory]) => {
+      KidManager.getKid(this.props.match.params.kidId)
+      .then((kid) => {
         this.setState({
           kid: kid.user,
-          pointHistory: pointHistory
         })
       })
   }
@@ -34,7 +27,6 @@ class KidCard extends Component {
   }
 
   render() {
-    console.log("kuma", this.state.pointHistory)
     return (
       <>
         <br />
@@ -66,38 +58,6 @@ class KidCard extends Component {
                   }
                 >Delete</Button>
               </ButtonGroup>
-            </Card.Body>
-          </Card>
-        </CardGroup>
-
-        <CardGroup>
-          <Card className="text-center">
-            <Card.Header as="h5" className="kidName">Point History</Card.Header>
-            <Card.Body>
-              {
-                this.state.pointHistory.map(point => {
-                  return (
-                    <Card key={point.id}>
-                      <Card.Body>
-                        <Card.Subtitle>
-                          {point.numberOfPoints}
-                        </Card.Subtitle>
-                        <Card.Title>
-                          {point.reason}
-                        </Card.Title>
-                        <Card.Text className="date">
-                          {new Date(point.timestamp).getFullYear()}-
-                          {new Date(point.timestamp).getMonth()}-{new Date(point.timestamp).getDate()}
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  )
-
-                }
-                )
-
-              }
-
             </Card.Body>
           </Card>
         </CardGroup>
