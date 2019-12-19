@@ -5,7 +5,7 @@
       "email": "bob1234girl@gmail.com",
       "password": "123",
       "isParent": true,
-      "points": null,
+      "points": 0,
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "email": "xander@gmail.com",
       "password": "123",
       "isParent": false,
-      "points": null,
+      "points": 0,
       "id": 2
     },
     {
@@ -21,7 +21,7 @@
       "email": "devin@gmail.com",
       "password": "123",
       "isParent": false,
-      "points": null,
+      "points": 0,
       "id": 3
     },
     {
@@ -29,23 +29,23 @@
       "email": "lauren@gmail.com",
       "password": "123",
       "isParent": false,
-      "points": null,
+      "points": 0,
       "id": 4
     },
     {
       "username": "yo",
       "email": "yo@gmail.com",
       "password": "123",
-      "isParent": false,
-      "points": "",
+      "isParent": true,
+      "points": 0,
       "id": 5
     },
     {
-      "username": "uouou",
-      "email": "l@gmail.com",
+      "username": "yolo",
+      "email": "yolo@gmail.com",
       "password": "123",
-      "isParent": false,
-      "points": "",
+      "isParent": true,
+      "points": 0,
       "id": 6
     }
   ],
@@ -74,6 +74,11 @@
       "parentId": 1,
       "userId": 6,
       "id": 5
+    },
+    {
+      "parentId": 5,
+      "userId": 6,
+      "id": 6
     }
   ],
   "comeuppanceType": [
@@ -170,6 +175,20 @@
       "reason": "2",
       "timestamp": "2018-12-18T21:55:01.248Z",
       "id": 4
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -1,
+      "reason": "please",
+      "timestamp": "2019-12-19T16:15:55.427Z",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": 3,
+      "reason": "hi",
+      "timestamp": "2019-12-19T16:16:10.020Z",
+      "id": 6
     }
   ]
 }

@@ -67,7 +67,7 @@ class NavBar extends Component {
 
                                 {this.props.relationships.map(kid =>
                                     <NavDropdown.Item onClick={() => {
-                                        console.log("hi", kid.user.id)
+                                        console.log("hi", kid.user.username)
                                         this.props.setKidId(kid.user.id)
                                     }} href={`/kid/${kid.id}`} key={kid.id}>
                                         {kid.user.username} </NavDropdown.Item >

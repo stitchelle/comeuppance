@@ -86,6 +86,7 @@ class PointList extends Component {
     }
 
     render() {
+        console.log("hi","onClick")
         if (this.isParent() !== false) {
             return (
                 <>
