@@ -36,7 +36,7 @@ class KidRewardList extends Component {
             })
     }
 
-
+    
 
 
 
@@ -51,7 +51,6 @@ class KidRewardList extends Component {
                         this.state.points.map((point, index) => <KidRewardCard key={point.id} point={point} rewards={this.state.rewards[index]} />
                         )
                     }
-                    <Button variant="dark">Redeem</Button>
                 </div>
             </>
         )

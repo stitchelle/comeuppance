@@ -126,6 +126,34 @@
       "name": "hunhu gumu",
       "comeuppanceType": 2,
       "id": 5
+    },
+    {
+      "userId": 2,
+      "pointId": 3,
+      "name": "1",
+      "comeuppanceType": 2,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "pointId": 4,
+      "name": "2",
+      "comeuppanceType": 2,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "pointId": 2,
+      "name": "2",
+      "comeuppanceType": 2,
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "pointId": 1,
+      "name": "6",
+      "comeuppanceType": 2,
+      "id": 9
     }
   ],
   "history": [],

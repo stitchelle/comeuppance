@@ -18,6 +18,13 @@ import PointList from "./points/PointList"
 
 
 export default class ApplicationViews extends Component {
+    isParent = () => {
+        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
+        console.log("RewardList: Render", Parent.isParent);
+            return(
+                Parent.isParent
+            )
+    }
     render() {
         return (
             <React.Fragment>
@@ -62,12 +69,12 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/rewards" render={(props) => {
-                    console.log(sessionStorage.getItem("kidCredentials"))
-                    if (sessionStorage.getItem("kidCredentials") !== null) {
-                        return <RewardList kidId={this.props.kidId} {...props} />
-                    } else {
-                        return <Redirect to="/" />
-                    }
+                     let kid = sessionStorage.getItem("kidCredentials")
+                     if (kid !== null || this.isParent() !== true) {
+                         return <RewardList kidId={this.props.kidId} {...props} />
+                     } else {
+                         return <Redirect to="/" />
+                     }
                 }} />
 
                 <Route path="/rewards/new" render={(props) => {
@@ -83,7 +90,7 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/punishments" render={(props) => {
                     console.log(sessionStorage.getItem("kidCredentials"))
 
-                    if (sessionStorage.getItem("kidCredentials") !== null) {
+                    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
                         return <PunishmentList kidId={this.props.kidId} {...props} />
                     } else {
                         return <Redirect to="/" />
@@ -101,7 +108,7 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route path="/points" render={(props) => {
-                    if (sessionStorage.getItem("kidCredentials") !== null) {
+                    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
                         return <PointList />
                     } else {
                         return <Redirect to="/" />

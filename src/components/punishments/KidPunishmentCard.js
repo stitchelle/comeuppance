@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap'
 
 class KidPunishmentCard extends Component {
+    pickRandomPunishment = () => {
+        let randomValue = this.props.punishments[Math.floor(Math.random() * this.props.punishments.length)];
+        alert(`YOU GOT: ${randomValue.name}`)
+    }
+
     render() {
         console.log("this.props.punishments", this.props.punishments)
         console.log("!-----")
@@ -23,7 +28,7 @@ class KidPunishmentCard extends Component {
                                     )
                                 }
                             </Card.Title>
-                            <Button variant="dark">Pick</Button>
+                            <Button variant="dark" onClick={() => {this.pickRandomPunishment()}}>Redeem</Button>
                         </Card.Body>
                     </Card>
                 </CardGroup>
