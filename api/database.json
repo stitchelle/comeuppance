@@ -220,6 +220,14 @@
       "completed": null,
       "timestamp": "2019-12-19T20:28:48.480Z",
       "id": 8
+    },
+    {
+      "userId": 2,
+      "pointId": 2,
+      "comeuppanceId": 8,
+      "completed": null,
+      "timestamp": "2019-12-19T20:37:19.985Z",
+      "id": 11
     }
   ],
   "points": [
