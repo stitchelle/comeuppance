@@ -64,12 +64,10 @@ class Comeuppance extends Component {
         this.setState({
             kidId: id
         });
-        console.log("this is working", this.state.kidId)
     }
 
     componentDidMount() {
         const user = sessionStorage.getItem("credentials")
-        console.log(user)
         if (user !== null) {
             KidManager.getAllRelationsips()
                 .then(relationships => {
@@ -85,7 +83,6 @@ class Comeuppance extends Component {
 
 
     render() {
-        console.log("this is working", this.state.kidId)
 
         return (
             <>

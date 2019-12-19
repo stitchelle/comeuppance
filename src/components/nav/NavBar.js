@@ -10,22 +10,8 @@ import { Nav, NavDropdown} from "react-bootstrap"
 
 class NavBar extends Component {
     state = {
-        // relationships: [],
         userId: ""
     };
-
-    // componentDidMount() {
-    //     const user = sessionStorage.getItem("credentials")
-    //     console.log(user)
-    //     if (user !== null) {
-    //         KidManager.getAllRelationsips()
-    //             .then(relationships => {
-
-    //                 this.setState({ relationships: relationships }
-    //                 )
-    //             })
-    //     }
-    // }
 
     setUserId(kid) {
         this.setState({ userId: kid })
@@ -35,7 +21,6 @@ class NavBar extends Component {
     isParent = () => {
         if(this.props.user === true){
             let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-            console.log("RewardList: Render", Parent.isParent);
             return (
                 Parent.isParent
             )
@@ -43,7 +28,6 @@ class NavBar extends Component {
     }
 
     render() {
-        console.log("hi",this.props.isParent)
 
         if (this.props.user !== true && this.isParent() === undefined ){
             return (

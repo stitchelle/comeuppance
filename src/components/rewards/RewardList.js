@@ -12,9 +12,7 @@ class RewardList extends Component {
     }
 
     componentDidMount() {
-        // console.log("REWARD LIST: ComponentDidMount");
-        // console.log("getAll",RewardManager.getAll())
-        //getAll from RewardManager and hang on to that data; put it in state
+
         RewardManager.getAll(sessionStorage.getItem("kidCredentials"))
             .then((rewards) => {
                 this.setState({

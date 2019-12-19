@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Col, Tooltip, OverlayTrigger } from 'react-bootstrap'
-import PointHistoryManager from "../../modules/PointsHistoryManager"
+import { Form, Col, Tooltip, OverlayTrigger, Card, CardGroup } from 'react-bootstrap'
+import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
 
@@ -11,8 +11,18 @@ class PointList extends Component {
         numberOfPoints: "",
         reason: "",
         timestamp: "",
+        pointsHistory: [],
         loadingStatus: false,
     };
+    // for PointsHistory
+    componentDidMount() {
+        PointsHistoryManager.getAll()
+            .then((pointsHistory) => {
+                this.setState({
+                    pointsHistory: pointsHistory
+                })
+            })
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -26,14 +36,14 @@ class PointList extends Component {
             window.alert("Please input point information");
         } else {
             this.setState({ loadingStatus: true });
-            const pointHistory = {
+            const pointsHistory = {
                 userId: Number(sessionStorage.getItem("kidCredentials")),
                 numberOfPoints: Number(this.state.numberOfPoints),
                 reason: this.state.reason,
                 timestamp: new Date().toISOString(),
             };
 
-            PointHistoryManager.post(pointHistory)
+            PointsHistoryManager.post(pointsHistory)
             // .then(() => this.props.history.push("/pointsHistory"));
         }
     };
@@ -44,14 +54,14 @@ class PointList extends Component {
             window.alert("Please input point information");
         } else {
             this.setState({ loadingStatus: true });
-            const pointHistory = {
+            const pointsHistory = {
                 userId: Number(sessionStorage.getItem("kidCredentials")),
                 numberOfPoints: -Number(this.state.numberOfPoints),
                 reason: this.state.reason,
                 timestamp: new Date().toISOString(),
             };
 
-            PointHistoryManager.post(pointHistory)
+            PointsHistoryManager.post(pointsHistory)
             // .then(() => this.props.history.push("/pointsHistory"));
         }
     };
@@ -76,7 +86,6 @@ class PointList extends Component {
     }
 
     render() {
-        console.log("lol", "onClick")
         if (this.isParent() !== false) {
             return (
                 <>
@@ -133,13 +142,76 @@ class PointList extends Component {
                             </Form.Group>
                         </fieldset>
                     </Form>
-                    {/* <KidPointCard/> */}
+                    <CardGroup>
+                        <Card className="text-center">
+                            <Card.Header as="h5" className="kidName">Point History</Card.Header>
+                            <Card.Body>
+                                {
+                                    this.state.pointsHistory.map(point => {
+                                        return (
+                                            <Card key={point.id}>
+                                                <Card.Body>
+                                                    <Card.Subtitle>
+                                                        {point.numberOfPoints}
+                                                    </Card.Subtitle>
+                                                    <Card.Title>
+                                                        {point.reason}
+                                                    </Card.Title>
+                                                    <Card.Text className="date">
+                                                        {new Date(point.timestamp).getFullYear()}-
+                          {new Date(point.timestamp).getMonth()}-{new Date(point.timestamp).getDate()}
+                                                    </Card.Text>
+                                                </Card.Body>
+                                            </Card>
+                                        )
+
+                                    }
+                                    )
+
+                                }
+
+                            </Card.Body>
+                        </Card>
+                    </CardGroup>
                 </>
 
             );
         } else if (this.isParent() !== true) {
             return (
-                <KidPointCard />
+                <>
+                    <KidPointCard />
+                    <CardGroup>
+                        <Card className="text-center">
+                            <Card.Header as="h5" className="kidName">Point History</Card.Header>
+                            <Card.Body>
+                                {
+                                    this.state.pointsHistory.map(point => {
+                                        return (
+                                            <Card key={point.id}>
+                                                <Card.Body>
+                                                    <Card.Subtitle>
+                                                        {point.numberOfPoints}
+                                                    </Card.Subtitle>
+                                                    <Card.Title>
+                                                        {point.reason}
+                                                    </Card.Title>
+                                                    <Card.Text className="date">
+                                                        {new Date(point.timestamp).getFullYear()}-
+                          {new Date(point.timestamp).getMonth()}-{new Date(point.timestamp).getDate()}
+                                                    </Card.Text>
+                                                </Card.Body>
+                                            </Card>
+                                        )
+
+                                    }
+                                    )
+
+                                }
+
+                            </Card.Body>
+                        </Card>
+                    </CardGroup>
+                </>
             )
         }
     }
