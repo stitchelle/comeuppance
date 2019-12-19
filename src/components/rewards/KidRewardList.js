@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button } from "react-bootstrap"
 //import the components we will need
 import KidRewardCard from './KidRewardCard'
 import PointManager from '../../modules/PointManager'

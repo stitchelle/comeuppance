@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button } from "react-bootstrap"
 //import the components we will need
 import KidPunishmentCard from './KidPunishmentCard'
 import PointManager from '../../modules/PointManager'
@@ -52,7 +51,7 @@ class KidPunishmentList extends Component {
                         )
                     }
                 </div>
-                <Button variant="dark">Redeem</Button>
+                
             </>
 
         )
