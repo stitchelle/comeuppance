@@ -91,7 +91,7 @@
       "id": 2
     }
   ],
-  "comeuppance": [
+  "comeuppances": [
     {
       "userId": 2,
       "pointId": 2,
@@ -156,7 +156,16 @@
       "id": 9
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "id": 1,
+      "userId": 2,
+      "pointId": 2,
+      "comeuppanceId": 2,
+      "completed": false,
+      "timestamp":"2017-12-18T21:54:50.728Z"
+    }
+  ],
   "points": [
     {
       "id": 1,

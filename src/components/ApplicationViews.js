@@ -13,6 +13,7 @@ import PunishmentList from "./punishments/PunishmentList";
 import PunishmentForm from "./punishments/PunishmentForm";
 import PunishmentEditForm from "./punishments/PunishmentEditForm";
 import PointList from "./points/PointList"
+import HistoryList from "./history/HistoryList"
 
 
 
@@ -21,9 +22,9 @@ export default class ApplicationViews extends Component {
     isParent = () => {
         let Parent = JSON.parse(sessionStorage.getItem("credentials"))
         console.log("RewardList: Render", Parent.isParent);
-            return(
-                Parent.isParent
-            )
+        return (
+            Parent.isParent
+        )
     }
     render() {
         return (
@@ -69,12 +70,12 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route exact path="/rewards" render={(props) => {
-                     let kid = sessionStorage.getItem("kidCredentials")
-                     if (kid !== null || this.isParent() !== true) {
-                         return <RewardList kidId={this.props.kidId} {...props} />
-                     } else {
-                         return <Redirect to="/" />
-                     }
+                    let kid = sessionStorage.getItem("kidCredentials")
+                    if (kid !== null || this.isParent() !== true) {
+                        return <RewardList kidId={this.props.kidId} {...props} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
 
                 <Route path="/rewards/new" render={(props) => {
@@ -113,6 +114,15 @@ export default class ApplicationViews extends Component {
                     } else {
                         return <Redirect to="/" />
                     }
+                }} />
+
+                <Route path="/history" render={(props) => {
+                    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true){
+                        return <HistoryList />
+                    }else {
+                        return <Redirect to="/" />
+                    }
+                        
                 }} />
 
             </React.Fragment>

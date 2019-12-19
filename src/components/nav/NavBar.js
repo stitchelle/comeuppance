@@ -63,6 +63,9 @@ class NavBar extends Component {
                             <Nav.Link href="/rewards">Reward</Nav.Link>
                             <Nav.Link href="/punishments">Punishment</Nav.Link>
                             <Nav.Link href="/points">Points</Nav.Link>
+                            <Nav.Link href="/history">
+                                History
+                            </Nav.Link>
                             <NavDropdown title="Kid" id="basic-nav-dropdown">
 
                                 {this.props.relationships.map(kid =>
@@ -99,10 +102,21 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/rewards">Reward</Nav.Link>
-                            <Nav.Link href="/punishments">Punishment</Nav.Link>
-                            <Nav.Link href="/points">Points</Nav.Link>
-                            <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>Logout</Nav.Link>
+                            <Nav.Link href="/rewards">
+                                Reward
+                            </Nav.Link>
+                            <Nav.Link href="/punishments">
+                                Punishment
+                            </Nav.Link>
+                            <Nav.Link href="/points">
+                                Points
+                            </Nav.Link>
+                            <Nav.Link href="/history">
+                                History
+                            </Nav.Link>
+                            <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>
+                                Logout
+                            </Nav.Link>
                         </Nav>
 
                     </Navbar.Collapse>
