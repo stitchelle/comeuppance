@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Card, Row } from 'react-bootstrap'
+import { Button, Card, Row,Col } from 'react-bootstrap'
 
 class RewardCard extends Component {
     render() {
-        console.log("yo",this.props.reward.point.numberOfPoints)
+        console.log("yo", this.props.reward.point.numberOfPoints)
         return (
             <Card className="text-center">
                 <Card.Body>
@@ -13,20 +13,27 @@ class RewardCard extends Component {
                                 <img src={require('./dog.svg')} alt="My Dog" />
                             </picture> */}
                             <Row>
-                                <Card.Subtitle className="card-rewardpoints">Points:{this.props.reward.point.numberOfPoints}</Card.Subtitle>
-                                <Card.Title className="card-rewardname">{this.props.reward.name}</Card.Title>
+                                <Col>
+                                    <Card.Text className="card-rewardpoints">{this.props.reward.point.numberOfPoints} Points</Card.Text>
+                                </Col>
+                                <Col>
+                                    <Card.Title className="card-rewardname">{this.props.reward.name}</Card.Title>
+                                </Col>
 
-                            </Row>
                             <Button type="button"
-                                variant="dark" ariant="outline-secondary"
+                                variant="dark" 
+                                ariant="outline-secondary"
+                                size="sm"
                                 onClick={() => { this.props.history.push(`/rewards/${this.props.reward.id}/edit`) }}>Edit
                             </Button>
                             <Button
                                 type="button"
                                 variant="dark"
                                 ariant="outline-secondary"
+                                size="sm"
                                 onClick={() => this.props.deleteReward(this.props.reward.id)}
                             >Delete</Button>
+                            </Row>
                         </div>
                     </div>
                 </Card.Body>
