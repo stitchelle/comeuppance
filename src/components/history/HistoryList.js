@@ -22,9 +22,9 @@ class HistoryList extends Component {
         JSON.parse(sessionStorage.getItem("credentials"))
 
     kidCredentials = () => {
-        if(this.isParent() !== false){
+        if (this.isParent() !== false) {
             return (sessionStorage.getItem("kidCredentials"))
-        }else if (this.isParent() !== true){
+        } else if (this.isParent() !== true) {
             return (this.credentials.id)
         }
         console.log("HIHIHIHIIHIHH", this.credentials)
@@ -45,11 +45,14 @@ class HistoryList extends Component {
         console.log("HISTORY LIST: Render", this.state.history);
 
         return (
-            <Card className="container-cards">
-                <Card.Body>
-                    {this.state.history.map(history => <HistoryCard key={history.id} history={history} />)}
-                </Card.Body>
-            </Card>
+            <>
+                <center><strong><h1>Reward & Punishment <br/> History</h1></strong></center>
+                <Card className="container-cards">
+                    <Card.Body>
+                        {this.state.history.map(history => <HistoryCard key={history.id} history={history} />)}
+                    </Card.Body>
+                </Card>
+            </>
         )
     }
 }
