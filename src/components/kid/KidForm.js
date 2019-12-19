@@ -20,6 +20,7 @@ class KidForm extends Component {
         this.setState(stateToChange);
     };
 
+    
     constructNewKid = evt => {
         evt.preventDefault();
         if (this.state.username === "" || this.state.email === "" || this.state.password === "") {
@@ -33,7 +34,7 @@ class KidForm extends Component {
                 email: this.state.email,
                 password: String(this.state.password),
                 isParent: false,
-                points: this.state.points,
+                points: 0,
             };
             KidManager.post(kid)
                 .then((response) => {

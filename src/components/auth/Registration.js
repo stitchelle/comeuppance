@@ -13,8 +13,9 @@ class Register extends Component {
         loadingStatus: false,
         confirmPassword: "",
         isParent: "",
-        pointId: ""
+        points: ""
     }
+    
 
     // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
@@ -52,7 +53,7 @@ class Register extends Component {
                             email: this.state.email,
                             password: String(this.state.password) ,
                             isParent: true,
-                            pointId: this.state.pointId,
+                            points: 0,
                         }
                         // post user to database
                         RegistrationLoginManager.postNewUser(userObj)
