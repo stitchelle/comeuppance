@@ -41,24 +41,24 @@ class RewardList extends Component {
     isParent = () => {
         let Parent = JSON.parse(sessionStorage.getItem("credentials"))
         console.log("RewardList: Render", Parent.isParent);
-            return(
-                Parent.isParent
-            )
+        return (
+            Parent.isParent
+        )
     }
 
     render() {
-
-        if (this.isParent() !== false ) {
+        
+        if (this.isParent() !== false) {
             return (
                 <>
-                    <br />
+                <center><strong><h1>Rewards</h1></strong></center>
                     <section className="section-content">
                         <Button type="button"
                             className="btn"
                             variant="dark" ariant="outline-secondary"
                             onClick={() => { this.props.history.push("/rewards/new") }}>
                             Add Reward
-                </Button>
+                    </Button>
                     </section>
                     <br />
                     <div className="container-cards">
