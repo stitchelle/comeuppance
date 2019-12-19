@@ -145,122 +145,31 @@
   "pointsHistory": [
     {
       "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "",
-      "timestamp": "",
+      "numberOfPoints": 1,
+      "reason": "1",
+      "timestamp": "2019-12-18T21:54:50.728Z",
       "id": 1
     },
     {
       "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "",
-      "timestamp": "",
+      "numberOfPoints": 1,
+      "reason": "2",
+      "timestamp": "2019-12-18T21:54:54.143Z",
       "id": 2
     },
     {
       "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "hi",
-      "timestamp": "",
+      "numberOfPoints": -1,
+      "reason": "1",
+      "timestamp": "2019-12-18T21:54:58.758Z",
       "id": 3
     },
     {
       "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "1",
-      "timestamp": "2019-12-18T20:56:47.484Z",
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "1",
-      "timestamp": "2019-12-18T20:56:49.587Z",
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 0,
+      "numberOfPoints": -1,
       "reason": "2",
-      "timestamp": "2019-12-18T20:57:41.911Z",
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "",
-      "timestamp": "2019-12-18T21:00:46.039Z",
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 0,
-      "reason": "meow",
-      "timestamp": "2019-12-18T21:01:15.798Z",
-      "id": 8
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 4,
-      "reason": "8",
-      "timestamp": "2019-12-18T21:03:49.014Z",
-      "id": 9
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 4,
-      "reason": "8",
-      "timestamp": "2019-12-18T21:05:13.479Z",
-      "id": 10
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 4,
-      "reason": "8",
-      "timestamp": "2019-12-18T21:05:19.229Z",
-      "id": 11
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 3,
-      "reason": "67",
-      "timestamp": "2019-12-18T21:12:39.384Z",
-      "id": 12
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 2,
-      "reason": "0000",
-      "timestamp": "2019-12-18T21:13:47.428Z",
-      "id": 13
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 3,
-      "reason": "yo",
-      "timestamp": "2019-12-18T21:40:44.609Z",
-      "id": 14
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": -3,
-      "reason": "lknef",
-      "timestamp": "2019-12-18T21:41:40.556Z",
-      "id": 15
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": -2,
-      "reason": "negative",
-      "timestamp": "2019-12-18T21:42:43.521Z",
-      "id": 16
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 2,
-      "reason": "positive",
-      "timestamp": "2019-12-18T21:42:56.256Z",
-      "id": 17
+      "timestamp": "2019-12-18T21:55:01.248Z",
+      "id": 4
     }
   ]
 }

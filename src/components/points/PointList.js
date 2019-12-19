@@ -122,6 +122,7 @@ class PointList extends Component {
                             <br />
                             <Form.Group controlId="numberOfPoints">
                                 <Form.Control as="select" onChange={this.handleFieldChange}>
+                                    <option >Choose Points</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
