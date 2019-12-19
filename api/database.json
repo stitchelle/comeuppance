@@ -306,6 +306,20 @@
       "reason": "hi",
       "timestamp": "2019-12-19T16:16:10.020Z",
       "id": 6
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": 1,
+      "reason": "play",
+      "timestamp": "2019-12-19T22:07:40.172Z",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": 1,
+      "reason": "play",
+      "timestamp": "2019-12-19T22:07:56.858Z",
+      "id": 8
     }
   ]
 }
