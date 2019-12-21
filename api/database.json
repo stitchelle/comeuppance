@@ -54,13 +54,6 @@
   "comeuppances": [
     {
       "userId": 2,
-      "pointId": 2,
-      "name": "Go to the Gym to play Basketball",
-      "comeuppanceType": 1,
-      "id": 1
-    },
-    {
-      "userId": 2,
       "pointId": 3,
       "name": "Basketball Cards",
       "comeuppanceType": 1,
@@ -114,13 +107,6 @@
       "name": "Clean the dinning table",
       "comeuppanceType": 2,
       "id": 10
-    },
-    {
-      "userId": 2,
-      "pointId": 1,
-      "name": "Take out the trash",
-      "comeuppanceType": 2,
-      "id": 11
     },
     {
       "userId": 2,
