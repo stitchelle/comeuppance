@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Button, Form, Col } from 'react-bootstrap'
 import PunishmentManager from "../../modules/PunishmentManager"
+import PointManager from "../../modules/PointManager"
 import "./PunishmentForm.css"
 
 class PunishmentEditForm extends Component {
@@ -10,6 +11,7 @@ class PunishmentEditForm extends Component {
         pointId: "",
         punishmentName: "",
         comeuppanceType: "",
+        points:[],
         loadingStatus: true,
     };
 
@@ -36,8 +38,27 @@ class PunishmentEditForm extends Component {
     }
 
     componentDidMount() {
-        PunishmentManager.get(this.props.match.params.punishmentId)
-            .then(punishment => {
+        // Promise.all([
+        //     PointManager.getAll(),
+        //     PunishmentManager.get(this.props.match.params.punishmentId)
+        // ])
+        //     .then(([points, punishment])
+        //     => {
+        //         this.setState({
+        //             points: points,
+        //             userId: punishment.userId,
+        //             pointId: Number(punishment.pointId),
+        //             punishmentName: punishment.name,
+        //             comeuppanceType: 2,
+        //             loadingStatus: false,
+        //         })
+        //     })
+
+        Promise.all([
+            PointManager.getAll(),
+            PunishmentManager.get(this.props.match.params.punishmentId)
+        ])
+            .then(([points, punishment])=> {
                 console.log("punishment", punishment)
                 this.setState({
                     userId: punishment.userId,
@@ -45,8 +66,10 @@ class PunishmentEditForm extends Component {
                     punishmentName: punishment.name,
                     comeuppanceType: 2,
                     loadingStatus: false,
+                    points: points
                 });
-            });
+            })
+
     }
 
     render() {
@@ -54,7 +77,7 @@ class PunishmentEditForm extends Component {
             <>
                 <Form>
                     <fieldset>
-                        <center><h2>ADD PUNISHMENT</h2></center>
+                        <center><h2>EDIT PUNISHMENT</h2></center>
 
                         <Form.Row>
                             <Col className="alignLeft">
@@ -63,11 +86,15 @@ class PunishmentEditForm extends Component {
                                     id="pointId"
                                     required
                                     onChange={this.handleFieldChange}
-                                    value={this.state.pointId}>
-                                    <option>5</option>
-                                    <option>10</option>
-                                    <option>15</option>
-                                    <option>20</option>
+                                    value={this.state.pointId}
+                                    >
+                                    
+                                    {this.state.points.map(point => {
+                                        return (
+                                            <option value={point.id} key={point.id}>{point.numberOfPoints}</option>
+                                        )
+                                    } 
+                                    )}
                                 </Form.Control>
                                 <Form.Text className="text-muted">Select Number of Points</Form.Text>
                             </Col>

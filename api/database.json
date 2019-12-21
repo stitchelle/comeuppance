@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "username": "Michelle",
+      "username": "bob1234girl",
       "email": "bob1234girl@gmail.com",
       "password": "123",
       "isParent": true,
@@ -31,22 +31,6 @@
       "isParent": false,
       "points": 0,
       "id": 4
-    },
-    {
-      "username": "yo",
-      "email": "yo@gmail.com",
-      "password": "123",
-      "isParent": true,
-      "points": 0,
-      "id": 5
-    },
-    {
-      "username": "yolo",
-      "email": "yolo@gmail.com",
-      "password": "123",
-      "isParent": true,
-      "points": 0,
-      "id": 6
     }
   ],
   "Relationships": [
@@ -64,188 +48,103 @@
       "parentId": 1,
       "userId": 4,
       "id": 3
-    },
-    {
-      "parentId": 1,
-      "userId": 5,
-      "id": 4
-    },
-    {
-      "parentId": 1,
-      "userId": 6,
-      "id": 5
-    },
-    {
-      "parentId": 5,
-      "userId": 6,
-      "id": 6
     }
   ],
-  "comeuppanceType": [
-    {
-      "type": "Reward",
-      "id": 1
-    },
-    {
-      "type": "Punishment",
-      "id": 2
-    }
-  ],
+  "comeuppanceType": [],
   "comeuppances": [
     {
       "userId": 2,
       "pointId": 2,
-      "name": "lol",
+      "name": "Go to the Gym to play Basketball",
       "comeuppanceType": 1,
       "id": 1
     },
     {
       "userId": 2,
-      "pointId": 2,
-      "name": "Reward 1",
+      "pointId": 3,
+      "name": "Basketball Cards",
       "comeuppanceType": 1,
       "id": 2
     },
     {
       "userId": 2,
-      "pointId": 4,
-      "name": "sf",
+      "pointId": 1,
+      "name": "Icecream",
       "comeuppanceType": 1,
       "id": 3
     },
     {
       "userId": 2,
-      "pointId": 2,
-      "name": "lknono",
-      "comeuppanceType": 2,
+      "pointId": 4,
+      "name": "Go to the Movies",
+      "comeuppanceType": 1,
       "id": 4
     },
     {
       "userId": 2,
-      "pointId": 1,
-      "name": "hunhu gumu",
-      "comeuppanceType": 2,
+      "pointId": 4,
+      "name": "Daddy Day",
+      "comeuppanceType": 1,
       "id": 5
+    },
+    {
+      "userId": 2,
+      "pointId": 2,
+      "name": "Play Games for 30 minutes",
+      "comeuppanceType": 1,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "pointId": 1,
+      "name": "Candy",
+      "comeuppanceType": 1,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "pointId": 4,
+      "name": "Go to Jumpstreet",
+      "comeuppanceType": 1,
+      "id": 8
     },
     {
       "userId": 2,
       "pointId": 3,
-      "name": "1",
-      "comeuppanceType": 2,
-      "id": 6
+      "name": "High Five",
+      "comeuppanceType": 1,
+      "id": 9
     },
     {
       "userId": 2,
       "pointId": 4,
-      "name": "2",
+      "name": "Clean the dinning table",
       "comeuppanceType": 2,
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "pointId": 2,
-      "name": "2",
-      "comeuppanceType": 2,
-      "id": 8
+      "id": 10
     },
     {
       "userId": 2,
       "pointId": 1,
-      "name": "6",
+      "name": "Take out the trash",
       "comeuppanceType": 2,
-      "id": 9
-    }
-  ],
-  "history": [
-    {
-      "id": 1,
-      "userId": 2,
-      "pointId": 2,
-      "comeuppanceId": 2,
-      "completed": false,
-      "timestamp": "2017-12-18T21:54:50.728Z"
-    },
-    {
-      "userId": null,
-      "pointId": 2,
-      "comeuppanceId": 1,
-      "completed": null,
-      "timestamp": "2019-12-19T20:21:43.689Z",
-      "id": 2
-    },
-    {
-      "userId": null,
-      "pointId": 2,
-      "comeuppanceId": 1,
-      "completed": null,
-      "timestamp": "2019-12-19T20:22:28.580Z",
-      "id": 3
-    },
-    {
-      "userId": null,
-      "pointId": 2,
-      "comeuppanceId": 1,
-      "completed": null,
-      "timestamp": "2019-12-19T20:23:09.548Z",
-      "id": 4
-    },
-    {
-      "userId": null,
-      "pointId": 2,
-      "comeuppanceId": 2,
-      "completed": null,
-      "timestamp": "2019-12-19T20:23:47.316Z",
-      "id": 5
-    },
-    {
-      "userId": null,
-      "pointId": 2,
-      "comeuppanceId": 2,
-      "completed": null,
-      "timestamp": "2019-12-19T20:25:22.277Z",
-      "id": 6
-    },
-    {
-      "userId": null,
-      "pointId": 2,
-      "comeuppanceId": 1,
-      "completed": null,
-      "timestamp": "2019-12-19T20:28:23.980Z",
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "pointId": 4,
-      "comeuppanceId": 3,
-      "completed": null,
-      "timestamp": "2019-12-19T20:28:48.480Z",
-      "id": 8
-    },
-    {
-      "userId": 2,
-      "pointId": 2,
-      "comeuppanceId": 8,
-      "completed": null,
-      "timestamp": "2019-12-19T20:37:19.985Z",
       "id": 11
     },
     {
       "userId": 2,
-      "pointId": 3,
-      "comeuppanceId": 6,
-      "completed": null,
-      "timestamp": "2019-12-19T21:28:22.993Z",
+      "pointId": 2,
+      "name": "No TV for the night",
+      "comeuppanceType": 2,
       "id": 12
     },
     {
       "userId": 2,
-      "pointId": 2,
-      "comeuppanceId": 2,
-      "completed": null,
-      "timestamp": "2019-12-19T21:28:29.871Z",
+      "pointId": 1,
+      "name": "No Games for the night",
+      "comeuppanceType": 2,
       "id": 13
     }
   ],
+  "history": [],
   "points": [
     {
       "id": 1,
@@ -264,62 +163,5 @@
       "numberOfPoints": 20
     }
   ],
-  "pointsHistory": [
-    {
-      "userId": 2,
-      "numberOfPoints": 1,
-      "reason": "1",
-      "timestamp": "2017-12-18T21:54:50.728Z",
-      "id": 1
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 1,
-      "reason": "2",
-      "timestamp": "2019-12-18T21:54:54.143Z",
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": -1,
-      "reason": "1",
-      "timestamp": "2019-12-18T21:54:58.758Z",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": -1,
-      "reason": "2",
-      "timestamp": "2018-12-18T21:55:01.248Z",
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": -1,
-      "reason": "please",
-      "timestamp": "2019-12-19T16:15:55.427Z",
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 3,
-      "reason": "hi",
-      "timestamp": "2019-12-19T16:16:10.020Z",
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 1,
-      "reason": "play",
-      "timestamp": "2019-12-19T22:07:40.172Z",
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "numberOfPoints": 1,
-      "reason": "play",
-      "timestamp": "2019-12-19T22:07:56.858Z",
-      "id": 8
-    }
-  ]
+  "pointsHistory": []
 }
