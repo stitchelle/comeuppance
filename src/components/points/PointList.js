@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Col, Tooltip, OverlayTrigger, Card, CardGroup } from 'react-bootstrap'
+import { Form, Col, Card, CardGroup } from 'react-bootstrap'
 import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
@@ -66,15 +66,6 @@ class PointList extends Component {
         }
     };
 
-
-    renderTooltipPositive(props) {
-        return <Tooltip {...props}>Add Positive Points</Tooltip>;
-    }
-
-    renderTooltipNegative(props) {
-        return <Tooltip {...props}>Add Negative Points</Tooltip>;
-    }
-
     isParent = () => {
         if (this.props.user === true) {
             let Parent = JSON.parse(sessionStorage.getItem("credentials"))
@@ -86,7 +77,7 @@ class PointList extends Component {
     }
 
     render() {
-        console.log("hi","onClick")
+        console.log("hi", "onClick")
         if (this.isParent() !== false) {
             return (
                 <>
@@ -97,16 +88,9 @@ class PointList extends Component {
                             <center><h2>ADD POINTS</h2></center>
                             <Form.Row>
                                 <Col className="alignLeft">
-
-                                    <OverlayTrigger
-                                        placement="right"
-                                        delay={{ show: 250, hide: 400 }}
-                                        overlay={this.renderTooltipPositive}
-                                    >
                                         <picture hover="Add Positive Points">
                                             <img src={require('./plus add.png')} alt="add button" height="45em" id="positive" onClick={this.constructNewPositivePointReason} />
                                         </picture>
-                                    </OverlayTrigger>
                                 </Col>
                                 <Col className="alignCenter">
 
@@ -118,15 +102,9 @@ class PointList extends Component {
                                     <Form.Text className="text-muted">Enter Reason For Points</Form.Text>
                                 </Col>
                                 <Col className="alignRight">
-
-                                    <OverlayTrigger
-                                        placement="right"
-                                        delay={{ show: 250, hide: 400 }}
-                                        overlay={this.renderTooltipNegative}>
-                                        <picture>
-                                            <img src={require('./remove_circle-24px.svg')} alt="add button" height="50em" id="negative" onClick={this.constructNewNegativePointReason} />
-                                        </picture>
-                                    </OverlayTrigger>
+                                    <picture>
+                                        <img src={require('./remove_circle-24px.svg')} alt="add button" height="50em" id="negative" onClick={this.constructNewNegativePointReason} />
+                                    </picture>
                                 </Col>
                             </Form.Row>
                             <br />
@@ -197,8 +175,9 @@ class PointList extends Component {
                                                         {point.reason}
                                                     </Card.Title>
                                                     <Card.Text className="date">
-                                                        {new Date(point.timestamp).getFullYear()}-
-                          {new Date(point.timestamp).getMonth()}-{new Date(point.timestamp).getDate()}
+                                                        {new Date(point.timestamp).getFullYear()}
+                                                        -{new Date(point.timestamp).getMonth()}
+                                                        -{new Date(point.timestamp).getDate()}
                                                     </Card.Text>
                                                 </Card.Body>
                                             </Card>

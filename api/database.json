@@ -142,5 +142,27 @@
       "numberOfPoints": 20
     }
   ],
-  "pointsHistory": []
+  "pointsHistory": [
+    {
+      "userId": 2,
+      "numberOfPoints": 1,
+      "reason": "was polite",
+      "timestamp": "2019-12-21T22:10:20.239Z",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -2,
+      "reason": "was rude",
+      "timestamp": "2019-12-21T22:10:44.696Z",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": 3,
+      "reason": "made your bed",
+      "timestamp": "2019-12-21T22:14:25.193Z",
+      "id": 3
+    }
+  ]
 }
