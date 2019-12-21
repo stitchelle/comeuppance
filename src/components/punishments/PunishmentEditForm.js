@@ -38,22 +38,6 @@ class PunishmentEditForm extends Component {
     }
 
     componentDidMount() {
-        // Promise.all([
-        //     PointManager.getAll(),
-        //     PunishmentManager.get(this.props.match.params.punishmentId)
-        // ])
-        //     .then(([points, punishment])
-        //     => {
-        //         this.setState({
-        //             points: points,
-        //             userId: punishment.userId,
-        //             pointId: Number(punishment.pointId),
-        //             punishmentName: punishment.name,
-        //             comeuppanceType: 2,
-        //             loadingStatus: false,
-        //         })
-        //     })
-
         Promise.all([
             PointManager.getAll(),
             PunishmentManager.get(this.props.match.params.punishmentId)

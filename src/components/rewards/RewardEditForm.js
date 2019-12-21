@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Button, Form, Col } from 'react-bootstrap'
 import RewardManager from "../../modules/RewardManager"
+import PointManager from "../../modules/PointManager"
 import "./RewardForm.css"
 
 class RewardEditForm extends Component {
@@ -10,6 +11,7 @@ class RewardEditForm extends Component {
         pointId: "",
         rewardName: "",
         comeuppanceType: "",
+        points:[],
         loadingStatus: true,
     };
 
@@ -36,17 +38,32 @@ class RewardEditForm extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.rewardId)
-        RewardManager.get(this.props.match.params.rewardId)
-            .then(reward => {
-                console.log("reward", reward)
+        Promise.all([
+            PointManager.getAll(),
+            RewardManager.get(this.props.match.params.rewardId)
+        ])
+            .then(([points,reward]) => {
                 this.setState({
                     userId: reward.userId,
                     pointId: Number(reward.pointId),
                     rewardName: reward.name,
                     comeuppanceType: 1,
                     loadingStatus: false,
-                });
+                    points: points
+            })
+
+
+        // console.log(this.props.match.params.rewardId)
+        // RewardManager.get(this.props.match.params.rewardId)
+        //     .then(reward => {
+        //         console.log("reward", reward)
+        //         this.setState({
+        //             userId: reward.userId,
+        //             pointId: Number(reward.pointId),
+        //             rewardName: reward.name,
+        //             comeuppanceType: 1,
+        //             loadingStatus: false,
+        //         });
             });
     }
 
@@ -65,10 +82,12 @@ class RewardEditForm extends Component {
                                     required
                                     onChange={this.handleFieldChange}
                                     value={this.state.pointId}>
-                                    <option>5</option>
-                                    <option>10</option>
-                                    <option>15</option>
-                                    <option>20</option>
+                                    {this.state.points.map(point => {
+                                        return (
+                                            <option value={point.id} key={point.id}>{point.numberOfPoints}</option>
+                                        )
+                                    } 
+                                    )}
                                 </Form.Control>
                                 <Form.Text className="text-muted">Select Number of Points</Form.Text>
                             </Col>

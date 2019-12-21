@@ -68,7 +68,7 @@
     },
     {
       "userId": 2,
-      "pointId": 1,
+      "pointId": 4,
       "name": "Icecream",
       "comeuppanceType": 1,
       "id": 3
@@ -93,13 +93,6 @@
       "name": "Play Games for 30 minutes",
       "comeuppanceType": 1,
       "id": 6
-    },
-    {
-      "userId": 2,
-      "pointId": 1,
-      "name": "Candy",
-      "comeuppanceType": 1,
-      "id": 7
     },
     {
       "userId": 2,
