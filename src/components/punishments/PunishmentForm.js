@@ -44,7 +44,6 @@ class PunishmentForm extends Component {
     componentDidMount() {
         PointManager.getAll()
             .then((points) => {
-                console.log("bob", points)
                 this.setState({
                     points: points
                 })
