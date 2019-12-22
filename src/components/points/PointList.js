@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Form, Col, Card, CardGroup } from 'react-bootstrap'
+import { Form, Col, Card, CardGroup, Row } from 'react-bootstrap'
 import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
+import "./Point.css"
 
 
 class PointList extends Component {
@@ -76,6 +77,14 @@ class PointList extends Component {
         }
     }
 
+    pointCard = (point) => {
+        if (point < 0) {
+            return "pointCardNegative"
+        } else {
+            return "pointCardPositive"
+        }
+    }
+
     render() {
         console.log("hi", "onClick")
         if (this.isParent() !== false) {
@@ -88,9 +97,9 @@ class PointList extends Component {
                             <center><h2>ADD POINTS</h2></center>
                             <Form.Row>
                                 <Col className="alignLeft">
-                                        <picture hover="Add Positive Points">
-                                            <img src={require('./plus add.png')} alt="add button" height="45em" id="positive" onClick={this.constructNewPositivePointReason} />
-                                        </picture>
+                                    <picture hover="Add Positive Points">
+                                        <img src={require('./plus add.png')} alt="add button" height="45em" id="positive" onClick={this.constructNewPositivePointReason} />
+                                    </picture>
                                 </Col>
                                 <Col className="alignCenter">
 
@@ -129,17 +138,26 @@ class PointList extends Component {
                                     this.state.pointsHistory.map(point => {
                                         return (
                                             <Card key={point.id}>
-                                                <Card.Body>
-                                                    <Card.Subtitle>
-                                                        {point.numberOfPoints}
-                                                    </Card.Subtitle>
-                                                    <Card.Title>
-                                                        {point.reason}
-                                                    </Card.Title>
-                                                    <Card.Text className="date">
-                                                        {new Date(point.timestamp).getFullYear()}-
-                          {new Date(point.timestamp).getMonth()}-{new Date(point.timestamp).getDate()}
-                                                    </Card.Text>
+                                                <Card.Body className={this.pointCard(point.numberOfPoints)}>
+                                                    <Row>
+                                                        <Col>
+                                                            <Card.Text>
+                                                                {point.numberOfPoints}
+                                                            </Card.Text>
+                                                        </Col>
+                                                        <Col>
+                                                            <Card.Title>
+                                                                {point.reason}
+                                                            </Card.Title>
+                                                        </Col>
+                                                        <Col>
+                                                            <Card.Text className="date">
+                                                                {new Date(point.timestamp).getFullYear()}
+                                                                -{new Date(point.timestamp).getMonth()}
+                                                                -{new Date(point.timestamp).getDate()}
+                                                            </Card.Text>
+                                                        </Col>
+                                                    </Row>
                                                 </Card.Body>
                                             </Card>
                                         )

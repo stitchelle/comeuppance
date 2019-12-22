@@ -123,7 +123,56 @@
       "id": 13
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "userId": 2,
+      "pointId": 3,
+      "comeuppanceId": 2,
+      "completed": null,
+      "timestamp": "2019-12-22T01:29:16.911Z",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "pointId": 2,
+      "comeuppanceId": 12,
+      "completed": null,
+      "timestamp": "2019-12-22T01:30:06.223Z",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "pointId": 1,
+      "comeuppanceId": 13,
+      "completed": null,
+      "timestamp": "2019-12-22T01:30:08.409Z",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "pointId": 4,
+      "comeuppanceId": 10,
+      "completed": null,
+      "timestamp": "2019-12-22T01:30:11.255Z",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "pointId": 2,
+      "comeuppanceId": 6,
+      "completed": null,
+      "timestamp": "2019-12-22T01:30:19.231Z",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "pointId": 3,
+      "comeuppanceId": 9,
+      "completed": null,
+      "timestamp": "2019-12-22T01:30:22.588Z",
+      "id": 6
+    }
+  ],
   "points": [
     {
       "id": 1,

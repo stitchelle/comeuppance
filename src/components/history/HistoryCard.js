@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { Card, InputGroup, Col, Row } from "react-bootstrap"
+import "./History.css"
 
 class HistoryCard extends Component {
+    historyCard = (comeuppance) => {
+        if (comeuppance === 2) {
+            return "historyCardNegative"
+        } else {
+            return "historyCardPositive"
+        }
+    }
     render() {
         console.log(this.props.history)
         return (
             <Card>
-                <Card.Body>
+                <Card.Body className={this.historyCard(this.props.history.comeuppance.comeuppanceType)}>
                     <Row>
                         {(this.props.history.comeuppance.comeuppanceType === 1) ?
                             <>
@@ -30,7 +38,7 @@ class HistoryCard extends Component {
                             </Card.Text>
                         </Col>
                         <Col>
-                            <InputGroup.Prepend>
+                            <InputGroup.Prepend >
                                 <InputGroup.Checkbox aria-label="checkbox" />
                             </InputGroup.Prepend>
                         </Col>
