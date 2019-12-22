@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
-import { Nav, NavDropdown} from "react-bootstrap"
+import { Nav, NavDropdown } from "react-bootstrap"
 // import { Link } from "react-router-dom"
 // import KidManager from "../../modules/KidManager"
 
@@ -19,7 +19,7 @@ class NavBar extends Component {
     }
 
     isParent = () => {
-        if(this.props.user === true){
+        if (this.props.user === true) {
             let Parent = JSON.parse(sessionStorage.getItem("credentials"))
             return (
                 Parent.isParent
@@ -27,9 +27,13 @@ class NavBar extends Component {
         }
     }
 
-    render() {
+    credentials =
+        JSON.parse(sessionStorage.getItem("credentials"))
 
-        if (this.props.user !== true && this.isParent() === undefined ){
+    render() {
+        console.log("hi", this.credentials.username)
+
+        if (this.props.user !== true && this.isParent() === undefined) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
                     <Navbar.Brand href="/">
@@ -44,7 +48,7 @@ class NavBar extends Component {
                      </Navbar.Brand>
                 </Navbar >
             )
-        }else if (this.props.user === true && this.isParent() !== false) {
+        } else if (this.props.user === true && this.isParent() !== false) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">
                     <Navbar.Brand href="/">
@@ -60,6 +64,9 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
+                            <Nav.Link href="/">{this.credentials.username}</Nav.Link>
+                            <NavDropdown.Divider />
+
                             <Nav.Link href="/rewards">Reward</Nav.Link>
                             <Nav.Link href="/punishments">Punishment</Nav.Link>
                             <Nav.Link href="/points">Points</Nav.Link>
@@ -79,6 +86,8 @@ class NavBar extends Component {
 
                                 <NavDropdown.Item href="/kid/new">New Kid</NavDropdown.Item>
                             </NavDropdown>
+                            <NavDropdown.Divider />
+
                             <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>Logout</Nav.Link>
                         </Nav>
 
@@ -101,6 +110,9 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
+                            <Nav.Link href="/">{this.credentials.username}</Nav.Link>
+                            <NavDropdown.Divider />
+
                             <Nav.Link href="/rewards">
                                 Reward
                             </Nav.Link>
@@ -113,6 +125,7 @@ class NavBar extends Component {
                             <Nav.Link href="/history">
                                 History
                             </Nav.Link>
+                            <NavDropdown.Divider />
                             <Nav.Link className="nav-link logout" href="/login" onClick={this.props.clearUser}>
                                 Logout
                             </Nav.Link>
@@ -121,7 +134,7 @@ class NavBar extends Component {
                     </Navbar.Collapse>
                 </Navbar >
             )
-        } 
+        }
     }
 }
 
