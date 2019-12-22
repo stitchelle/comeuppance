@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Col, Card, CardGroup, Row } from 'react-bootstrap'
+import { Form, Col, Card, CardGroup, Row} from 'react-bootstrap'
 import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
@@ -87,10 +87,10 @@ class PointList extends Component {
 
     render() {
         console.log("hi", "onClick")
-        if (this.isParent() !== false) {
+        if (this.isParent()) {
             return (
                 <>
-                    <strong><center><h1>TOTAL POINTS</h1></center></strong>
+                    <header className="text-center">TOTAL POINTS</header>
                     <PointCard />
                     <Form>
                         <fieldset>
@@ -132,7 +132,7 @@ class PointList extends Component {
                     </Form>
                     <CardGroup>
                         <Card className="text-center">
-                            <Card.Header as="h5" className="kidName">Point History</Card.Header>
+                            <Card.Header className="pointHistory">Point History</Card.Header>
                             <Card.Body>
                                 {
                                     this.state.pointsHistory.map(point => {
@@ -173,7 +173,7 @@ class PointList extends Component {
                 </>
 
             );
-        } else if (this.isParent() !== true) {
+        } else {
             return (
                 <>
                     <KidPointCard />
@@ -181,22 +181,30 @@ class PointList extends Component {
                         <Card className="text-center">
                             <Card.Header as="h5" className="kidName">Point History</Card.Header>
                             <Card.Body>
-                                {
+                            {
                                     this.state.pointsHistory.map(point => {
                                         return (
                                             <Card key={point.id}>
-                                                <Card.Body>
-                                                    <Card.Subtitle>
-                                                        {point.numberOfPoints}
-                                                    </Card.Subtitle>
-                                                    <Card.Title>
-                                                        {point.reason}
-                                                    </Card.Title>
-                                                    <Card.Text className="date">
-                                                        {new Date(point.timestamp).getFullYear()}
-                                                        -{new Date(point.timestamp).getMonth()}
-                                                        -{new Date(point.timestamp).getDate()}
-                                                    </Card.Text>
+                                                <Card.Body className={this.pointCard(point.numberOfPoints)}>
+                                                    <Row>
+                                                        <Col>
+                                                            <Card.Text>
+                                                                {point.numberOfPoints}
+                                                            </Card.Text>
+                                                        </Col>
+                                                        <Col>
+                                                            <Card.Title>
+                                                                {point.reason}
+                                                            </Card.Title>
+                                                        </Col>
+                                                        <Col>
+                                                            <Card.Text className="date">
+                                                                {new Date(point.timestamp).getFullYear()}
+                                                                -{new Date(point.timestamp).getMonth()}
+                                                                -{new Date(point.timestamp).getDate()}
+                                                            </Card.Text>
+                                                        </Col>
+                                                    </Row>
                                                 </Card.Body>
                                             </Card>
                                         )

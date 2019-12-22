@@ -46,8 +46,8 @@ class HistoryList extends Component {
 
         return (
             <>
-                <center><strong><h1>Reward & Punishment <br/> History</h1></strong></center>
                 <Card className="container-cards">
+                    <Card.Header><center><h1>History</h1><h5>Rewards & Punishments</h5></center></Card.Header>
                     <Card.Body>
                         {this.state.history.map(history => <HistoryCard key={history.id} history={history} />)}
                     </Card.Body>
