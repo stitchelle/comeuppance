@@ -87,11 +87,10 @@ class PointList extends Component {
 
     render() {
         console.log("hi", "onClick")
-        if (this.isParent()) {
+        if (this.isParent()!== true) {
             return (
                 <>
-                    <header className="text-center">TOTAL POINTS</header>
-                    <PointCard />
+                    <PointCard/>
                     <Form>
                         <fieldset>
                             <center><h2>ADD POINTS</h2></center>
@@ -132,7 +131,7 @@ class PointList extends Component {
                     </Form>
                     <CardGroup>
                         <Card className="text-center">
-                            <Card.Header className="pointHistory">Point History</Card.Header>
+                            <Card.Header className="pointHistory"><h3>Point History</h3></Card.Header>
                             <Card.Body>
                                 {
                                     this.state.pointsHistory.map(point => {
