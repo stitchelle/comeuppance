@@ -25,10 +25,19 @@ class NavBar extends Component {
                 Parent.isParent
             )
         }
-    }   
+    }
+
+    credentials = () => {
+        if (sessionStorage.getItem("credentials") !== null) {
+            return (JSON.parse(sessionStorage.getItem("credentials"))
+            )
+        } else {
+            return ("user")
+        }
+    }
 
     render() {
-        console.log("hi",this.state.userId)
+        console.log("hi", this.credentials().username)
 
         if (this.props.user !== true && this.isParent() === undefined) {
             return (
@@ -61,7 +70,7 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/"></Nav.Link>
+                            <Nav.Link href="/">{this.credentials().username}</Nav.Link>
                             <NavDropdown.Divider />
 
                             <Nav.Link href="/rewards">Reward</Nav.Link>
@@ -107,6 +116,9 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
+                            <Nav.Link href="/">
+                                {this.credentials().username}
+                            </Nav.Link>
                             <NavDropdown.Divider />
 
                             <Nav.Link href="/rewards">
