@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Col, Card, CardGroup, Row} from 'react-bootstrap'
+import { Form, Col, Card, CardGroup, Row } from 'react-bootstrap'
 import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
@@ -90,7 +90,6 @@ class PointList extends Component {
         if (this.isParent()) {
             return (
                 <>
-                    <header className="text-center">TOTAL POINTS</header>
                     <PointCard />
                     <Form>
                         <fieldset>
@@ -132,7 +131,7 @@ class PointList extends Component {
                     </Form>
                     <CardGroup>
                         <Card className="text-center">
-                            <Card.Header className="pointHistory">Point History</Card.Header>
+                            <Card.Header className="pointHistory"><h3>Point History</h3></Card.Header>
                             <Card.Body>
                                 {
                                     this.state.pointsHistory.map(point => {
@@ -181,7 +180,7 @@ class PointList extends Component {
                         <Card className="text-center">
                             <Card.Header as="h5" className="kidName">Point History</Card.Header>
                             <Card.Body>
-                            {
+                                {
                                     this.state.pointsHistory.map(point => {
                                         return (
                                             <Card key={point.id}>
