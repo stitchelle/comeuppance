@@ -1,5 +1,3 @@
-import { mockComponent } from "react-dom/test-utils"
-
 const remoteURL = "http://localhost:5002"
 
 export default {
@@ -21,6 +19,17 @@ export default {
                     return currentDate.getMonth() === pointDate.getMonth() && currentDate.getFullYear() === pointDate.getFullYear()
                 })
                 return currentPoints
+            })
+    },
+    getPreviousForUser(id) {
+        return fetch(`${remoteURL}/pointsHistory?userId=${id}`).then(result => result.json())
+            .then(data => {
+                let previousDate = new Date()
+                let previousPoints = data.filter(point => {
+                    let pointDate = new Date(point.timestamp)
+                    return previousDate.getMonth()-1 === pointDate.getMonth() && previousDate.getFullYear() === pointDate.getFullYear()
+                })
+                return previousPoints
             })
     },
     post(newPointReason) {

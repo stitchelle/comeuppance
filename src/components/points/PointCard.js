@@ -7,6 +7,7 @@ class PointCard extends Component {
     state = {
         kidId: "",
         currentMonthsPoints: [],
+        previousMonthsPoints: [],
         loadingStatus: false
     };
 
@@ -21,14 +22,26 @@ class PointCard extends Component {
     componentDidMount() {
         let userId = this.isParent() ? Number(sessionStorage.getItem("kidCredentials")) : JSON.parse(sessionStorage.getItem("credentials")).id
         console.log("user".userId)
-        PointsHistoryManager.getCurrentForUser(userId)
-            .then((currentPoints) => {
-                console.log("filtered", currentPoints)
+
+        Promise.all([
+            PointsHistoryManager.getCurrentForUser(userId),
+            PointsHistoryManager.getPreviousForUser(userId)
+        ])
+            .then(([currentPoints, previousPoints]) => {
                 this.setState({
                     kidId: userId,
-                    currentMonthsPoints: currentPoints
+                    currentMonthsPoints: currentPoints,
+                    previousMonthsPoints: previousPoints
                 })
             })
+        // PointsHistoryManager.getCurrentForUser(userId)
+        //     .then((currentPoints) => {
+        //         console.log("filtered", currentPoints)
+        //         this.setState({
+        //             kidId: userId,
+        //             currentMonthsPoints: currentPoints
+        //         })
+        //     })
     }
     totalPoints = (points) => {
         let total = 0
@@ -39,7 +52,7 @@ class PointCard extends Component {
     }
 
     render() {
-        console.log("points", this.state.currentMonthsPoints)
+        console.log("points", this.state.previousMonthsPoints)
         return (
             <>
                 <Card.Header className="text-center"><h1>TOTAL POINTS</h1></Card.Header>
@@ -49,7 +62,7 @@ class PointCard extends Component {
                         <Card className="text-center">
                             <Card.Body>
                                 <Card.Title className="previousMonthsPoints">Previous Month</Card.Title>
-                                <Card.Text></Card.Text>
+                                <Card.Text>{this.totalPoints(this.state.previousMonthsPoints)}</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>

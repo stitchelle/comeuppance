@@ -196,7 +196,7 @@
       "userId": 2,
       "numberOfPoints": 1,
       "reason": "was polite",
-      "timestamp": "2019-12-21T22:10:20.239Z",
+      "timestamp": "2019-11-21T22:10:20.239Z",
       "id": 1
     },
     {
@@ -212,6 +212,27 @@
       "reason": "made your bed",
       "timestamp": "2019-12-21T22:14:25.193Z",
       "id": 3
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -4,
+      "reason": "was rude",
+      "timestamp": "2019-12-22T22:57:31.880Z",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -1,
+      "reason": "didnt do homework",
+      "timestamp": "2019-12-22T22:58:05.051Z",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -1,
+      "reason": "didnt do homework",
+      "timestamp": "2019-12-22T22:58:06.593Z",
+      "id": 6
     }
   ]
 }
