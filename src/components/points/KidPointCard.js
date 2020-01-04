@@ -47,35 +47,32 @@ class KidPointCard extends Component {
     render() {
         return (
             <>
-            <Card.Header as="h1"className="text-center">Points</Card.Header>
-                <Row>
-                    <Col>
-                        <Card className="text-center">
+                <Card.Header as="h1" className="text-center">Points</Card.Header>
+                <Card className="text-center">
+                    <Row>
+                        <Col>
                             <Card.Body>
-                                        <Card.Title className="previousMonthsPoints">Previous Month</Card.Title> 
-                                        <Card.Text>{this.totalPoints(this.state.previousMonthsPoints)}</Card.Text> 
+                                <Card.Title className="previousMonthsPoints">Previous Month</Card.Title>
+                                <Card.Text>{this.totalPoints(this.state.previousMonthsPoints)}</Card.Text>
                             </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card className="text-center">
+                        </Col>
+                        <Col>
                             <Card.Body>
-                                        <Card.Title className="currentMonthsPoints">Current Month </Card.Title>
-                                        <Card.Text>{this.totalPoints(this.state.currentMonthsPoints)}</Card.Text>
+                                <Card.Title className="currentMonthsPoints">Current Month </Card.Title>
+                                <Card.Text>{this.totalPoints(this.state.currentMonthsPoints)}</Card.Text>
                             </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-                <br/>
+                        </Col>
+                    </Row>
+                </Card>
                 <ButtonGroup className="redeemButton" >
                     <Button
                         type="button"
-                        variant="dark" ariant="outline-secondary"
+                        variant="dark"
+                        ariant="outline-secondary"
                         size="lg"
                         onClick={() => {
                             //   this.props.history.push(`/`)
-                        }
-                        }
+                        }}
                     >Redeem Points</Button>
                 </ButtonGroup>
             </>

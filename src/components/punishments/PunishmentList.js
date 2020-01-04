@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 //import the components we will need
 import PunishmentCard from './PunishmentCard'
 import PunishmentManager from '../../modules/PunishmentManager'
@@ -52,17 +52,19 @@ class PunishmentList extends Component {
         if (this.isParent() !== false) {
             return (
                 <>
-                    <br />
-                    <section className="section-content">
+                    <Card style={{backgroundColor: "#fce3ed"}}>
+                        <Card.Header><center><h1>Punishments</h1></center></Card.Header>
                         <Button type="button"
                             className="btn"
-                            variant="dark" ariant="outline-secondary"
+                            variant="dark"
+                            size="lg" 
+                            block
+                            ariant="outline-secondary"
                             onClick={() => { this.props.history.push("/punishments/new") }}>
                             Add Punishment
-                    </Button>
-                    </section>
-                    <br />
-                    <div className="container-cards">
+                        </Button>
+                    </Card>
+                    <Card>
                         {this.state.punishments.map(punishment =>
                             <PunishmentCard
                                 key={punishment.id}
@@ -70,7 +72,7 @@ class PunishmentList extends Component {
                                 deletePunishment={this.deletePunishment}
                                 {...this.props} />
                         )}
-                    </div>
+                    </Card>
                 </>
             )
 

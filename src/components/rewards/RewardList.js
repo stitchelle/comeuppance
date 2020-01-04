@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 //import the components we will need
 import RewardCard from './RewardCard';
 import RewardManager from '../../modules/RewardManager';
@@ -51,17 +51,19 @@ class RewardList extends Component {
         if (this.isParent() !== false) {
             return (
                 <>
-                <center><strong><h1>Rewards</h1></strong></center>
-                    <section className="section-content">
+                <Card style={{backgroundColor: "#ccdefa"}}>
+                        <Card.Header><center><h1>Rewards</h1></center></Card.Header>
                         <Button type="button"
                             className="btn"
-                            variant="dark" ariant="outline-secondary"
+                            variant="dark" 
+                            size="lg" 
+                            block
+                            ariant="outline-secondary"
                             onClick={() => { this.props.history.push("/rewards/new") }}>
                             Add Reward
-                    </Button>
-                    </section>
-                    <br />
-                    <div className="container-cards">
+                        </Button>
+                    </Card>
+                    <Card>
                         {this.state.rewards.map(reward =>
                             <RewardCard
                                 key={reward.id}
@@ -69,7 +71,7 @@ class RewardList extends Component {
                                 deleteReward={this.deleteReward}
                                 {...this.props} />
                         )}
-                    </div>
+                    </Card>
                 </>
             )
         } else {
