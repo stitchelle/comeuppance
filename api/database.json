@@ -25,12 +25,12 @@
       "id": 3
     },
     {
-      "username": "Lauren",
-      "email": "lauren@gmail.com",
+      "username": "Eliana",
+      "email": "eli@gmail.com",
       "password": "123",
       "isParent": false,
       "points": 0,
-      "id": 4
+      "id": 5
     }
   ],
   "Relationships": [
@@ -46,8 +46,8 @@
     },
     {
       "parentId": 1,
-      "userId": 4,
-      "id": 3
+      "userId": 5,
+      "id": 4
     }
   ],
   "comeuppanceType": [],
@@ -110,17 +110,17 @@
     },
     {
       "userId": 2,
-      "pointId": 2,
-      "name": "No TV for the night",
-      "comeuppanceType": 2,
-      "id": 12
-    },
-    {
-      "userId": 2,
       "pointId": 1,
       "name": "No Games for the night",
       "comeuppanceType": 2,
       "id": 13
+    },
+    {
+      "userId": 2,
+      "pointId": 3,
+      "name": "Mow the lawn",
+      "comeuppanceType": 2,
+      "id": 14
     }
   ],
   "history": [
@@ -131,14 +131,6 @@
       "completed": null,
       "timestamp": "2019-12-22T01:29:16.911Z",
       "id": 1
-    },
-    {
-      "userId": 2,
-      "pointId": 2,
-      "comeuppanceId": 12,
-      "completed": null,
-      "timestamp": "2019-12-22T01:30:06.223Z",
-      "id": 2
     },
     {
       "userId": 2,
