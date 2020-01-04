@@ -56,25 +56,20 @@ class PointCard extends Component {
         return (
             <>
                 <Card.Header className="text-center"><h1>TOTAL POINTS</h1></Card.Header>
-
-                <Row>
-                    <Col>
-                        <Card className="text-center">
+                    <Row>
+                        <Col className="text-center">
                             <Card.Body>
                                 <Card.Title className="previousMonthsPoints">Previous Month</Card.Title>
                                 <Card.Text>{this.totalPoints(this.state.previousMonthsPoints)}</Card.Text>
                             </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card className="text-center">
+                        </Col>
+                        <Col className="text-center">
                             <Card.Body>
                                 <Card.Title className="currentMonthsPoints">Current Month </Card.Title>
                                 <Card.Text>{this.totalPoints(this.state.currentMonthsPoints)}</Card.Text>
                             </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
             </>
         );
     }

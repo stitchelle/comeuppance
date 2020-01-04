@@ -6,11 +6,8 @@ class PunishmentCard extends Component {
         return (
             <Card className="text-center">
                 <Card.Body>
-                    <div className="card">
-                        <div className="card-content">
-                            {/* <picture>
-                                <img src={require('./dog.svg')} alt="My Dog" />
-                            </picture> */}
+                    {/* <div className="card">
+                        <div className="card-content"> */}
                             <Row>
                                 <Col>
                                     <Card.Text className="card-punishmentpoints">{this.props.punishment.point.numberOfPoints} Points</Card.Text>
@@ -33,8 +30,8 @@ class PunishmentCard extends Component {
                                     onClick={() => this.props.deletePunishment(this.props.punishment.id)}
                                 >Delete</Button>
                             </Row>
-                        </div>
-                    </div>
+                        {/* </div>
+                    </div> */}
                 </Card.Body>
             </Card>
         );

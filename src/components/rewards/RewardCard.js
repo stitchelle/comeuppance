@@ -7,8 +7,8 @@ class RewardCard extends Component {
         return (
             <Card className="text-center">
                 <Card.Body>
-                    <div className="card">
-                        <div className="card-content">
+                    {/* <div className="card">
+                        <div className="card-content"> */}
                             {/* <picture>
                                 <img src={require('./dog.svg')} alt="My Dog" />
                             </picture> */}
@@ -34,8 +34,8 @@ class RewardCard extends Component {
                                 onClick={() => this.props.deleteReward(this.props.reward.id)}
                             >Delete</Button>
                             </Row>
-                        </div>
-                    </div>
+                        {/* </div>
+                    </div> */}
                 </Card.Body>
             </Card>
         );

@@ -87,10 +87,12 @@ class PointList extends Component {
 
     render() {
         console.log("hi", "onClick")
-        if (this.isParent()) {
+        if (this.isParent()!== false) {
             return (
                 <>
+                <CardGroup>
                     <PointCard />
+                    <Card.Body>
                     <Form>
                         <fieldset>
                             <center><h2>ADD POINTS</h2></center>
@@ -115,7 +117,6 @@ class PointList extends Component {
                                     </picture>
                                 </Col>
                             </Form.Row>
-                            <br />
                             <Form.Group controlId="numberOfPoints">
                                 <Form.Control as="select" onChange={this.handleFieldChange}>
                                     <option >Choose Points</option>
@@ -129,6 +130,8 @@ class PointList extends Component {
                             </Form.Group>
                         </fieldset>
                     </Form>
+                    </Card.Body>
+                    </CardGroup>
                     <CardGroup>
                         <Card className="text-center">
                             <Card.Header className="pointHistory"><h3>Point History</h3></Card.Header>
