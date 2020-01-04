@@ -10,7 +10,8 @@ class Home extends Component {
   render() {
     if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
       return (
-        <center><h1>COMEUPPANCE</h1></center>)
+        <center><h1>COMEUPPANCE</h1></center>
+      )
     } else {
       return (
         <>

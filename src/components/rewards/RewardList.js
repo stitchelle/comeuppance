@@ -33,10 +33,10 @@ class RewardList extends Component {
                     })
             })
     }
-    pickRandomReward = () => {
-        let randomValue = this.state.rewards[Math.floor(Math.random() * this.state.rewards.length)];
-        alert(`YOU GOT: ${randomValue.name}`)
-    }
+    // pickRandomReward = () => {
+    //     let randomValue = this.state.rewards[Math.floor(Math.random() * this.state.rewards.length)];
+    //     alert(`YOU GOT: ${randomValue.name}`)
+    // }
 
     isParent = () => {
         let Parent = JSON.parse(sessionStorage.getItem("credentials"))
@@ -70,17 +70,6 @@ class RewardList extends Component {
                                 {...this.props} />
                         )}
                     </div>
-                    <br />
-                    <section className="section-content">
-                        <Button type="button"
-                            className="btn"
-                            variant="dark" ariant="outline-secondary"
-                            onClick={() => { this.pickRandomReward() }}
-                        >
-                            Pick Random Reward
-                </Button>
-                    </section>
-                    <br />
                 </>
             )
         } else {

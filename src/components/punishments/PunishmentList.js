@@ -34,10 +34,10 @@ class PunishmentList extends Component {
             })
     }
 
-    pickRandomPunishment = () => {
-        let randomValue = this.state.punishments[Math.floor(Math.random() * this.state.punishments.length)];
-        alert(`YOU GOT: ${randomValue.name}`)
-    }
+    // pickRandomPunishment = () => {
+    //     let randomValue = this.state.punishments[Math.floor(Math.random() * this.state.punishments.length)];
+    //     alert(`YOU GOT: ${randomValue.name}`)
+    // }
 
     isParent = () => {
         let Parent = JSON.parse(sessionStorage.getItem("credentials"))
@@ -71,17 +71,6 @@ class PunishmentList extends Component {
                                 {...this.props} />
                         )}
                     </div>
-                    <br />
-                    <section className="section-content">
-                        <Button type="button"
-                            className="btn"
-                            variant="dark" ariant="outline-secondary"
-                            onClick={() => { this.pickRandomPunishment() }}
-                        >
-                            Pick Random Punishment
-                    </Button>
-                    </section>
-                    <br />
                 </>
             )
 
