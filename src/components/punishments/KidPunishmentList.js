@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 //import the components we will need
+import {Card} from 'react-bootstrap'
 import KidPunishmentCard from './KidPunishmentCard'
 import PointManager from '../../modules/PointManager'
 import PunishmentManager from "../../modules/PunishmentManager"
@@ -44,13 +45,13 @@ class KidPunishmentList extends Component {
 
         return (
             <>
-                <div className="container-cards">
-                    <h3>Punishments</h3>
+               <Card style={{backgroundColor: "#fce3ed"}}>
+                    <Card.Header><center><h3>Punishments</h3></center></Card.Header>
                     {
                         this.state.points.map((point, index) => <KidPunishmentCard key={point.id} point={point} punishments={this.state.punishments[index]} />
                         )
                     }
-                </div>
+                </Card>
                 
             </>
 
