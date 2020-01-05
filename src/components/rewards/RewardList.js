@@ -47,16 +47,16 @@ class RewardList extends Component {
     }
 
     render() {
-        
+
         if (this.isParent() !== false) {
             return (
                 <>
-                <Card style={{backgroundColor: "#ccdefa"}}>
+                    <Card style={{ backgroundColor: "#ccdefa" }}>
                         <Card.Header><center><h1>Rewards</h1></center></Card.Header>
                         <Button type="button"
                             className="btn"
-                            variant="dark" 
-                            size="lg" 
+                            variant="dark"
+                            size="lg"
                             block
                             ariant="outline-secondary"
                             onClick={() => { this.props.history.push("/rewards/new") }}>
