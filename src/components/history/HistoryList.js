@@ -22,12 +22,11 @@ class HistoryList extends Component {
         JSON.parse(sessionStorage.getItem("credentials"))
 
     kidCredentials = () => {
-        if (this.isParent() !== false) {
+        if (this.isParent()) {
             return (sessionStorage.getItem("kidCredentials"))
-        } else if (this.isParent() !== true) {
+        } else {
             return (this.credentials.id)
         }
-        console.log("HIHIHIHIIHIHH", this.credentials)
     }
 
     componentDidMount() {
