@@ -34,7 +34,7 @@ class HistoryCard extends Component {
                         <Col>
                             <Card.Text>
                                 Date: {new Date(this.props.history.timestamp).getFullYear()}-
-                          {new Date(this.props.history.timestamp).getMonth()}-{new Date(this.props.history.timestamp).getDate()}
+                          {new Date(this.props.history.timestamp).getMonth()+1}-{new Date(this.props.history.timestamp).getDate()}
                             </Card.Text>
                         </Col>
                         <Col>
