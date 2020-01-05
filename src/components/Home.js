@@ -19,10 +19,10 @@ class Home extends Component {
       return (
         <>
           <Card.Header>
-          <center><h1>COMEUPPANCE</h1></center>
+            <center><h1>COMEUPPANCE</h1></center>
           </Card.Header>
           <Card.Body>
-          <center><h5>Please Pick Child in Navigation Dropdown</h5></center>
+            <center><h5>Please Pick Child in Navigation Dropdown</h5></center>
           </Card.Body>
         </>
       )

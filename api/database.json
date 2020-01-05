@@ -225,6 +225,13 @@
       "reason": "didnt do homework",
       "timestamp": "2019-12-22T22:58:06.593Z",
       "id": 6
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": 5,
+      "reason": "cleaned room",
+      "timestamp": "2020-01-05T21:16:01.314Z",
+      "id": 7
     }
   ]
 }

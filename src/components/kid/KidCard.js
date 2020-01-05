@@ -29,8 +29,6 @@ class KidCard extends Component {
   render() {
     return (
       <>
-        <br />
-        <strong><h3>Kid Info:</h3></strong>
         <CardGroup>
           <Card className="text-center">
             <Card.Header as="h5" className="kidName">{this.state.kid.username}</Card.Header>
