@@ -110,7 +110,7 @@ export default class ApplicationViews extends Component {
 
                 <Route path="/points" render={(props) => {
                     if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
-                        return <PointList />
+                        return <PointList {...props} {...this.props}/>
                     } else {
                         return <Redirect to="/" />
                     }
@@ -118,7 +118,7 @@ export default class ApplicationViews extends Component {
 
                 <Route path="/history" render={(props) => {
                     if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true){
-                        return <HistoryList />
+                        return <HistoryList {...props} {...this.props}/>
                     }else {
                         return <Redirect to="/" />
                     }
