@@ -17,7 +17,7 @@ class RewardCard extends Component {
                                     <Card.Text className="card-rewardpoints">{this.props.reward.point.numberOfPoints} Points</Card.Text>
                                 </Col>
                                 <Col>
-                                    <Card.Title className="card-rewardname">{this.props.reward.name}</Card.Title>
+                                    <Card.Text className="card-rewardname"><strong>{this.props.reward.name}</strong></Card.Text>
                                 </Col>
 
                             <Button type="button"
