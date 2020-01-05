@@ -151,7 +151,7 @@ class PointList extends Component {
                                                         <Col>
                                                             <Card.Text className="date">
                                                                 {new Date(point.timestamp).getFullYear()}
-                                                                -{new Date(point.timestamp).getMonth()}
+                                                                -{new Date(point.timestamp).getMonth()+1}
                                                                 -{new Date(point.timestamp).getDate()}
                                                             </Card.Text>
                                                         </Col>
