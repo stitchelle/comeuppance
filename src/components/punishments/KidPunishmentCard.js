@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardGroup } from 'react-bootstrap'
+import { Button, Card, ListGroup } from 'react-bootstrap'
 import HistoryManager from "../../modules/HistoryManager"
 
 let picked = {}
@@ -29,20 +29,20 @@ class KidPunishmentCard extends Component {
             JSON.parse(sessionStorage.getItem("credentials"))
         console.log("picked", credentials.id)
         // evt.preventDefault();
-            this.setState({ loadingStatus: true });
-            const history = {
-                userId: credentials.id,
-                pointId: picked.pointId,
-                comeuppanceId: picked.id,
-                completed: null,
-                timestamp: new Date().toISOString()
+        this.setState({ loadingStatus: true });
+        const history = {
+            userId: credentials.id,
+            pointId: picked.pointId,
+            comeuppanceId: picked.id,
+            completed: null,
+            timestamp: new Date().toISOString()
 
-            };
-            // Create the history and redirect user to ristory list
-            HistoryManager.post(history)
-            // .then(() => this.props.history.push("/history"));
-        }
-    
+        };
+        // Create the history and redirect user to ristory list
+        HistoryManager.post(history)
+        // .then(() => this.props.history.push("/history"));
+    }
+
     pickRandomPunishment = () => {
         let randomValue = this.props.punishments[Math.floor(Math.random() * this.props.punishments.length)];
         alert(`YOU GOT: ${randomValue.name}`)
@@ -57,25 +57,26 @@ class KidPunishmentCard extends Component {
 
         return (
             <>
-                <CardGroup>
-                    <Card>
-                        <Card.Header as="h5">{this.props.point.numberOfPoints} Points</Card.Header>
-                        <Card.Body>
-                            <Card.Title>
-                                {
-                                    this.props.punishments.map(punishment =>
-                                        <Card>
-                                            <Card.Body>
-                                                <h5>{punishment.name}</h5>
-                                            </Card.Body>
-                                        </Card>
-                                    )
-                                }
-                            </Card.Title>
-                            <Button variant="dark" onClick={() => {this.pickRandomPunishment()}}>Redeem</Button>
-                        </Card.Body>
-                    </Card>
-                </CardGroup>
+                <Card>
+                    <Card.Header as="h5">{this.props.point.numberOfPoints} Points</Card.Header>
+                    <ListGroup>
+                        {
+                            this.props.punishments.map(punishment =>
+                                <ListGroup.Item>
+                                    {punishment.name}
+                                </ListGroup.Item>
+                            )
+                        }
+                    </ListGroup>
+                    <Button
+                        variant="dark"
+                        size="sm"
+                        onClick={() => {
+                            this.pickRandomPunishment()
+                        }}>
+                        Redeem
+                    </Button>
+                </Card>
             </>
         )
     }

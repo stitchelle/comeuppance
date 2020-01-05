@@ -66,7 +66,7 @@ class KidPointCard extends Component {
                 <Button
                     type="button"
                     variant="dark"
-                    size="lg"
+                    size="md"
                     block
                     ariant="outline-secondary"
                     onClick={() => {

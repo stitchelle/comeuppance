@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardGroup } from 'react-bootstrap'
+import { Button, Card, ListGroup } from 'react-bootstrap'
 import HistoryManager from "../../modules/HistoryManager"
 
 let picked = {}
@@ -28,27 +28,27 @@ class KidRewardCard extends Component {
             JSON.parse(sessionStorage.getItem("credentials"))
         console.log("picked", credentials.id)
         // evt.preventDefault();
-            this.setState({ loadingStatus: true });
-            const history = {
-                userId: credentials.id,
-                pointId: picked.pointId,
-                comeuppanceId: picked.id,
-                completed: null,
-                timestamp: new Date().toISOString()
+        this.setState({ loadingStatus: true });
+        const history = {
+            userId: credentials.id,
+            pointId: picked.pointId,
+            comeuppanceId: picked.id,
+            completed: null,
+            timestamp: new Date().toISOString()
 
-            };
-            // Create the history and redirect user to ristory list
-            HistoryManager.post(history)
-            // .then(() => this.props.history.push("/history"));
-        }
-    
+        };
+        // Create the history and redirect user to ristory list
+        HistoryManager.post(history)
+        // .then(() => this.props.history.push("/history"));
+    }
+
 
 
     pickRandomReward = () => {
         let randomValue = this.props.rewards[Math.floor(Math.random() * this.props.rewards.length)];
         alert(`YOU GOT: ${randomValue.name}`)
         picked = randomValue
-        this.constructNewHistory() 
+        this.constructNewHistory()
     }
 
     render() {
@@ -57,30 +57,26 @@ class KidRewardCard extends Component {
 
         return (
             <>
-                <CardGroup>
-                    <Card>
-                        <Card.Header as="h5">{this.props.point.numberOfPoints} Points</Card.Header>
-                        <Card.Body>
-                            <Card.Title>
-                                {
-                                    this.props.rewards.map(reward =>
-                                        <Card>
-                                            <Card.Body>
-                                                <h5>{reward.name}</h5>
-                                            </Card.Body>
-                                        </Card>
-                                    )
-                                }
-                            </Card.Title>
-                            <Button variant="dark" onClick={
-                                () => {
-
-                                this.pickRandomReward()
-
-                                }}>Redeem</Button>
-                        </Card.Body>
-                    </Card>
-                </CardGroup>
+                <Card>
+                    <Card.Header as="h5">{this.props.point.numberOfPoints} Points</Card.Header>
+                    <ListGroup>
+                        {
+                            this.props.rewards.map(reward =>
+                                <ListGroup.Item>
+                                    {reward.name}
+                                </ListGroup.Item>
+                            )
+                        }
+                    </ListGroup>
+                    <Button
+                        variant="dark"
+                        size="sm"
+                        onClick={() => {
+                            this.pickRandomReward()
+                        }}>
+                        Redeem
+                    </Button>
+                </Card>
             </>
         )
     }

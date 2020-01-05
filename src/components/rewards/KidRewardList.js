@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import KidRewardCard from './KidRewardCard'
 import PointManager from '../../modules/PointManager'
 import RewardManager from "../../modules/RewardManager"
+import { Card } from 'react-bootstrap'
 
 class KidRewardList extends Component {
     //define what this component needs to render
@@ -35,7 +36,7 @@ class KidRewardList extends Component {
             })
     }
 
-    
+
 
 
 
@@ -44,13 +45,13 @@ class KidRewardList extends Component {
 
         return (
             <>
-                <div className="container-cards">
-                    <h3>Rewards</h3>
+                <Card style={{backgroundColor: "#ccdefa"}}>
+                    <Card.Header><center><h3>Rewards</h3></center></Card.Header>
                     {
                         this.state.points.map((point, index) => <KidRewardCard key={point.id} point={point} rewards={this.state.rewards[index]} />
                         )
                     }
-                </div>
+                </Card>
             </>
         )
     }
