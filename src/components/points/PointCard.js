@@ -55,7 +55,7 @@ class PointCard extends Component {
         console.log("points", this.state.previousMonthsPoints)
         return (
             <>
-                <Card.Header className="text-center"><h1>TOTAL POINTS</h1></Card.Header>
+                <Card.Header className="text-center"><h3>TOTAL POINTS</h3></Card.Header>
                     <Row>
                         <Col className="text-center">
                             <Card.Body>
