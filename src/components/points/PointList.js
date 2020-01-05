@@ -87,51 +87,47 @@ class PointList extends Component {
 
     render() {
         console.log("hi", "onClick")
-        if (this.isParent()!== false) {
+        if (this.isParent() ) {
             return (
                 <>
-                <CardGroup>
                     <PointCard />
-                    <Card.Body>
-                    <Form>
-                        <fieldset>
-                            <center><h2>ADD POINTS</h2></center>
-                            <Form.Row>
-                                <Col className="alignLeft">
-                                    <picture hover="Add Positive Points">
-                                        <img src={require('./plus add.png')} alt="add button" height="45em" id="positive" onClick={this.constructNewPositivePointReason} />
-                                    </picture>
-                                </Col>
-                                <Col className="alignCenter">
+                        <Form>
+                            <fieldset>
+                                <center><h2>ADD POINTS</h2></center>
+                                <Form.Row>
+                                    <Col className="alignLeft">
+                                        <picture hover="Add Positive Points">
+                                            <img src={require('./plus add.png')} alt="add button" height="45em" id="positive" onClick={this.constructNewPositivePointReason} />
+                                        </picture>
+                                    </Col>
+                                    <Col className="alignCenter">
 
-                                    <Form.Control
-                                        type="text"
-                                        required
-                                        onChange={this.handleFieldChange}
-                                        id="reason" placeholder="Reason" />
-                                    <Form.Text className="text-muted">Enter Reason For Points</Form.Text>
-                                </Col>
-                                <Col className="alignRight">
-                                    <picture>
-                                        <img src={require('./remove_circle-24px.svg')} alt="add button" height="50em" id="negative" onClick={this.constructNewNegativePointReason} />
-                                    </picture>
-                                </Col>
-                            </Form.Row>
-                            <Form.Group controlId="numberOfPoints">
-                                <Form.Control as="select" onChange={this.handleFieldChange}>
-                                    <option >Choose Points</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </Form.Control>
-                                <Form.Text className="text-muted">Select Number of Points</Form.Text>
-                            </Form.Group>
-                        </fieldset>
-                    </Form>
-                    </Card.Body>
-                    </CardGroup>
+                                        <Form.Control
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="reason" placeholder="Reason" />
+                                        <Form.Text className="text-muted">Enter Reason For Points</Form.Text>
+                                    </Col>
+                                    <Col className="alignRight">
+                                        <picture>
+                                            <img src={require('./remove_circle-24px.svg')} alt="add button" height="50em" id="negative" onClick={this.constructNewNegativePointReason} />
+                                        </picture>
+                                    </Col>
+                                </Form.Row>
+                                <Form.Group controlId="numberOfPoints">
+                                    <Form.Control as="select" onChange={this.handleFieldChange}>
+                                        <option >Choose Points</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </Form.Control>
+                                    <Form.Text className="text-muted">Select Number of Points</Form.Text>
+                                </Form.Group>
+                            </fieldset>
+                        </Form>
                     <CardGroup>
                         <Card className="text-center">
                             <Card.Header className="pointHistory"><h3>Point History</h3></Card.Header>
@@ -181,7 +177,7 @@ class PointList extends Component {
                     <KidPointCard />
                     <CardGroup>
                         <Card className="text-center">
-                            <Card.Header as="h5" className="kidName">Point History</Card.Header>
+                            <Card.Header as="h3">Point History</Card.Header>
                             <Card.Body>
                                 {
                                     this.state.pointsHistory.map(point => {

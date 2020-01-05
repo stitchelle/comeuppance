@@ -47,34 +47,32 @@ class KidPointCard extends Component {
     render() {
         return (
             <>
-                <Card.Header as="h1" className="text-center">Points</Card.Header>
-                <Card className="text-center">
-                    <Row>
-                        <Col>
-                            <Card.Body>
-                                <Card.Title className="previousMonthsPoints">Previous Month</Card.Title>
-                                <Card.Text>{this.totalPoints(this.state.previousMonthsPoints)}</Card.Text>
-                            </Card.Body>
-                        </Col>
-                        <Col>
-                            <Card.Body>
-                                <Card.Title className="currentMonthsPoints">Current Month </Card.Title>
-                                <Card.Text>{this.totalPoints(this.state.currentMonthsPoints)}</Card.Text>
-                            </Card.Body>
-                        </Col>
-                    </Row>
-                </Card>
-                <ButtonGroup className="redeemButton" >
-                    <Button
-                        type="button"
-                        variant="dark"
-                        ariant="outline-secondary"
-                        size="lg"
-                        onClick={() => {
-                            //   this.props.history.push(`/`)
-                        }}
-                    >Redeem Points</Button>
-                </ButtonGroup>
+                <Card.Header as="h3" className="text-center">TOTAL POINTS</Card.Header>
+
+                <Row>
+                    <Col className="text-center">
+                        <Card.Body>
+                            <Card.Title className="previousMonthsPoints">Previous Month</Card.Title>
+                            <Card.Text>{this.totalPoints(this.state.previousMonthsPoints)}</Card.Text>
+                        </Card.Body>
+                    </Col>
+                    <Col className="text-center">
+                        <Card.Body>
+                            <Card.Title className="currentMonthsPoints">Current Month </Card.Title>
+                            <Card.Text>{this.totalPoints(this.state.currentMonthsPoints)}</Card.Text>
+                        </Card.Body>
+                    </Col>
+                </Row>
+                <Button
+                    type="button"
+                    variant="dark"
+                    size="lg"
+                    block
+                    ariant="outline-secondary"
+                    onClick={() => {
+                        //   this.props.history.push(`/`)
+                    }}
+                >Redeem Points</Button>
             </>
         );
     }
