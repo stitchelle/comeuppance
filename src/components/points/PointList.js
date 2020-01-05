@@ -4,6 +4,7 @@ import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import PointCard from "./PointCard"
 import KidPointCard from './KidPointCard';
 import "./Point.css"
+import Helper from "../Helper"
 
 
 class PointList extends Component {
@@ -16,8 +17,22 @@ class PointList extends Component {
         loadingStatus: false,
     };
     // for PointsHistory
+    credentials =
+        JSON.parse(sessionStorage.getItem("credentials"))
+        
+    kidCredentials = () => {
+        if (Helper.isParent(sessionStorage)) {
+            console.log("parent")
+            return (sessionStorage.getItem("kidCredentials"))
+        } else {
+            console.log("notparent")
+            return (this.credentials.id)
+        }
+    }
+
     componentDidMount() {
-        PointsHistoryManager.getAll()
+        console.log("POINT HISTORY LIST: ComponentDidMount", this.kidCredentials());
+        PointsHistoryManager.getAllForUser(this.kidCredentials())
             .then((pointsHistory) => {
                 this.setState({
                     pointsHistory: pointsHistory
@@ -67,16 +82,6 @@ class PointList extends Component {
         }
     };
 
-    isParent = () => {
-        if (this.props.user === true) {
-            let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-            console.log("RewardList: Render", Parent.isParent);
-            return (
-                Parent.isParent
-            )
-        }
-    }
-
     pointCard = (point) => {
         if (point < 0) {
             return "pointCardNegative"
@@ -87,7 +92,7 @@ class PointList extends Component {
 
     render() {
         console.log("hi", "onClick")
-        if (this.isParent() ) {
+        if (Helper.isParent(sessionStorage) ) {
             return (
                 <>
                     <PointCard />
@@ -198,7 +203,7 @@ class PointList extends Component {
                                                         <Col>
                                                             <Card.Text className="date">
                                                                 {new Date(point.timestamp).getFullYear()}
-                                                                -{new Date(point.timestamp).getMonth()}
+                                                                -{new Date(point.timestamp).getMonth()+1}
                                                                 -{new Date(point.timestamp).getDate()}
                                                             </Card.Text>
                                                         </Col>

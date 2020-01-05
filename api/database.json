@@ -240,6 +240,13 @@
       "reason": "cleaned room",
       "timestamp": "2020-01-05T21:16:01.314Z",
       "id": 7
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 1,
+      "reason": "fff",
+      "timestamp": "2020-01-05T23:09:20.686Z",
+      "id": 8
     }
   ]
 }
