@@ -13,7 +13,7 @@ class PunishmentCard extends Component {
                                     <Card.Text className="card-punishmentpoints">{this.props.punishment.point.numberOfPoints} Points</Card.Text>
                                 </Col>
                                 <Col>
-                                    <Card.Title className="card-punishmentname">{this.props.punishment.name}</Card.Title>
+                                    <Card.Text className="card-punishmentname"><strong>{this.props.punishment.name}</strong></Card.Text>
                                 </Col>
 
 
