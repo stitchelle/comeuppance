@@ -10,6 +10,13 @@ class HistoryCard extends Component {
             return "historyCardPositive"
         }
     }
+
+    handleBoxChange = evt => {
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange);
+        console.log(stateToChange)
+    };
     render() {
         console.log(this.props.history.comeuppance.id)
         return (
@@ -38,8 +45,10 @@ class HistoryCard extends Component {
                             </Card.Text>
                         </Col>
                         <Col>
-                            <InputGroup.Prepend key={(this.props.history.comeuppance.id)}>
-                                <InputGroup.Checkbox aria-label="checkbox" />
+                            <InputGroup.Prepend>
+                                <InputGroup.Checkbox 
+                                    aria-label="checkbo"key={(this.props.history.comeuppance.id)}
+                                    onChange={this.handleBoxChange}/>
                             </InputGroup.Prepend>
                         </Col>
                     </Row>
