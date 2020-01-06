@@ -33,6 +33,22 @@ class HistoryList extends Component {
             })
     }
 
+    // updateCheckBox = evt => {
+    //     evt.preventDefault()
+    //     this.setState({ loadingStatus: true });
+    //     const editedCheckBox = {
+    //         userId: credentials.id,
+    //         pointId: picked.pointId,
+    //         comeuppanceId: picked.id,
+    //         completed: evt.target.checked,
+    //         timestamp: new Date().toISOString()
+    //     };
+    //     HistoryManager.update(editedCheckBox)
+    //         .then(() => this.props.history.push("/punishments"))
+
+    //     }
+    // }
+
     render() {
         console.log("HISTORY LIST: Render", this.state.history);
 
@@ -41,7 +57,7 @@ class HistoryList extends Component {
                 <Card className="container-cards">
                     <Card.Header><center><h1>History</h1><h5>Rewards & Punishments</h5></center></Card.Header>
                     <Card.Body>
-                        {this.state.history.map(history => <HistoryCard key={history.id} history={history} />)}
+                        {this.state.history.map(history => <HistoryCard key={history.id} historyCard={history} {...this.props}/>)}
                     </Card.Body>
                 </Card>
             </>

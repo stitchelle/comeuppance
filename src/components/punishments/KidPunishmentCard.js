@@ -34,7 +34,7 @@ class KidPunishmentCard extends Component {
             userId: credentials.id,
             pointId: picked.pointId,
             comeuppanceId: picked.id,
-            completed: null,
+            completed: false,
             timestamp: new Date().toISOString()
 
         };
