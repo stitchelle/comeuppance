@@ -13,12 +13,14 @@ class HistoryCard extends Component {
 
     handleBoxChange = evt => {
         const stateToChange = {};
-        stateToChange[evt.target.id] = evt.target.value;
+        stateToChange[evt.target.id] = evt.target.checked;
         this.setState(stateToChange);
-        console.log(stateToChange)
+        console.log(evt.target.id);
+        console.log("hi",stateToChange)
+    
     };
     render() {
-        console.log(this.props.history.comeuppance.id)
+        console.log(this.props.history.id)
         return (
             <Card>
                 <Card.Body className={this.historyCard(this.props.history.comeuppance.comeuppanceType)}>
@@ -47,7 +49,7 @@ class HistoryCard extends Component {
                         <Col>
                             <InputGroup.Prepend>
                                 <InputGroup.Checkbox 
-                                    aria-label="checkbo"key={(this.props.history.comeuppance.id)}
+                                    aria-label="checkbox"id={(this.props.history.id)} key={(this.props.history.id)}
                                     onChange={this.handleBoxChange}/>
                             </InputGroup.Prepend>
                         </Col>
