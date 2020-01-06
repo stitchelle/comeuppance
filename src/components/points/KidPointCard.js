@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button, Col, Row } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import PointsHistoryManager from "../../modules/PointsHistoryManager"
 import Helper from '../Helper'
 

@@ -1,11 +1,44 @@
+.Background{
+    background-image: url("./Untitled3.png");
+    min-width: 100%;
+    min-height: 93%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: .625;
+}
+
 .HomeLogoContainer {
     display: flex;
     justify-items: center;
     align-items: center;
-    margin-top: 5%;
-    margin-left: 35%;
+    margin-top: 3%;
+    margin-left: 20%;
 }
+
+.HomeLogoContainer2 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .KumaLogo{
-    width: 50%;
-    opacity: .5; 
+    z-index: 1;
+    width: 75%;
+    opacity: .8; 
 }
+
+.Header{
+    opacity: 1;
+    z-index: 1;
+}
+
+.Title{
+    font-size: 50px;
+    color: black;
+}
+
+
+

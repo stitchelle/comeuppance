@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
 import { Nav, NavDropdown } from "react-bootstrap"
-import Helper from '../Helper'
 
 
 

@@ -9,32 +9,36 @@ class Home extends Component {
     if (sessionStorage.getItem("kidCredentials") !== null || Helper.isParent(sessionStorage) !== true) {
       return (
         <>
-          <Card.Header>
+          <div className="Background"></div>
+          <div className="HomeLogoContainer2">
             <center>
-              <h1>COMEUPPANCE</h1>
+              <h1 className="Title">COMEUPPANCE</h1>
+              <div className="HomeLogoContainer">
+                <img className="KumaLogo" src={Logo} alt="ComeuppanceLogo"></img>
+              </div>
             </center>
-          </Card.Header>
-          <Card.Body>
-            <div className="HomeLogoContainer">
-              <img className="KumaLogo" src={Logo}></img>
-            </div>
-          </Card.Body>
+          </div>
         </>
       )
     } else {
       return (
         <>
-          <Card.Header>
-            <center><h1>COMEUPPANCE</h1></center>
-          </Card.Header>
-          <Card.Body>
+          {/* <Card.Header> */}
+          <div className="Background"></div>
+          <div className="HomeLogoContainer2">
             <center>
-              <h5>Please Pick Child in Navigation Dropdown</h5>
-              <div className="HomeLogoContainer">
-                <img className="KumaLogo" src={Logo}></img>
-              </div>
-            </center>
-          </Card.Body>
+              <h1 className="Title">COMEUPPANCE</h1>
+            
+          {/* </Card.Header> */}
+          {/* <Card.Body> */}
+          
+            <h5>Please Pick Child in Navigation Dropdown</h5>
+            <div className="HomeLogoContainer">
+              <img className="KumaLogo" src={Logo} alt="ComeuppanceLogo"></img>
+            </div>
+          </center>
+        </div>
+          {/* </Card.Body> */ }
         </>
       )
     }

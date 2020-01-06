@@ -195,6 +195,14 @@
       "completed": null,
       "timestamp": "2020-01-06T14:54:04.417Z",
       "id": 9
+    },
+    {
+      "userId": 2,
+      "pointId": 4,
+      "comeuppanceId": 4,
+      "completed": null,
+      "timestamp": "2020-01-06T17:51:17.544Z",
+      "id": 10
     }
   ],
   "points": [
