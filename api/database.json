@@ -23,6 +23,22 @@
       "isParent": false,
       "points": 0,
       "id": 3
+    },
+    {
+      "username": "Hello",
+      "email": "hello@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": 0,
+      "id": 4
+    },
+    {
+      "username": "Hi",
+      "email": "hi@gmail.com",
+      "password": "123",
+      "isParent": false,
+      "points": 0,
+      "id": 5
     }
   ],
   "Relationships": [
@@ -35,6 +51,16 @@
       "parentId": 1,
       "userId": 3,
       "id": 2
+    },
+    {
+      "parentId": 1,
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "parentId": 1,
+      "userId": 5,
+      "id": 4
     }
   ],
   "comeuppanceType": [],
@@ -129,30 +155,162 @@
       "name": "Paint the fence",
       "comeuppanceType": 2,
       "id": 17
+    },
+    {
+      "userId": 4,
+      "pointId": 1,
+      "name": "1",
+      "comeuppanceType": 1,
+      "id": 18
+    },
+    {
+      "userId": 4,
+      "pointId": 1,
+      "name": "2",
+      "comeuppanceType": 1,
+      "id": 19
+    },
+    {
+      "userId": 4,
+      "pointId": 1,
+      "name": "3",
+      "comeuppanceType": 1,
+      "id": 20
+    },
+    {
+      "userId": 4,
+      "pointId": 2,
+      "name": "1",
+      "comeuppanceType": 1,
+      "id": 21
+    },
+    {
+      "userId": 4,
+      "pointId": 2,
+      "name": "2",
+      "comeuppanceType": 1,
+      "id": 22
+    },
+    {
+      "userId": 4,
+      "pointId": 2,
+      "name": "3",
+      "comeuppanceType": 1,
+      "id": 23
+    },
+    {
+      "userId": 4,
+      "pointId": 3,
+      "name": "1",
+      "comeuppanceType": 1,
+      "id": 24
+    },
+    {
+      "userId": 4,
+      "pointId": 3,
+      "name": "2",
+      "comeuppanceType": 1,
+      "id": 25
+    },
+    {
+      "userId": 4,
+      "pointId": 3,
+      "name": "3",
+      "comeuppanceType": 1,
+      "id": 26
+    },
+    {
+      "userId": 4,
+      "pointId": 4,
+      "name": "1",
+      "comeuppanceType": 1,
+      "id": 27
+    },
+    {
+      "userId": 4,
+      "pointId": 4,
+      "name": "2",
+      "comeuppanceType": 1,
+      "id": 28
+    },
+    {
+      "userId": 4,
+      "pointId": 4,
+      "name": "3",
+      "comeuppanceType": 1,
+      "id": 29
+    },
+    {
+      "userId": 4,
+      "pointId": 1,
+      "name": "1",
+      "comeuppanceType": 2,
+      "id": 30
+    },
+    {
+      "userId": 4,
+      "pointId": 2,
+      "name": "1",
+      "comeuppanceType": 2,
+      "id": 31
+    },
+    {
+      "userId": 4,
+      "pointId": 3,
+      "name": "1",
+      "comeuppanceType": 2,
+      "id": 32
+    },
+    {
+      "userId": 4,
+      "pointId": 4,
+      "name": "1",
+      "comeuppanceType": 2,
+      "id": 33
+    },
+    {
+      "userId": 4,
+      "pointId": 1,
+      "name": "2",
+      "comeuppanceType": 2,
+      "id": 34
+    },
+    {
+      "userId": 4,
+      "pointId": 2,
+      "name": "2",
+      "comeuppanceType": 2,
+      "id": 35
+    },
+    {
+      "userId": 4,
+      "pointId": 3,
+      "name": "2",
+      "comeuppanceType": 2,
+      "id": 36
+    },
+    {
+      "userId": 4,
+      "pointId": 4,
+      "name": "2",
+      "comeuppanceType": 2,
+      "id": 37
     }
   ],
   "history": [
     {
       "userId": 2,
-      "pointId": 3,
-      "comeuppanceId": 2,
-      "completed": null,
-      "timestamp": "2019-12-22T01:29:16.911Z",
-      "id": 1
-    },
-    {
-      "userId": 2,
       "pointId": 1,
-      "comeuppanceId": 13,
-      "completed": null,
+      "comeuppanceId": 3,
+      "completed": true,
       "timestamp": "2019-12-22T01:30:08.409Z",
       "id": 3
     },
     {
       "userId": 2,
       "pointId": 4,
-      "comeuppanceId": 10,
-      "completed": null,
+      "comeuppanceId": 4,
+      "completed": true,
       "timestamp": "2019-12-22T01:30:11.255Z",
       "id": 4
     },
@@ -160,7 +318,7 @@
       "userId": 2,
       "pointId": 2,
       "comeuppanceId": 6,
-      "completed": null,
+      "completed": false,
       "timestamp": "2019-12-22T01:30:19.231Z",
       "id": 5
     },
@@ -168,7 +326,7 @@
       "userId": 2,
       "pointId": 3,
       "comeuppanceId": 9,
-      "completed": null,
+      "completed": false,
       "timestamp": "2019-12-22T01:30:22.588Z",
       "id": 6
     },
@@ -176,7 +334,7 @@
       "userId": 2,
       "pointId": 4,
       "comeuppanceId": 8,
-      "completed": null,
+      "completed": false,
       "timestamp": "2020-01-05T21:29:05.752Z",
       "id": 7
     },
@@ -184,7 +342,7 @@
       "userId": 2,
       "pointId": 3,
       "comeuppanceId": 14,
-      "completed": null,
+      "completed": false,
       "timestamp": "2020-01-06T14:53:56.576Z",
       "id": 8
     },
@@ -192,7 +350,7 @@
       "userId": 2,
       "pointId": 1,
       "comeuppanceId": 13,
-      "completed": null,
+      "completed": false,
       "timestamp": "2020-01-06T14:54:04.417Z",
       "id": 9
     },
@@ -200,9 +358,41 @@
       "userId": 2,
       "pointId": 4,
       "comeuppanceId": 4,
-      "completed": null,
+      "completed": false,
       "timestamp": "2020-01-06T17:51:17.544Z",
       "id": 10
+    },
+    {
+      "userId": 4,
+      "pointId": 1,
+      "comeuppanceId": 19,
+      "completed": false,
+      "timestamp": "2020-01-06T21:29:41.632Z",
+      "id": 11
+    },
+    {
+      "userId": 4,
+      "pointId": 2,
+      "comeuppanceId": 22,
+      "completed": false,
+      "timestamp": "2020-01-06T21:29:44.275Z",
+      "id": 12
+    },
+    {
+      "userId": 4,
+      "pointId": 3,
+      "comeuppanceId": 26,
+      "completed": false,
+      "timestamp": "2020-01-06T21:29:47.338Z",
+      "id": 13
+    },
+    {
+      "userId": 4,
+      "pointId": 4,
+      "comeuppanceId": 29,
+      "completed": false,
+      "timestamp": "2020-01-06T21:29:50.307Z",
+      "id": 14
     }
   ],
   "points": [
@@ -363,6 +553,34 @@
       "reason": "Emptied dishwasher",
       "timestamp": "2020-01-06T15:18:11.094Z",
       "id": 20
+    },
+    {
+      "userId": 4,
+      "numberOfPoints": 1,
+      "reason": "1",
+      "timestamp": "2020-01-06T21:28:28.755Z",
+      "id": 21
+    },
+    {
+      "userId": 4,
+      "numberOfPoints": 1,
+      "reason": "2",
+      "timestamp": "2020-01-06T21:28:32.826Z",
+      "id": 22
+    },
+    {
+      "userId": 4,
+      "numberOfPoints": -1,
+      "reason": "1",
+      "timestamp": "2020-01-06T21:28:38.279Z",
+      "id": 23
+    },
+    {
+      "userId": 4,
+      "numberOfPoints": -1,
+      "reason": "2",
+      "timestamp": "2020-01-06T21:28:43.882Z",
+      "id": 24
     }
   ]
 }

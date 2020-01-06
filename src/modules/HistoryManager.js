@@ -15,5 +15,14 @@ export default {
         },
         body: JSON.stringify(newHistory)
     }).then(data => data.json())
+},
+update(completedChecked,id) {
+    return fetch(`${remoteURL}/history/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(completedChecked)
+    }).then(data => data.json());
 }
 }

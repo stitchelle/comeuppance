@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Card, InputGroup, Col, Row } from "react-bootstrap"
 import "./History.css"
+import HistoryManager from '../../modules/HistoryManager'
 
 class HistoryCard extends Component {
     historyCard = (comeuppance) => {
+        console.log("type?", comeuppance)
         if (comeuppance === 2) {
             return "historyCardNegative"
         } else {
@@ -12,44 +14,54 @@ class HistoryCard extends Component {
     }
 
     handleBoxChange = evt => {
-        const stateToChange = {};
-        stateToChange[evt.target.id] = evt.target.checked;
-        this.setState(stateToChange);
-        console.log(evt.target.id);
-        console.log("hi",stateToChange)
+        const editedCheckBox = {
+            userId: this.props.historyCard.userId,
+            pointId: this.props.historyCard.pointId,
+            comeuppanceId: this.props.historyCard.id,
+            completed: evt.target.checked,
+            timestamp: this.props.historyCard.timestamp
+        };
+        HistoryManager.update(editedCheckBox,this.props.historyCard.id)
+            .then(() => this.props.history.push("/history"))
+
+    
+        // const stateToChange = {};
+        // stateToChange[evt.target.id] = evt.target.checked;
+        // this.setState(stateToChange);
+
     
     };
     render() {
-        console.log(this.props.history.id)
+        console.log(this.props.historyCard.id)
         return (
             <Card>
-                <Card.Body className={this.historyCard(this.props.history.comeuppance.comeuppanceType)}>
+                <Card.Body className={this.historyCard(this.props.historyCard.comeuppance.comeuppanceType)}>
                     <Row>
-                        {(this.props.history.comeuppance.comeuppanceType === 1) ?
+                        {(this.props.historyCard.comeuppance.comeuppanceType === 1) ?
                             <>
                                 <Col>
-                                    <Card.Text>{this.props.history.point.numberOfPoints} Points</Card.Text>
+                                    <Card.Text>{this.props.historyCard.point.numberOfPoints} Points</Card.Text>
                                 </Col>
                             </> :
                             <Col>
-                                <Card.Subtitle> - {this.props.history.point.numberOfPoints} Points</Card.Subtitle>
+                                <Card.Subtitle> - {this.props.historyCard.point.numberOfPoints} Points</Card.Subtitle>
                             </Col>
                         }
                         <Col>
                             <Card.Title>
-                                {this.props.history.comeuppance.name}
+                                {this.props.historyCard.comeuppance.name}
                             </Card.Title>
                         </Col>
                         <Col>
                             <Card.Text>
-                                Date: {new Date(this.props.history.timestamp).getFullYear()}-
-                          {new Date(this.props.history.timestamp).getMonth()+1}-{new Date(this.props.history.timestamp).getDate()}
+                                Date: {new Date(this.props.historyCard.timestamp).getFullYear()}-
+                          {new Date(this.props.historyCard.timestamp).getMonth()+1}-{new Date(this.props.historyCard.timestamp).getDate()}
                             </Card.Text>
                         </Col>
                         <Col>
                             <InputGroup.Prepend>
                                 <InputGroup.Checkbox 
-                                    aria-label="checkbox"id={(this.props.history.id)} key={(this.props.history.id)}
+                                    aria-label="checkbox"id={(this.props.historyCard.id)} key={(this.props.historyCard.id)}
                                     onChange={this.handleBoxChange}/>
                             </InputGroup.Prepend>
                         </Col>
