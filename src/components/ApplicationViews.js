@@ -14,18 +14,12 @@ import PunishmentForm from "./punishments/PunishmentForm";
 import PunishmentEditForm from "./punishments/PunishmentEditForm";
 import PointList from "./points/PointList"
 import HistoryList from "./history/HistoryList"
+import Helper from "./Helper"
 
 
 
 
 export default class ApplicationViews extends Component {
-    isParent = () => {
-        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-        console.log("RewardList: Render", Parent.isParent);
-        return (
-            Parent.isParent
-        )
-    }
     render() {
         return (
             <React.Fragment>
@@ -71,7 +65,7 @@ export default class ApplicationViews extends Component {
 
                 <Route exact path="/rewards" render={(props) => {
                     let kid = sessionStorage.getItem("kidCredentials")
-                    if (kid !== null || this.isParent() !== true) {
+                    if (kid !== null || Helper.isParent(sessionStorage) !== true) {
                         return <RewardList kidId={this.props.kidId} {...props} />
                     } else {
                         return <Redirect to="/" />
@@ -91,7 +85,7 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/punishments" render={(props) => {
                     console.log(sessionStorage.getItem("kidCredentials"))
 
-                    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
+                    if (sessionStorage.getItem("kidCredentials") !== null || Helper.isParent(sessionStorage) !== true) {
                         return <PunishmentList kidId={this.props.kidId} {...props} />
                     } else {
                         return <Redirect to="/" />
@@ -109,7 +103,7 @@ export default class ApplicationViews extends Component {
                 />
 
                 <Route path="/points" render={(props) => {
-                    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
+                    if (sessionStorage.getItem("kidCredentials") !== null || Helper.isParent(sessionStorage) !== true) {
                         return <PointList {...props} {...this.props}/>
                     } else {
                         return <Redirect to="/" />
@@ -117,7 +111,7 @@ export default class ApplicationViews extends Component {
                 }} />
 
                 <Route path="/history" render={(props) => {
-                    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true){
+                    if (sessionStorage.getItem("kidCredentials") !== null || Helper.isParent(sessionStorage) !== true){
                         return <HistoryList {...props} {...this.props}/>
                     }else {
                         return <Redirect to="/" />

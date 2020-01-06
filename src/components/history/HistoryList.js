@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap"
 //import the components we will need
 import HistoryCard from './HistoryCard'
 import HistoryManager from '../../modules/HistoryManager'
+import Helper from "../Helper"
 
 class HistoryList extends Component {
     //define what this component needs to render
@@ -10,19 +11,11 @@ class HistoryList extends Component {
         history: [],
     }
 
-    isParent = () => {
-        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-        console.log("RewardList: Render", Parent.isParent);
-        return (
-            Parent.isParent
-        )
-    }
-
     credentials =
         JSON.parse(sessionStorage.getItem("credentials"))
 
     kidCredentials = () => {
-        if (this.isParent()) {
+        if (Helper.isParent(sessionStorage)) {
             return (sessionStorage.getItem("kidCredentials"))
         } else {
             return (this.credentials.id)

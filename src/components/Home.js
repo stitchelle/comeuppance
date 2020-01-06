@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap'
+import Helper from './Helper'
 
 class Home extends Component {
-  isParent = () => {
-    let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-    return (
-      Parent.isParent
-    )
-  }
   render() {
-    if (sessionStorage.getItem("kidCredentials") !== null || this.isParent() !== true) {
+    if (sessionStorage.getItem("kidCredentials") !== null || Helper.isParent(sessionStorage) !== true) {
       return (
         <Card.Header>
           <center><h1>COMEUPPANCE</h1></center>

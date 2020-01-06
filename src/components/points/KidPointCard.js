@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button, Col, Row } from 'react-bootstrap'
 import PointsHistoryManager from "../../modules/PointsHistoryManager"
+import Helper from '../Helper'
 
 
 class KidPointCard extends Component {
@@ -11,16 +12,8 @@ class KidPointCard extends Component {
         loadingStatus: false
     };
 
-    isParent = () => {
-        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-        console.log("RewardList: Render", Parent.isParent);
-        return (
-            Parent.isParent
-        )
-    }
-
     componentDidMount() {
-        let userId = this.isParent() ? Number(sessionStorage.getItem("kidCredentials")) : JSON.parse(sessionStorage.getItem("credentials")).id
+        let userId = Helper.isParent(sessionStorage) ? Number(sessionStorage.getItem("kidCredentials")) : JSON.parse(sessionStorage.getItem("credentials")).id
         console.log("user".userId)
 
         Promise.all([
