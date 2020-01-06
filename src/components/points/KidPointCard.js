@@ -56,7 +56,7 @@ class KidPointCard extends Component {
                         </Card.Body>
                     </Col>
                 </Row>
-                <Button
+                {/* <Button
                     type="button"
                     variant="dark"
                     size="md"
@@ -65,7 +65,7 @@ class KidPointCard extends Component {
                     onClick={() => {
                         //   this.props.history.push(`/`)
                     }}
-                >Redeem Points</Button>
+                >Redeem Points</Button> */}
             </>
         );
     }
