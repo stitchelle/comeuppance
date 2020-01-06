@@ -1,0 +1,11 @@
+.HomeLogoContainer {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 35%;
+}
+.KumaLogo{
+    width: 50%;
+    opacity: .5; 
+}
