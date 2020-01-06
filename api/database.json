@@ -108,6 +108,20 @@
       "name": "Mow the lawn",
       "comeuppanceType": 2,
       "id": 14
+    },
+    {
+      "userId": 3,
+      "pointId": 2,
+      "name": "1 hr tv",
+      "comeuppanceType": 1,
+      "id": 15
+    },
+    {
+      "userId": 3,
+      "pointId": 3,
+      "name": "3 days grounded",
+      "comeuppanceType": 2,
+      "id": 16
     }
   ],
   "history": [
@@ -158,6 +172,22 @@
       "completed": null,
       "timestamp": "2020-01-05T21:29:05.752Z",
       "id": 7
+    },
+    {
+      "userId": 2,
+      "pointId": 3,
+      "comeuppanceId": 14,
+      "completed": null,
+      "timestamp": "2020-01-06T14:53:56.576Z",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "pointId": 1,
+      "comeuppanceId": 13,
+      "completed": null,
+      "timestamp": "2020-01-06T14:54:04.417Z",
+      "id": 9
     }
   ],
   "points": [
@@ -234,6 +264,83 @@
       "reason": "fff",
       "timestamp": "2020-01-05T23:09:20.686Z",
       "id": 8
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 3,
+      "reason": "good behavior",
+      "timestamp": "2020-01-06T14:51:20.658Z",
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 3,
+      "reason": "good behavior",
+      "timestamp": "2020-01-06T14:51:29.379Z",
+      "id": 10
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 3,
+      "reason": "good behavior",
+      "timestamp": "2020-01-06T14:51:29.915Z",
+      "id": 11
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 3,
+      "reason": "good behavior",
+      "timestamp": "2020-01-06T14:51:30.432Z",
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 3,
+      "reason": "good behavior",
+      "timestamp": "2020-01-06T14:51:37.005Z",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": 3,
+      "reason": "good behavior",
+      "timestamp": "2020-01-06T14:51:37.567Z",
+      "id": 14
+    },
+    {
+      "userId": 3,
+      "numberOfPoints": -2,
+      "reason": "ohopnopn",
+      "timestamp": "2020-01-06T14:52:13.781Z",
+      "id": 15
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -2,
+      "reason": "attitude",
+      "timestamp": "2020-01-06T14:59:13.231Z",
+      "id": 16
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -2,
+      "reason": "attitude",
+      "timestamp": "2020-01-06T14:59:14.483Z",
+      "id": 17
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": 2,
+      "reason": "put up toys",
+      "timestamp": "2020-01-06T15:02:07.873Z",
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "numberOfPoints": -1,
+      "reason": "left out dirty dishes",
+      "timestamp": "2020-01-06T15:03:25.039Z",
+      "id": 19
     }
   ]
 }
