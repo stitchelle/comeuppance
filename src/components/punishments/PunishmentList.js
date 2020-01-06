@@ -4,6 +4,7 @@ import { Button, Card } from 'react-bootstrap'
 import PunishmentCard from './PunishmentCard'
 import PunishmentManager from '../../modules/PunishmentManager'
 import KidPunishmentList from './KidPunishmentList'
+import Helper from '../Helper'
 
 class PunishmentList extends Component {
     //define what this component needs to render
@@ -34,22 +35,9 @@ class PunishmentList extends Component {
             })
     }
 
-    // pickRandomPunishment = () => {
-    //     let randomValue = this.state.punishments[Math.floor(Math.random() * this.state.punishments.length)];
-    //     alert(`YOU GOT: ${randomValue.name}`)
-    // }
-
-    isParent = () => {
-        let Parent = JSON.parse(sessionStorage.getItem("credentials"))
-        console.log("RewardList: Render", Parent.isParent);
-            return(
-                Parent.isParent
-            )
-    }
-
     render() {
         console.log("PunishmentList: Render");
-        if (this.isParent() !== false) {
+        if (Helper.isParent(sessionStorage) !== false) {
             return (
                 <>
                     <Card style={{backgroundColor: "#fce3ed"}}>

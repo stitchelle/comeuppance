@@ -2,8 +2,7 @@ import React, { Component } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "react-bootstrap/NavBar"
 import { Nav, NavDropdown } from "react-bootstrap"
-// import { Link } from "react-router-dom"
-// import KidManager from "../../modules/KidManager"
+import Helper from '../Helper'
 
 
 
