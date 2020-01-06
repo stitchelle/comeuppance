@@ -11,7 +11,7 @@ class HistoryCard extends Component {
         }
     }
     render() {
-        console.log(this.props.history)
+        console.log(this.props.history.comeuppance.id)
         return (
             <Card>
                 <Card.Body className={this.historyCard(this.props.history.comeuppance.comeuppanceType)}>
@@ -38,7 +38,7 @@ class HistoryCard extends Component {
                             </Card.Text>
                         </Col>
                         <Col>
-                            <InputGroup.Prepend >
+                            <InputGroup.Prepend key={(this.props.history.comeuppance.id)}>
                                 <InputGroup.Checkbox aria-label="checkbox" />
                             </InputGroup.Prepend>
                         </Col>

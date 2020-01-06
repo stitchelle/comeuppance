@@ -23,14 +23,6 @@
       "isParent": false,
       "points": 0,
       "id": 3
-    },
-    {
-      "username": "Eliana",
-      "email": "eli@gmail.com",
-      "password": "123",
-      "isParent": false,
-      "points": 0,
-      "id": 5
     }
   ],
   "Relationships": [
@@ -43,11 +35,6 @@
       "parentId": 1,
       "userId": 3,
       "id": 2
-    },
-    {
-      "parentId": 1,
-      "userId": 5,
-      "id": 4
     }
   ],
   "comeuppanceType": [],
