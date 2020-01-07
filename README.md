@@ -11,7 +11,7 @@ Are you a Parent? Do you want a point system for your children that allows the c
 3. Track behavior trends for individual children by keeping record of previously earned points, rewards, and punishments.
 
 
-# Want to use Comeuppance? Follow the instructions bellow to run the application.
+# Want to use Comeuppance? Follow the instructions below to run the application.
 
 Clone down this repository by clicking the "Clone or Download" button above, copying the SSH key, and running the following command in your terminal git clone SSH KEY GOES HERE.
 
