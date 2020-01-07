@@ -1,8 +1,8 @@
-## Welcome to Comeuppance!
+# Welcome to Comeuppance!
 
 Are you a Parent? Do you want a point system for your children that allows the children to choose rewards or punishments based on their behavior? Well Comeuppance can help with that.
 
-# What does Comeuppance solve?
+## What does Comeuppance solve?
 
 1. Point system for children based on behavior that gives both parents and their children access to their progress.
 
@@ -11,7 +11,7 @@ Are you a Parent? Do you want a point system for your children that allows the c
 3. Track behavior trends for individual children by keeping record of previously earned points, rewards, and punishments.
 
 
-# Want to use Comeuppance? Follow the instructions below to run the application.
+## Want to use Comeuppance? Follow the instructions below to run the application.
 
 Clone down this repository by clicking the "Clone or Download" button above, copying the SSH key, and running the following command in your terminal git clone SSH KEY GOES HERE.
 
@@ -29,4 +29,4 @@ In the api folder, run json-server -p 5002 -w database.json.
 
 Go to http://localhost:3000/ to view the app.
 
-# This project was bootstrapped with Create React App.
+### This project was bootstrapped with Create React App.
