@@ -6,32 +6,28 @@ class PunishmentCard extends Component {
         return (
             <Card className="text-center">
                 <Card.Body>
-                    {/* <div className="card">
-                        <div className="card-content"> */}
-                            <Row>
-                                <Col>
-                                    <Card.Text className="card-punishmentpoints">{this.props.punishment.point.numberOfPoints} Points</Card.Text>
-                                </Col>
-                                <Col>
-                                    <Card.Text className="card-punishmentname"><strong>{this.props.punishment.name}</strong></Card.Text>
-                                </Col>
+                    <Row>
+                        <Col>
+                            <Card.Text className="card-punishmentpoints">{this.props.punishment.point.numberOfPoints} Points</Card.Text>
+                        </Col>
+                        <Col>
+                            <Card.Text className="card-punishmentname"><strong>{this.props.punishment.name}</strong></Card.Text>
+                        </Col>
 
 
-                                <Button type="button"
-                                    variant="dark" ariant="outline-secondary"
-                                    size="sm"
-                                    onClick={() => { this.props.history.push(`/punishments/${this.props.punishment.id}/edit`) }}>Edit
+                        <Button type="button"
+                            variant="dark" ariant="outline-secondary"
+                            size="sm"
+                            onClick={() => { this.props.history.push(`/punishments/${this.props.punishment.id}/edit`) }}>Edit
                             </Button>
-                                <Button
-                                    type="button"
-                                    variant="dark"
-                                    ariant="outline-secondary"
-                                    size="sm"
-                                    onClick={() => this.props.deletePunishment(this.props.punishment.id)}
-                                >Delete</Button>
-                            </Row>
-                        {/* </div>
-                    </div> */}
+                        <Button
+                            type="button"
+                            variant="dark"
+                            ariant="outline-secondary"
+                            size="sm"
+                            onClick={() => this.props.deletePunishment(this.props.punishment.id)}
+                        >Delete</Button>
+                    </Row>
                 </Card.Body>
             </Card>
         );

@@ -13,7 +13,6 @@ class PunishmentList extends Component {
     }
 
     componentDidMount() {
-        console.log("PUNISHMENT LIST: ComponentDidMount");
         //getAll from PunishmentManager and hang on to that data; put it in state
         PunishmentManager.getAll(sessionStorage.getItem("kidCredentials"))
             .then((punishments) => {
@@ -36,7 +35,6 @@ class PunishmentList extends Component {
     }
 
     render() {
-        console.log("PunishmentList: Render");
         if (Helper.isParent(sessionStorage) !== false) {
             return (
                 <>

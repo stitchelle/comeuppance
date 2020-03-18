@@ -31,7 +31,6 @@ class PunishmentEditForm extends Component {
             comeuppanceType: 2,
             id: this.props.match.params.punishmentId,
         };
-        console.log(editedPunishment)
 
         PunishmentManager.update(editedPunishment)
             .then(() => this.props.history.push("/punishments"))
@@ -43,7 +42,6 @@ class PunishmentEditForm extends Component {
             PunishmentManager.get(this.props.match.params.punishmentId)
         ])
             .then(([points, punishment])=> {
-                console.log("punishment", punishment)
                 this.setState({
                     userId: punishment.userId,
                     pointId: Number(punishment.pointId),

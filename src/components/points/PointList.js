@@ -22,16 +22,13 @@ class PointList extends Component {
 
     kidCredentials = () => {
         if (Helper.isParent(sessionStorage)) {
-            console.log("parent")
             return (sessionStorage.getItem("kidCredentials"))
         } else {
-            console.log("notparent")
             return (this.credentials.id)
         }
     }
 
     componentDidMount() {
-        console.log("POINT HISTORY LIST: ComponentDidMount", this.kidCredentials());
         PointsHistoryManager.getAllForUser(this.kidCredentials())
             .then((pointsHistory) => {
                 this.setState({
@@ -66,7 +63,6 @@ class PointList extends Component {
                             pointsHistory: pointsHistory
                         })
                     }))
-            // .then(() => this.props.history.push("/points"));
         }
     };
 
@@ -90,7 +86,6 @@ class PointList extends Component {
                             pointsHistory: pointsHistory
                         })
                     }))
-            // .then(() => this.props.history.push("/points"));
         }
     };
 
@@ -103,7 +98,6 @@ class PointList extends Component {
     }
 
     render() {
-        console.log("hi", "onClick")
         if (Helper.isParent(sessionStorage)) {
             return (
                 <>
@@ -176,17 +170,12 @@ class PointList extends Component {
                                                 </Card.Body>
                                             </Card>
                                         )
-
-                                    }
-                                    )
-
+                                    })
                                 }
-
                             </Card.Body>
                         </Card>
                     </CardGroup>
                 </>
-
             );
         } else {
             return (
@@ -223,12 +212,8 @@ class PointList extends Component {
                                                 </Card.Body>
                                             </Card>
                                         )
-
-                                    }
-                                    )
-
+                                    })
                                 }
-
                             </Card.Body>
                         </Card>
                     </CardGroup>

@@ -14,7 +14,6 @@ class PointCard extends Component {
 
     componentDidMount() {
         let userId = Helper.isParent(sessionStorage) ? Number(sessionStorage.getItem("kidCredentials")) : JSON.parse(sessionStorage.getItem("credentials")).id
-        console.log("user".userId)
 
         Promise.all([
             PointsHistoryManager.getCurrentForUser(userId),
@@ -27,14 +26,6 @@ class PointCard extends Component {
                     previousMonthsPoints: previousPoints
                 })
             })
-        // PointsHistoryManager.getCurrentForUser(userId)
-        //     .then((currentPoints) => {
-        //         console.log("filtered", currentPoints)
-        //         this.setState({
-        //             kidId: userId,
-        //             currentMonthsPoints: currentPoints
-        //         })
-        //     })
     }
     totalPoints = (points) => {
         let total = 0
@@ -45,7 +36,6 @@ class PointCard extends Component {
     }
 
     render() {
-        console.log("points", this.state.previousMonthsPoints)
         return (
             <>
                 <Card.Header className="text-center"><h3>TOTAL POINTS</h3></Card.Header>

@@ -27,8 +27,6 @@ class KidPunishmentCard extends Component {
     constructNewHistory = evt => {
         let credentials =
             JSON.parse(sessionStorage.getItem("credentials"))
-        console.log("picked", credentials.id)
-        // evt.preventDefault();
         this.setState({ loadingStatus: true });
         const history = {
             userId: credentials.id,
@@ -36,11 +34,8 @@ class KidPunishmentCard extends Component {
             comeuppanceId: picked.id,
             completed: false,
             timestamp: new Date().toISOString()
-
         };
-        // Create the history and redirect user to ristory list
         HistoryManager.post(history)
-        // .then(() => this.props.history.push("/history"));
     }
 
     pickRandomPunishment = () => {
@@ -52,9 +47,6 @@ class KidPunishmentCard extends Component {
     }
 
     render() {
-        console.log("this.props.punishments", this.props.punishments)
-        console.log("!-----")
-
         return (
             <>
                 <Card>
