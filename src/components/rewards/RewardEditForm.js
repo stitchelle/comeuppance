@@ -11,7 +11,7 @@ class RewardEditForm extends Component {
         pointId: "",
         rewardName: "",
         comeuppanceType: "",
-        points:[],
+        points: [],
         loadingStatus: true,
     };
 
@@ -42,7 +42,7 @@ class RewardEditForm extends Component {
             PointManager.getAll(),
             RewardManager.get(this.props.match.params.rewardId)
         ])
-            .then(([points,reward]) => {
+            .then(([points, reward]) => {
                 this.setState({
                     userId: reward.userId,
                     pointId: Number(reward.pointId),
@@ -50,20 +50,7 @@ class RewardEditForm extends Component {
                     comeuppanceType: 1,
                     loadingStatus: false,
                     points: points
-            })
-
-
-        // console.log(this.props.match.params.rewardId)
-        // RewardManager.get(this.props.match.params.rewardId)
-        //     .then(reward => {
-        //         console.log("reward", reward)
-        //         this.setState({
-        //             userId: reward.userId,
-        //             pointId: Number(reward.pointId),
-        //             rewardName: reward.name,
-        //             comeuppanceType: 1,
-        //             loadingStatus: false,
-        //         });
+                })
             });
     }
 
@@ -86,7 +73,7 @@ class RewardEditForm extends Component {
                                         return (
                                             <option value={point.id} key={point.id}>{point.numberOfPoints}</option>
                                         )
-                                    } 
+                                    }
                                     )}
                                 </Form.Control>
                                 <Form.Text className="text-muted">Select Number of Points</Form.Text>
