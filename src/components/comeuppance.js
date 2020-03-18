@@ -59,7 +59,6 @@ class Comeuppance extends Component {
     }
 
     setKidId = (id) => {
-        console.log("hi", id)
         sessionStorage.setItem("kidCredentials", JSON.stringify(id))
         this.setState({
             kidId: id

@@ -5,7 +5,6 @@ import HistoryManager from '../../modules/HistoryManager'
 
 class HistoryCard extends Component {
     historyCard = (comeuppance) => {
-        console.log("type?", comeuppance)
         if (comeuppance === 2) {
             return "historyCardNegative"
         } else {
@@ -23,16 +22,9 @@ class HistoryCard extends Component {
         };
         HistoryManager.update(editedCheckBox,this.props.historyCard.id)
             .then(() => this.props.history.push("/history"))
-
-    
-        // const stateToChange = {};
-        // stateToChange[evt.target.id] = evt.target.checked;
-        // this.setState(stateToChange);
-
     
     };
     render() {
-        console.log(this.props.historyCard.id)
         return (
             <Card>
                 <Card.Body className={this.historyCard(this.props.historyCard.comeuppance.comeuppanceType)}>

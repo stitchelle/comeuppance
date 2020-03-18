@@ -13,7 +13,6 @@ class NavBar extends Component {
 
     setUserId(kid) {
         this.setState({ userId: kid })
-        console.log("setUser", this.state.userId)
     }
 
     isParent = () => {
@@ -35,8 +34,6 @@ class NavBar extends Component {
     }
 
     render() {
-        console.log("hi", this.credentials().username)
-
         if (this.props.user !== true && this.isParent() === undefined) {
             return (
                 <Navbar bg="dark" variant="dark" expand="lg">

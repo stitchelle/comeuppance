@@ -14,7 +14,6 @@ class KidPointCard extends Component {
 
     componentDidMount() {
         let userId = Helper.isParent(sessionStorage) ? Number(sessionStorage.getItem("kidCredentials")) : JSON.parse(sessionStorage.getItem("credentials")).id
-        console.log("user".userId)
 
         Promise.all([
             PointsHistoryManager.getCurrentForUser(userId),
@@ -36,7 +35,6 @@ class KidPointCard extends Component {
         return total
     }
 
-
     render() {
         return (
             <>
@@ -56,16 +54,6 @@ class KidPointCard extends Component {
                         </Card.Body>
                     </Col>
                 </Row>
-                {/* <Button
-                    type="button"
-                    variant="dark"
-                    size="md"
-                    block
-                    ariant="outline-secondary"
-                    onClick={() => {
-                        //   this.props.history.push(`/`)
-                    }}
-                >Redeem Points</Button> */}
             </>
         );
     }

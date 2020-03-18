@@ -20,7 +20,7 @@ class KidForm extends Component {
         this.setState(stateToChange);
     };
 
-    
+
     constructNewKid = evt => {
         evt.preventDefault();
         if (this.state.username === "" || this.state.email === "" || this.state.password === "") {
@@ -45,18 +45,14 @@ class KidForm extends Component {
                     KidManager.postRelationship(relationship)
                         .then((relationship) => {
                             this.props.updateRelationships()
-                            console.log("relationship",relationship.id)
                             sessionStorage.setItem("kidCredentials", relationship.id)
                             this.props.history.push(`/kid/${relationship.id}`)
                         })
                 });
-
         }
-
     };
 
     render() {
-
         return (
             <>
                 <Form>
@@ -65,37 +61,37 @@ class KidForm extends Component {
 
                         <Form.Group id="formBasicName">
                             <Form.Label>Kid Name</Form.Label>
-                            <Form.Control 
+                            <Form.Control
                                 id="username"
-                                type="text" 
-                                placeholder="Kids Name" 
+                                type="text"
+                                placeholder="Kids Name"
                                 required
-                                onChange={this.handleFieldChange}/>
+                                onChange={this.handleFieldChange} />
                         </Form.Group>
 
                         <Form.Group id="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control 
+                            <Form.Control
                                 id="email"
-                                type="email" 
-                                placeholder="Enter email" 
+                                type="email"
+                                placeholder="Enter email"
                                 required
-                                onChange={this.handleFieldChange}/>
+                                onChange={this.handleFieldChange} />
                         </Form.Group>
 
                         <Form.Group id="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control 
+                            <Form.Control
                                 id="password"
-                                type="password" 
-                                placeholder="Password" 
+                                type="password"
+                                placeholder="Password"
                                 required
-                                onChange={this.handleFieldChange}/>
+                                onChange={this.handleFieldChange} />
                         </Form.Group>
 
                         <Button
                             type="submit"
-                            variant="dark" 
+                            variant="dark"
                             ariant="outline-secondary"
                             disabled={this.state.loadingStatus}
                             onClick={this.constructNewKid}>

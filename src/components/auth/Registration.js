@@ -24,7 +24,7 @@ class Register extends Component {
         this.setState(stateToChange)
     }
 
-    // the logic to handle registration. This calls functions from Article manager.
+    // the logic to handle registration. This calls functions from Register Login manager.
     handleRegistration = (e) => {
         e.preventDefault()
         // if statements for validating password
@@ -62,10 +62,10 @@ class Register extends Component {
                                 RegistrationLoginManager.getRegisteredUser(this.state.email)
                                     .then(users => {
                                         users.forEach(user => {
-                                            // call the set user function from nutshell.js to set local storage.
+                                            // call the set user function from comeuppance.js to set local storage.
                                             this.props.setUser(user)
                                         });
-                                        // then once the local storage is set, then take the user to the articles page
+                                        // then once the local storage is set, then take the user to the home page
                                         this.props.history.push("/")
                                     })
                             })
@@ -89,7 +89,7 @@ class Register extends Component {
                     <h3>Register Account</h3>
                     <div className="formgrid">
                         <input onChange={this.handleFieldChange} type="text"
-                        /* if you are doing an input, and you want the content that the user is putting in the input box to be saved in state, then your ID in you input box has to match the state key. See below for example.
+                        /* if you are doing an input, and you want the content that the user is putting in the input box to be saved in state, then your ID in your input box has to match the state key. See below for example.
                         State = {
                             key: name
                         } 

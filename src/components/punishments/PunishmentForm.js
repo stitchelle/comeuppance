@@ -51,7 +51,6 @@ class PunishmentForm extends Component {
     }
 
     render() {
-        console.log(this.props.kidId)
         return (
             <>
                 <Form>
@@ -66,10 +65,6 @@ class PunishmentForm extends Component {
                                     required
                                     onChange={this.handleFieldChange}>
                                     <option>select points</option>
-                                    {/* <option>5</option>
-                                    <option>10</option>
-                                    <option>15</option>
-                                    <option>20</option> */}
 
                                     {this.state.points.map(point => {
                                         return (

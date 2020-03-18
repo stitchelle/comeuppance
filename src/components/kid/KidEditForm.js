@@ -24,7 +24,6 @@ class KidEditForm extends Component {
     updateExistingKid = evt => {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
-        // const userId = JSON.parse(sessionStorage.getItem("credentials"))
 
         const editedKid = {
             username: this.state.username,
@@ -44,14 +43,13 @@ class KidEditForm extends Component {
         
         KidManager.get(this.props.match.params.kidId)
             .then(kid => {
-                console.log("kid",kid.username)
                 this.setState({
                     username: kid.username,
                     email: kid.email,
                     password: kid.password,
                     isParent: false,
                     points: kid.points,
-                });console.log(this.state)
+                });
             });
     }
 

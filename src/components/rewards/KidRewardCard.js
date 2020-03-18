@@ -26,8 +26,6 @@ class KidRewardCard extends Component {
     constructNewHistory = evt => {
         let credentials =
             JSON.parse(sessionStorage.getItem("credentials"))
-        console.log("picked", credentials.id)
-        // evt.preventDefault();
         this.setState({ loadingStatus: true });
         const history = {
             userId: credentials.id,
@@ -37,9 +35,7 @@ class KidRewardCard extends Component {
             timestamp: new Date().toISOString()
 
         };
-        // Create the history and redirect user to ristory list
         HistoryManager.post(history)
-        // .then(() => this.props.history.push("/history"));
     }
 
 
@@ -52,9 +48,6 @@ class KidRewardCard extends Component {
     }
 
     render() {
-        console.log("this.props.rewards", this.props.point.id)
-        console.log("!-----")
-
         return (
             <>
                 <Card>

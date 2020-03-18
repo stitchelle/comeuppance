@@ -13,12 +13,10 @@ class KidRewardList extends Component {
     }
 
     componentDidMount() {
-        console.log("KID REWARD LIST: ComponentDidMount");
         //getAll from PointManager and hang on to that data; put it in state
         // Parse all the getAllByPoints
         let credentials =
             JSON.parse(sessionStorage.getItem("credentials"))
-
 
         Promise.all([
             PointManager.getAll(),
@@ -28,7 +26,6 @@ class KidRewardList extends Component {
             RewardManager.getAllByPoints(credentials.id, 4)
         ])
             .then(([points, rewards1, rewards2, rewards3, rewards4]) => {
-
                 this.setState({
                     points: points,
                     rewards: [rewards1, rewards2, rewards3, rewards4]
@@ -36,13 +33,7 @@ class KidRewardList extends Component {
             })
     }
 
-
-
-
-
     render() {
-        console.log("Points LIST: Render", this.state);
-
         return (
             <>
                 <Card style={{backgroundColor: "#ccdefa"}}>

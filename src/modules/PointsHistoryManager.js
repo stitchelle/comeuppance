@@ -27,7 +27,7 @@ export default {
                 let previousDate = new Date()
                 let previousPoints = data.filter(point => {
                     let pointDate = new Date(point.timestamp)
-                    return previousDate.getMonth()-1 === pointDate.getMonth() && previousDate.getFullYear() === pointDate.getFullYear()
+                    return previousDate.getMonth() === pointDate.getMonth() && previousDate.getFullYear() === pointDate.getFullYear()
                 })
                 return previousPoints
             })

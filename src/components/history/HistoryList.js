@@ -23,7 +23,6 @@ class HistoryList extends Component {
     }
 
     componentDidMount() {
-        console.log("HISTORY LIST: ComponentDidMount", this.kidCredentials());
         //getAll from HistoryManager and hang on to that data; put it in state
         HistoryManager.getAll(this.kidCredentials())
             .then((history) => {
@@ -50,8 +49,6 @@ class HistoryList extends Component {
     // }
 
     render() {
-        console.log("HISTORY LIST: Render", this.state.history);
-
         return (
             <>
                 <Card className="container-cards">

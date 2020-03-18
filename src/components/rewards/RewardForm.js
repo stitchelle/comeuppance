@@ -18,7 +18,6 @@ class RewardForm extends Component {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
-        console.log(stateToChange)
     };
 
     /*  Local method for validation, set loadingStatus, create reward      object, invoke the RewardManager post method, and redirect to the full reward list
@@ -46,7 +45,6 @@ class RewardForm extends Component {
     componentDidMount() {
         PointManager.getAll()
             .then((points) => {
-                console.log("bob", points)
                 this.setState({
                     points: points
                 })
@@ -69,14 +67,10 @@ class RewardForm extends Component {
                                     required
                                     onChange={this.handleFieldChange}>
                                     <option>select points</option>
-                                    {/* <option>5</option>
-                                    <option>10</option>
-                                    <option>15</option>
-                                    <option>20</option> */}
 
                                     {this.state.points.map(point => {
                                         return (
-                                        <option value={point.id} key={point.id}>{point.numberOfPoints}</option>
+                                            <option value={point.id} key={point.id}>{point.numberOfPoints}</option>
                                         )
                                     }
                                     )}

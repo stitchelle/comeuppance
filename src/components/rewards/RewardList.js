@@ -27,7 +27,6 @@ class RewardList extends Component {
             .then(() => {
                 RewardManager.getAll(sessionStorage.getItem("kidCredentials"))
                     .then((newRewards) => {
-                        console.log("new", newRewards)
                         this.setState({
                             rewards: newRewards
                         })
